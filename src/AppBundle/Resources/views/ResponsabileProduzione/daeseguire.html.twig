@@ -1,0 +1,38 @@
+{% extends "AppBundle:ResponsabileProduzione:SPbase.html.twig" %}
+
+
+{% block title %}Lavori da eseguire{% endblock %}
+
+{% block corpo %}
+
+<section class="top">
+   <h4>LAVORI DA ESEGUIRE</h4>
+      </section>
+		    <section class="ric">
+		    	  <div>
+		    		<h4>Ricerca</h4>
+		    		<input class="search" name="" placeholder="nome cliente, numero ordine..."><a class="btn-flat primary" href="">  Ricerca </a>
+				  </div>
+		    </section>
+	            <section class="t1" >
+	               <table class="table table-hover">
+					    <caption> <h4>Lavori - <span>da eseguire </span></h4></caption>
+						    <thead> 
+						    	<tr><th class="span3">Descrizione</th><th class="span4">Codice lavorazione</th><th class="span4">data</th><th class="span4">STATO</th><th class="span4"> </th></tr>
+					    	</thead>
+					    <tbody>
+					            {%for item in  eseguire %}
+					    	<tr class="first">
+						        <td>{{item.descrizione}}</td>
+						        <td>{{item.codiceordine}}</td>
+						        <td><time datetime="2016-07-20">{{item.data}}</time></td>
+						        <td>{{item.stato}}</td>
+						        <td>	       
+        						<a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="cliente.html"><i class="icon-zoom-in"></i> Analizza</a>
+								</td>
+						    </tr>
+						        {%endfor%}
+					   </tbody>
+				   </table>
+				</section>
+		{% endblock %}
