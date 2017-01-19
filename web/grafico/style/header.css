@@ -1,0 +1,182 @@
+/* Override family buttons */
+
+.glow {
+	outline: none;
+}
+
+.btn-group button.glow {
+	padding: 7px 10px;
+}
+
+/* Override border radius per subcats */
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+	border-radius: 3px;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+	border-radius: 3px;
+}
+
+/*Selection overloading*/
+::selection {
+background: #00CCFF;
+color:#555;
+}
+
+::-moz-selection {
+background:#00D692;
+color:#555;
+}
+
+::-webkit-selection {
+background:#00D692;
+color:#555;
+}
+
+/*Menu overriding*/
+/*.navbar
+{
+	width: 100%;
+	position: fixed;
+	z-index: 100000;
+}*/
+
+.navbar-inverse .nav > li > a:hover {
+	background: rgba(255, 255, 255, 0.12);
+}
+.navbar-inner {
+	border: 0px rgba(255, 255, 255, 0.30);
+}
+.navbar-inverse .navbar-inner {
+	border-radius: 0px;
+	border-bottom: 0px solid #191e23;
+	/*background: #016CB3; /*#008DEB;*/
+	background: linear-gradient(6deg,#0064C0,#00c8ff);
+}
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle
+{
+	color: #ffffff;
+	/*background-color: #00C2FF;*/
+	/*background-color: #0065A8;*/
+	background-color:rgba(255, 255, 255, 0.24);
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+	background: rgb(0, 66, 129) !important;
+}
+.navbar-inverse .nav > li > a
+{
+	border-left: 0px solid #101417;
+	color: rgb(255, 255, 255);
+}
+.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
+	border-top-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+}
+#dashboard-menu > li > a {
+	/*color: #005279;*/
+	color: #00396F;
+	/*color: #009FEE;*/
+	/*color: #0070FF;*/
+	transition:all .3s ease-in; 
+    -o-transition:all .3s ease-in; 
+    -moz-transition:all .3s ease-in; 
+    -webkit-transition:all .3s ease-in;
+}
+#dashboard-menu > li.active > a, #dashboard-menu > li > a:hover {
+	color: rgba(0, 42, 90, 1);
+	transition:all .3s ease-in; 
+    -o-transition:all .3s ease-in; 
+    -moz-transition:all .3s ease-in; 
+    -webkit-transition:all .3s ease-in;
+}
+
+.container {
+  z-index:10;
+  position: absolute;
+  top: -1px;
+  /*width: 100%;*/
+  left: 50%;
+  margin-left: -140px;
+  text-align: center;
+  width: 280px;
+}
+ 
+.notification {
+	transition:all .3s ease-in; 
+    -o-transition:all .3s ease-in; 
+    -moz-transition:all .3s ease-in; 
+    -webkit-transition:all .3s ease-in;
+	cursor: pointer;
+	display: inline;
+	display: block;
+	background-color: rgba(0, 0, 0, 0.05);
+	color: white;
+	width: 280px;
+	height: 33px;
+	padding-top: 15px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.notification:hover {
+	transition:all .3s ease-in; 
+    -o-transition:all .3s ease-in; 
+    -moz-transition:all .3s ease-in; 
+    -webkit-transition:all .3s ease-in;
+	background-color: rgba(0, 0, 0, 0.68);
+}
+
+.accountant_clients_remove_icon {
+	opacity: 0.7;
+	font-size: 15px;
+	float: right;
+	margin-top: 3px;
+	margin-right: 10px;
+	cursor:pointer;
+}
+
+.accountant_clients_remove_icon:hover {
+	opacity: 1;
+}
+
+.menu-edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -5px;
+    display: block
+    float: right
+    padding: 2px 7px;
+    font-size: 16px;
+    background: #DFEFFF;
+    color: rgba(0, 57, 111, 0.7);
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+    z-index: auto;
+}
+
+.menu-edit:hover {
+    color: rgba(0, 57, 111, 1);
+}
+
+.menu-indent {
+    line-height: 5px;
+}
+
+.menu-indent a{
+    padding-left: 28px !important;
+}
+
+.menu-indent i{
+    margin-left: 18px !important;
+    font-size: 18px !important;
+    margin-top: -11px !important;
+}
+
+/* customer support plugin color customization */
+#crmhero-powered-by a {
+    color: #007be2;
+    font-weight: 600;
+}
+#crmhero-powered-by {
+    font-size: 11px !important;
+}
