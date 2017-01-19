@@ -77,4 +77,6 @@ class ResponsabileProduzioneController extends Controller
         return $this->render('AppBundle:ResponsabileProduzione:conclusi.html.twig', array("conclusi"=>$conclusi));
     }
 
+    
+    //branch luis porco dio
 }
