@@ -31,12 +31,20 @@ public function showAction(Request $request)
                     $check=$this->getDoctrine()->getManager()->getRepository("AppBundle:Operatore")->findOneByUsername($user);
                     if($check and $check->getTipo()=="Responsabile" ){
                         return $this->redirect($this->generateUrl('SPhome',array('User' => $user, )));
+                    }elseif($check and $check->getTipo()=="Operatore"){
+                        return $this->redirect($this->generateUrl('Ohome',array('User' => $user, )));
+                    }else{
+                    $check=$this->getDoctrine()->getManager()->getRepository("AppBundle:Grafico")->findOneByUsername($user);
+                        if($check and $check->getTipo()=="Responsabile" ){
+                            return $this->redirect($this->generateUrl('Ghome',array('User' => $user, )));
+                        }elseif($check and $check->getTipo()=="Grafico"){
+                            return $this->redirect($this->generateUrl('Ghome',array('User' => $user, )));
+                        }else{
+                               return $this->render('AppBundle:Login:login.html.twig');
+                            }
                     }
                 }
-        }else{
-           return $this->render('AppBundle:Login:login.html.twig');
         }
-        
         
     }
 }
