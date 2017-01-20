@@ -18,7 +18,7 @@ class GraficoController extends Controller
     }
     
     /**
-     * @Route("/ghome", name="ghome")
+     * @Route("/ghome", name="Ghome")
      */
     public function homeAction(Request $request){
         
