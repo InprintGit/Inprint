@@ -10,7 +10,6 @@ namespace AppBundle\Repository;
  */
 class GraficoRepository extends \Doctrine\ORM\EntityRepository
 {
-    
     public function checkUsername($em,$user){
         
         $p = $em->getRepository("AppBundle:Grafico")->findOneBy(array("username"=>$user,));
@@ -28,17 +27,17 @@ class GraficoRepository extends \Doctrine\ORM\EntityRepository
         return($query->getSingleScalarResult());
     }
     
-    public function tabellaEseguire($em,$user,$n){
+    public function tabellaEseguire($em, $user, $n){
         
         $id= $this->getIdByUsername($em,$user);
         $query = $em->createQuery(
             'SELECT c.Nome, c.Cognome, o.id, o.Data
-            FROM AppBundle:Grafica g, Appbundle:Ordine o, AppBundle:Cliente c
-            WHERE g.GraficoId = :id AND e.Tipo= ?' 
-        )->setParameter(1, 'Da Assegnare', 'id',$id);
+            FROM Appbundle:Ordine o, AppBundle:Cliente c, AppBundle:Grafica g
+            WHERE c.id = o.ClienteId AND o.GraficaId = g.id AND (o.StatoId = 9 AND g.GraficoId = :id)' 
+        )->setParameter('id', $id); 
 
-        $tabellaEseguire = $query->setMaxResults($n)->getResult();
-        return $tabellaEseguire;
+        $eseguire = $query->setMaxResults($n)->getResult();
+        return $eseguire;
 
     }
     
@@ -46,21 +45,43 @@ class GraficoRepository extends \Doctrine\ORM\EntityRepository
         
         $id= $this->getIdByUsername($em,$user);
         $query = $em->createQuery(
-            'SELECT c.Nome, c.Cognome, o.id, o.Data
-            FROM AppBundle:Grafica g, Appbundle:Ordine o, AppBundle:Cliente c
-            WHERE g.GraficoId = :id AND e.Tipo= ?' 
-        )->setParameter(1, 'In Lavorazione', 'id',$id);
+            'SELECT c.Nome, c.Cognome, o.id, e.Data
+            FROM Appbundle:Ordine o, AppBundle:Cliente c, AppBundle:Grafica g, AppBundle:EventoGrafica e
+            WHERE c.id = o.ClienteId AND o.GraficaId = g.id AND (g.GraficoId = :id AND o.StatoId = 10)' 
+        )->setParameter('id', $id);
         
-        $tabellaLavorazione = $query->setMaxResults($n)->getResult();
-        return $tabellaLavorazione;
+        $lavorazione = $query->setMaxResults($n)->getResult();
+        return $lavorazione;
 
     }
     
-    public function tabellaDaRieseguire ($em, $user, $id){
+    public function tabellaDaRieseguire ($em, $user, $n){
         
+        $id= $this->getIdByUsername($em,$user);
+        $query = $em->createQuery(
+            'SELECT c.Nome, c.Cognome, o.id, o.Data
+            FROM Appbundle:Ordine o, AppBundle:Cliente c, AppBundle:Grafica g
+            WHERE c.id = o.ClienteId AND o.GraficaId = g.id AND (g.GraficoId = :id AND o.StatoId = 12)' 
+        )->setParameter('id', $id);
+        
+        $rieseguire = $query->setMaxResults($n)->getResult();
+        return $rieseguire;
+
+    }
+    
+    public function tabellaInAttesa ($em, $user, $n){
+        
+        $id= $this->getIdByUsername($em,$user);   
+        $query = $em->createQuery(
+            'SELECT c.Nome, c.Cognome, o.id, o.Data
+            FROM Appbundle:Ordine o, AppBundle:Cliente c, AppBundle:Grafica g
+            WHERE c.id = o.ClienteId AND o.GraficaId = g.id AND (o.StatoId = 11 AND g.GraficoId = 0)' 
+        )->setParameter('id', $id);
+        
+        $attesa = $query->setMaxResults($n)->getResult();
+        return $attesa;
         
     }
 
+
 }
- 
- 
