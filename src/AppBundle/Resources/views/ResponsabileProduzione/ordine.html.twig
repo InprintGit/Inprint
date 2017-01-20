@@ -1,0 +1,96 @@
+{% extends "AppBundle:ResponsabileProduzione:SPbase.html.twig" %}
+{% block title %}Ordine{% endblock %}
+{% block corpo %}
+<div id="esterno">
+    <div class="container-fluid" style="">
+        <script>var premiumAccess = 2;</script><script>var type=0; var csid=1750327;</script>
+            <div style="margin-top:20px;" align="center">
+                <h4 style="font-weight: 300;">Dettagli ordine</h4>
+                <h3 style="font-weight: 300; margin-top:10px;">{{item.id}} - {{item.nome}} {{item.cognome}}</h3>
+            </div>
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th class="span2">Data ordine</th>
+                        <th class="span2"><span class="line"></span>Data Conclusione</th>
+                        <th class="span2"><span class="line"></span>Stato</th>
+                        <th class="span4"><span class="line"></span>Descrizione</th>
+                        <th class="span1"><span class="line"></span>quantita'</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr class="first" style="font-size:14px; cursor:pointer; ">
+                        <td>{{ordine.dataordine}}</td>
+                        <td>{# ordine.dataconclusione #}<span class="label label-verde">Prevista</span></td>
+                        <td>{{ordine.stato}}</td>
+                        <td>{{ordine.descrizione}}</td>
+                        <td>{{ordine.quantità}}</td>
+                    </tr>				    			
+                    <tr class="dettagli"><td colspan="5"> Eventuali dettagli della lavorazione del prodotto</td></tr>
+              
+                </tbody>
+            </table>
+            <div style="margin-top:15px;" align="right">
+                <a class="btn-flat success dettagli" id="b1" style="border-radius:2px; cursor:pointer;"> Modifica Fasi di lavorazione</a>
+                <a class="btn-flat success alt" id="b3" style="border-radius:2px; cursor:pointer;" onclick="Mostra(2)"> Visualizza Fasi</a>
+                <a class="btn-flat success dettagli" id="b2" style="border-radius:2px; cursor:pointer;" onclick="Mostra(1)"> Visualizza Eventi</a>
+            </div>
+        <table>
+            <tbody>
+                <tr valign="top">
+                    <td style="width: 1400px;" width="100%"><div class="row-fluid" id="boxTable" style="margin-top:30px;">
+                        <table class="table table-hover" id="t1" >
+                            <caption><h4>Eventi di lavorazione<h4></caption>
+                            <thead>
+                                <tr>
+                                    <th class="span2">Fase</th>
+                                    <th class="span2"><span class="line"></span>Assegnazione</th>
+                                    <th class="span4"><span class="line"></span>Presa in carico</th>
+                                    <th class="span4"><span class="line"></span>Conclusione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {%for item in eventi%}
+                                <tr style="font-size:14px; cursor:pointer; ">
+                                    <td>{{item.fase}}</td>
+                                    <td>{{item.assegnazione}}</td>
+                                    <td>{{item.presaincarico}}</td>
+                                    <td>{{item.conclusione}}</td>
+                                </tr>
+                            {%endfor%}
+                            </tbody>
+                        </table>
+                        <table class="table table-hover dettagli" id="t2" >
+                            <caption> <h4>Fasi Lavorazione<h4> </caption>
+                            <thead>
+                                <tr>
+                                    <th class="span2">Fase</th>
+                                    <th class="span2"><span class="line"></span>stato</th>
+                                    <th class="span2"><span class="line"></span>Operatore</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {%for item in fasi%}
+                                {%if item.presaincarico=null%}
+                                    {%set item.stato="Assegnata"%}
+                                {%elseif item.concluso=null %}
+                                    {%item.stato="Presa in carico"%}
+                                {%else%}
+                                    {% set item.stato="Concluso"%}
+                                {%endif%}
+                                <tr style="font-size:14px; cursor:pointer; ">
+                                    <td>{{item.fase}}</td>
+                                    <td>{{item.stato}}</td>
+                                    <td>{{item.operatore}}</td>
+                                </tr>
+                            {%endfor%}
+                            </tbody>
+                        </table>
+                    </td> 
+                </tr>
+            </tbody> 
+        </table>
+    </div>	    
+</div>
+{% endblock %}

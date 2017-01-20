@@ -77,6 +77,15 @@ class ResponsabileProduzioneController extends Controller
         return $this->render('AppBundle:ResponsabileProduzione:conclusi.html.twig', array("conclusi"=>$conclusi));
     }
 
+   /**
+     * @Route("/SP/ordine/{idordine}", name="SPordine")
+     */
+    public function ordineAction(Request $request)
+    {
+        $idOrdine=$request->get('idordine');
+        //generare informazioni necessarie per costruire l'interfaccia
+        return $this->render('AppBundle:ResponsabileProduzione:conclusi.html.twig', array("conclusi"=>$conclusi));
+    }
+ 
     
-    //branch luis porco dio cristo
 }
