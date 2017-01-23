@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class OperatoreRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getLavoratori($em, $idRP){
+       $query=$em->createQuery('
+                    SELECT O.id,O.nome, O.cognome, O.dataNascita, O.codiceFiscale, O.telefono, O.mail, O.username
+                    FROM AppBundle:Operatore O, AppBundle:Operatore R
+                    WHERE  R.sitoProduzioneId=O.sitoProduzioneId AND O.id<>R.id and R.id=:idRP
+                    ')->setParameter('idRP',$idRP);
+        $ris = $query->getResult();
+        return $ris;
+    }
 }
