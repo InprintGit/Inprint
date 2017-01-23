@@ -346,4 +346,24 @@ class OrdineRepository extends \Doctrine\ORM\EntityRepository
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    
+        public function DatiPrincipali($em,$idOrdine){
+            $query=('
+                    Select OD.*
+                    From OrdineDati OD
+                    Where codiceordine='.$idOrdine);
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    
+       public function FasiProduzione($em,$idOrdine){
+            $query=('
+                    Select FO.*
+                    From FasiOrdini FO
+                    Where codiceordine='.$idOrdine);
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

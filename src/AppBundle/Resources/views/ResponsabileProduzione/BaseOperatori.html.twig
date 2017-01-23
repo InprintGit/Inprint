@@ -1,0 +1,21 @@
+{% extends "AppBundle:ResponsabileProduzione:SPbase.html.twig" %}
+
+{% block title %}Operatori{% endblock %}
+
+{% block corpo %}
+
+    {%block Oheader %}
+    <header style=" background: linear-gradient(to right,#646464,#b9b9b9)">
+                    <nav class="menu">
+                            <ul >
+                    <li><a href="esterni.html">Home</a></li>
+                    <li><a href="{{ path('SPnuovoOperatore')}}">Nuovo operatore</a></li>
+                    <li><a href="enuovo.html">Gestisci lavoro</a></li>
+                </ul>
+            </nav>
+    </header>
+    {%endblock%}
+    {%block Ocorpo%}
+    {%endblock%}
+    
+{% endblock %}

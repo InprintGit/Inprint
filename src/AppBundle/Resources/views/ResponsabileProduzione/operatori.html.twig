@@ -1,7 +1,30 @@
-{% extends "::base.html.twig" %}
+{% extends "AppBundle:ResponsabileProduzione:BaseOperatori.html.twig" %}
+{%block Ocorpo%}
 
-{% block title %}AppBundle:ResponsabileProduzione:operatori{% endblock %}
-
-{% block body %}
-<h1>Welcome to the ResponsabileProduzione:operatori page</h1>
-{% endblock %}
+    <div id="operatore">
+        <section class="t1" >
+            <table class="table table-hover">
+                <caption> <h4>Elenco- <span>operatori</span></h4></caption>
+                <thead> 
+                    <tr>
+                        <th class="span3">Nome e cognome</th>
+                        <th class="span4">Codice lavoratore</th><th class="span4">data nascita</th>
+                        <th class="span4"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {%for item in operatori%}
+                    <tr class="first">
+                        <td> {{item.nome}} {{item.cognome}} </td>
+                        <td>{{item.id}}</td>
+                        <td><time datetime="2016-07-20">{{item.dataNascita|date('d-m-Y')}} </time></td>
+                        <td>	       
+                            <a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('SPoperatore', {'idOperatore': item.id})}}><i class="icon-zoom-in"></i> Visualizza</a>
+                        </td>
+                    </tr>
+                {%endfor%}
+                </tbody>  
+            </table>
+        </section>
+    </div>
+{%endblock%}

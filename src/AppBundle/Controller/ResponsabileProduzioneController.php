@@ -39,9 +39,11 @@ class ResponsabileProduzioneController extends Controller
      */
     public function operatoriAction()
     {
-        return $this->render('AppBundle:ResponsabileProduzione:operatori.html.twig', array(
-            // ...
-        ));
+        $session= new session();
+        $idRP=$session->get("idRP");
+        $em= $this->getDoctrine()->getManager();
+        $lavoratori=$em->getRepository("AppBundle:Operatore")->getLavoratori($em,$idRP);
+        return $this->render('AppBundle:ResponsabileProduzione:operatori.html.twig', array("operatori"=>$lavoratori));
     }
 
     /**
@@ -81,11 +83,30 @@ class ResponsabileProduzioneController extends Controller
      * @Route("/SP/ordine/{idordine}", name="SPordine")
      */
     public function ordineAction(Request $request)
-    {
+    {   // aggiungere la possibilità di modificare le fasi
+        $em=$this->getDoctrine()->getManager();
         $idOrdine=$request->get('idordine');
-        //generare informazioni necessarie per costruire l'interfaccia
-        return $this->render('AppBundle:ResponsabileProduzione:conclusi.html.twig', array("conclusi"=>$conclusi));
+        $ordine=$em->getRepository("AppBundle:Ordine")->DatiPrincipali($em,$idOrdine);
+        $fasiOrdine=$em->getRepository("AppBundle:Ordine")->FasiProduzione($em,$idOrdine);
+        return $this->render('AppBundle:ResponsabileProduzione:ordine.html.twig', array("ordine"=>$ordine[0], "fasi"=>$fasiOrdine));
     }
- 
+    
+    /**
+     * @Route("/SP/operatori/nuovo", name="SPnuovoOperatore")
+     */
+    public function nuovooperatoreAction(Request $request)
+    {   // realizzare controllore per Visualizzare un Operatore
+        
+        return $this->render('AppBundle:ResponsabileProduzione:Operatorenuovo.html.twig', array());
+    }
+    
+     /**
+     * @Route("/SP/operatori/{idOperatore}", name="SPoperatore")
+     */
+    public function operatoreAction(Request $request)
+    {   // realizzare controllore per Visualizzare un Operatore
+        
+        return $this->render('AppBundle:ResponsabileProduzione:Operatorenuovo.html.twig', array());
+    }
     
 }
