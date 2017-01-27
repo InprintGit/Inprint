@@ -26,7 +26,7 @@
                     <td>{{item.codiceordine}}</td>
                     <td><time datetime="{{item.data}}">{{item.data}} </time></td>
                     <td>{{item.stato}}</td>
-                    <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="ordine.html"><i class="icon-zoom-in"></i> Analizza</a></td>
+                    <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('SPordine', {'idordine': item.codiceordine})}}><i class="icon-zoom-in"></i> Analizza</a></td>
                 </tr>
             {%endfor%}
             </tbody>
@@ -45,7 +45,7 @@
                     <td>{{item.codiceordine}}</td>
                     <td><time datetime="{{item.data}}">{{item.data}} </time></td>
                     <td>{{item.stato}}</td>
-                    <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="ordine.html"><i class="icon-zoom-in"></i> Analizza</a></td>
+                    <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('SPordine', {'idordine': item.codiceordine})}}><i class="icon-zoom-in"></i> Analizza</a></td>
                 </tr>
             {%endfor%}
                 <tr class="dettagli" id="dettagli11"> <td colspan="4"> il presente div contiene i dettagli dell'elemento 1 </td></tr>

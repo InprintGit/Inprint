@@ -95,15 +95,19 @@ class OrdineRepository extends \Doctrine\ORM\EntityRepository
         if(array_key_exists("idarticolo",  $ordine )){
             if(array_key_exists("idcliente",  $ordine )){
                 if(array_key_exists("quantita",  $ordine )){
-                    if(array_key_exists("bozza",  $ordine ) or array_key_exists("idbozza",  $ordine )){
-                        if(array_key_exists("commento",  $ordine )){
-                            $ris= "completo";
+                    if(array_key_exists("allegato",  $ordine )){
+                        if(array_key_exists("bozza",  $ordine ) or array_key_exists("idbozza",  $ordine )){
+                            if(array_key_exists("commento",  $ordine )){
+                                $ris= "completo";
+                            }else{
+                                $ris= "commento";
+                            }
                         }else{
-                            $ris= "commento";
+                            $ris= "bozza";
                         }
                     }else{
-                        $ris= "bozza";
-                    }
+                        $ris="allegato";
+                }
                 }else{
                     $ris="quantita";
                 }
@@ -342,6 +346,26 @@ class OrdineRepository extends \Doctrine\ORM\EntityRepository
                     From OrdineDati OD
                     Where idsitoproduzione='.$idSP.' and idstato=21
                     Limit '.$n);
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    
+        public function DatiPrincipali($em,$idOrdine){
+            $query=('
+                    Select OD.*
+                    From OrdineDati OD
+                    Where codiceordine='.$idOrdine);
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    
+       public function FasiProduzione($em,$idOrdine){
+            $query=('
+                    Select FO.*
+                    From FasiOrdini FO
+                    Where codiceordine='.$idOrdine);
         $stmt = $em->getConnection()->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();

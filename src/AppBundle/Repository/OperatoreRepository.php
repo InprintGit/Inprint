@@ -10,6 +10,7 @@ namespace AppBundle\Repository;
  */
 class OperatoreRepository extends \Doctrine\ORM\EntityRepository
 {
+
     public function checkUsername($em,$user){
         
         $p = $em->getRepository("AppBundle:Operatore")->findOneBy(array("username"=>$user,));
@@ -17,6 +18,17 @@ class OperatoreRepository extends \Doctrine\ORM\EntityRepository
             return(FALSE); 
         }else {return TRUE;}
 }
+    public function getLavoratori($em, $idRP){
+       $query=$em->createQuery('
+                    SELECT O.id,O.nome, O.cognome, O.dataNascita, O.codiceFiscale, O.telefono, O.mail, O.username
+                    FROM AppBundle:Operatore O, AppBundle:Operatore R
+                    WHERE  R.sitoProduzioneId=O.sitoProduzioneId AND O.id<>R.id and R.id=:idRP
+                    ')->setParameter('idRP',$idRP);
+        $ris = $query->getResult();
+        return $ris;
+    }
+
+
     public function getIdByUsername($em,$user){
         $query = $em->createQuery(
             'SELECT o.id

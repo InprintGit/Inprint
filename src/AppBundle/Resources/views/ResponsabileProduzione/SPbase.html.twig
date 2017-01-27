@@ -7,8 +7,8 @@
        {%endblock%}
         <!-- Javascript -->
         {% block js %}
-            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-             <script src="{{ asset('js/base.js') }}"></script>
+            <script type="text/javascript" src= {{asset("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")}}></script>
+             <script src="{{ asset('SitoProduzione/js/base.js') }}"></script>
         {%endblock%}
     </head>
     <body>
@@ -34,6 +34,7 @@
 	        </div>
                 <div id="corpo">
                     {%block corpo%}
+                    
                     {%endblock%}    
 	        </div>
 	        <footer>

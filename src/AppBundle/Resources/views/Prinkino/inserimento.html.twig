@@ -17,13 +17,18 @@
                         <div class="field-box">
                             <label>{{dettaglio}}:</label>							
                             <td height="300" width="300">
+                                {%if not(dettaglio="allegato") %}
                                 <input name={{dettaglio}} id="extra" placeholder="Inserisci {{dettaglio}}..." class="span8" rows="8" style="margin: 0px 0px 10px; height: 110px; width: 250px; position:static; resize:none;"></textarea>
+                                {%else%}
+                                <input type="file" name={{dettaglio}} id="extra" placeholder="Inserisci {{dettaglio}}..." class="span8" rows="8" style="margin: 0px 0px 10px; height: 110px; width: 250px; position:static; resize:none;">
+                                {%endif%}
                             </td>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+                            
         <input type="submit" class="btn-flat primary" >  
     </form>
 </section>
