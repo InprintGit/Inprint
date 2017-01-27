@@ -44,7 +44,11 @@ public function showAction(Request $request)
                             }
                     }
                 }
+        
+               
         }
         
+
+        return $this->render('AppBundle:Login:login.html.twig');
     }
 }

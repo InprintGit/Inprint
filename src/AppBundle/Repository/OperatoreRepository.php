@@ -10,4 +10,47 @@ namespace AppBundle\Repository;
  */
 class OperatoreRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function checkUsername($em,$user){
+        
+        $p = $em->getRepository("AppBundle:Operatore")->findOneBy(array("username"=>$user,));
+        if(!$o) {
+            return(FALSE); 
+        }else {return TRUE;}
 }
+    public function getIdByUsername($em,$user){
+        $query = $em->createQuery(
+            'SELECT o.id
+            FROM AppBundle:operatore o
+            WHERE o.username = :user'
+        )->setParameter('user', $user);
+        return($query->getSingleScalarResult());
+    }
+    
+    public function tabellaNuovi ($em, $user, $n){        
+         $id= $this->getIdByUsername($em,$user);
+         $query = 
+           'SELECT fase, articolo, codiceordine,assegnazione as data 
+            FROM `FasiOrdini`FO
+            WHERE (assegnazione is not null AND presaincarico is null AND conclusione is null AND operatore ='.$id.' )' 
+            ;         
+          $nuovi = $em->getConnection()->prepare($query);
+          $nuovi->execute();
+          return $nuovi;
+    }
+    
+     public function tabellaEsecuzione ($em, $user, $n){        
+         $id= $this->getIdByUsername($em,$user);
+         $query =
+           'SELECT fase, articolo, codiceordine,presaincarico as data
+            FROM `FasiOrdini`FO
+            WHERE (assegnazione is not null AND presaincarico is not null AND conclusione is null AND operatore = '.$id.')' 
+            ;         
+          $esecuzione = $em->getConnection()->prepare($query);
+          $esecuzione->execute();
+          return $esecuzione;
+    }
+    
+    
+        
+    }
+    
