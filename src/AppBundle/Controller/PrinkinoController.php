@@ -197,6 +197,8 @@ class PrinkinoController extends Controller
             return $this->redirect($this->generateUrl('clienti'));
         }elseif($check=="idarticolo"){
             return $this->redirect($this->generateUrl('catalogo'));
+       } elseif($check=="allegato") {
+            return $this->render('AppBundle:Prinkino:inserimento.html.twig', array("dettaglio"=>$check)); 
         } elseif($check=="bozza") {
             return $this->redirect($this->generateUrl('bozza'));
         }elseif($check=="quantita" or $check="commento"){
