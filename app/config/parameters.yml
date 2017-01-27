@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 192.168.2.250
+    database_port: null
+    database_name: inprink
+    database_user: root
+    database_password: nacella
+    mailer_transport: smtp
+    mailer_host: 192.168.2.250
+    mailer_user: null
+    mailer_password: null
+    secret: fa750757d1818edc1c3faece6f262d7953ebfab0
