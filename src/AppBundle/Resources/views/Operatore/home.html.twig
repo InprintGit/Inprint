@@ -1,7 +1,57 @@
-{% extends "::base.html.twig" %}
+{% extends "AppBundle:Operatore:base.html.twig" %}
 
-{% block title %}AppBundle:Operatore:home{% endblock %}
+{% block title %}Operatore{% endblock %}
 
-{% block body %}
-<h1>Welcome to the Operatore:home page</h1>
+{% block corpo %}
+
+<section class="top">
+    <h4>Benvenuto Operatore di Produzione</h4>
+        </section>
+            <section style="text-align:right;">
+                <div >
+                    <input class="search" name="" placeholder="nome cliente, numero ordine..."><a class="btn-flat primary" href="">  Ricerca </a>
+                        </div>
+                            </section>
+
+    <section class="t1" >
+        <table class="table table-hover">
+            <caption> <h4>Lavori - <span>Nuovi </span></h4></caption>
+                <thead> 
+                    <tr><th class="span3">Descrizione</th><th class="span4">Fase</th><th class="span4">Codice Lavorazione</th><th class="span4">Data</th></tr>
+                        </thead>
+                            <tbody>
+                                {%for item in nuovi%}
+                                    <tr class="first">
+                                            <td>{{item.articolo}}<a href="javascript: dettagli(1,1);"><img src="../src/down.png" class="freccia" id="img11"></a></td>
+                                            <td>{{item.fase}}</td>
+                                            <td> {{item.codiceordine}}</td>
+                                            <td><time datetime="2016-07-20">{{item.data}}</time></td>
+                                            
+                                    </tr>
+                                            {%endfor%}
+                                                <tr class="dettagli" id="dettagli13"> <td colspan="4"><a class="btn-flat primary" href="">Prendi in carico </a> </td></tr>
+                               </tbody>
+                          </table>
+                  </section>
+
+    <section class="t1" >
+        <table class="table table-hover">
+            <caption> <h4>Lavori - <span>in esecuzione </span></h4></caption>
+                <thead> 
+                    <tr><th class="span3">Descrizione</th><th class="span4">Fase</th><th class="span4">Codice Lavorazione</th><th class="span4">Data</th></tr>
+                        </thead>
+                            <tbody>
+                                {%for item in esecuzione%}
+                                <tr class="first">
+                                    <td>{{item.articolo}}<a href="javascript: dettagli(1,2);"><img src="../src/down.png" class="freccia" id="img21"></a></td>
+                                    <td>{{item.fase}}</td>
+                                    <td> {{item.codiceordine}}</td>
+                                    <td><time datetime="2016-07-20">{{item.data}}</time></td>
+                                   
+                                </tr>
+                                    {%endfor%}
+                                        <tr class="dettagli" id="dettagli21"> <td colspan="4"><a class="btn-flat primary" href="">Concluso </a> </td></tr>
+                            </tbody>
+                    </table>
+    </section>
 {% endblock %}
