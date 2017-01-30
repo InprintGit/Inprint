@@ -109,4 +109,5 @@ class ResponsabileProduzioneController extends Controller
         return $this->render('AppBundle:ResponsabileProduzione:Operatorenuovo.html.twig', array());
     }
     
+
 }

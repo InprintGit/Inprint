@@ -66,6 +66,39 @@ class Producibile
         return $this->id;
     }
 
+      /**
+     * @var float
+     *
+     * @ORM\Column(name="CompensoGrafico", type="float", nullable=true)
+     */
+    private $compensoGrafico;
+    
+    /**
+     * Set compensoGrafico
+     *
+     * @param float $compensoGrafico
+     *
+     * @return Producibile
+     */
+    public function setCompensoGrafico($compensoGrafico)
+    {
+        $this->compensoGragico = $compensoGrafico;
+
+        return $this;
+    }
+
+    /**
+     * Get compensoGrafico
+     *
+     * @return float
+     */
+    public function getCompensoGrafico()
+    {
+        return $this->CompensoGrafico;
+    }
+    
+    
+    
     /**
      * Set nome
      *

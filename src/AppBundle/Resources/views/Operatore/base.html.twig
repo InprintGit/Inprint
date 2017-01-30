@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Prinkino{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('Operatore/style/monitor.css') }}" rel="stylesheet" />
+        {% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+            <script src="{{ asset('Operatore/js/base.js') }}"></script>
+        {% endblock %}
+        
+    </head>
+    <body>
+        {% block body %}
+            <header>
+                {% block header %}
+                    <img src="{{ asset('Operatore/src/prink.png')}}" id="logo">
+                    <nav class="menu">
+                    </nav>
+                {% endblock %}
+            </header>
+            <div class="conteiner">
+                <div class="aside">  
+	            {% block aside %}    
+                        
+                    {% endblock %}
+	        </div>
+                <div id="corpo">
+                    {% block corpo %}
+                   {% endblock %}
+                </div>
+                <footer>
+           		<p> inprint s.r.l.</p>
+	    	</footer>
+            </div>
+            {% endblock %}
+    </body>
+</html>
+
