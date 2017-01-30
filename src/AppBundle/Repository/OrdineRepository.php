@@ -76,13 +76,23 @@ class OrdineRepository extends \Doctrine\ORM\EntityRepository
         return $stmt->fetchAll();
     }
     
-    public function DatoRequest($request){
+    public function DatoRequest($em,$request){
         if($request->get('idcliente')){
             $ris=array("tipo"=>"idcliente","dato"=>$request->get('idcliente'));
         }elseif($request->get('idarticolo')){
             $ris=array("tipo"=>"idarticolo","dato"=>$request->get('idarticolo'));
         }elseif ($request->get('quantita')) {
             $ris=array("tipo"=>"quantita","dato"=>$request->get('quantita'));
+        }elseif (!isset($_FILES['allegato']) || !is_uploaded_file($_FILES['allegato']['tmp_name'])) {
+            echo "Prima di salva allegato";
+           $dato= $this->SalvaAllegato($em);
+           echo "Dopo salva allegato";
+           if($dato){
+                $ris[]=array("tipo"=>"allegato","dato"=>$request->get('allegato'));
+                $ris[]=array("tipo"=>"bozza","dato"=>'ND');
+           } else{
+               $ris=array();
+           }
         }elseif ($request->get('bozza')) {
             $ris=array("tipo"=>"bozza","dato"=>$request->get('bozza'));
         }elseif ($request->get('commento')) {
@@ -370,4 +380,30 @@ class OrdineRepository extends \Doctrine\ORM\EntityRepository
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    
+    public function SalvaAllegato($em){
+        $nome="gEsterna".$this->GeneraIdOrdine($em);
+        // per prima cosa verifico che il file sia stato effettivamente caricato
+        if (!isset($_FILES['allegato']) || !is_uploaded_file($_FILES['allegato']['tmp_name'])) {
+           echo "non carica il file";
+            return FALSE;   
+        }
+                //percorso della cartella dove mettere i file caricati dagli utenti
+        $uploaddir = '/Utente/Grafiche/Esterne/';
+
+        //Recupero il percorso temporaneo del file
+        $userfile_tmp = $_FILES['allegato']['tmp_name'];
+
+        //recupero il nome originale del file caricato
+        $userfile_name = $_FILES['allegato']['name'];
+        
+        if (move_uploaded_file($userfile_tmp, $uploaddir . $nome)) {
+           echo "salvataggio effettuato";
+            return $uploaddir . $nome;
+        }else{
+            echo "non salva";
+          return FALSE;
+          
+        }
+            }
 }

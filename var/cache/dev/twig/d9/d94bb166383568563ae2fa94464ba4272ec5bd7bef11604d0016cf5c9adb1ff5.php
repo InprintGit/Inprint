@@ -22,32 +22,32 @@ class __TwigTemplate_f44074012e6ef3157c9fbc94e0dcfd0cb656840de612a95ae714648e2f0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9fd1d2cc2250ad482df7c3be0a2e4fda1520b86c8992dcb5a9370287a6edc82e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9fd1d2cc2250ad482df7c3be0a2e4fda1520b86c8992dcb5a9370287a6edc82e->enter($__internal_9fd1d2cc2250ad482df7c3be0a2e4fda1520b86c8992dcb5a9370287a6edc82e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:inserimento.html.twig"));
+        $__internal_160f18cdcf1f939d6b8d33c379e1059d0646366f956b24142cc5203fa9783e24 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_160f18cdcf1f939d6b8d33c379e1059d0646366f956b24142cc5203fa9783e24->enter($__internal_160f18cdcf1f939d6b8d33c379e1059d0646366f956b24142cc5203fa9783e24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:inserimento.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_9fd1d2cc2250ad482df7c3be0a2e4fda1520b86c8992dcb5a9370287a6edc82e->leave($__internal_9fd1d2cc2250ad482df7c3be0a2e4fda1520b86c8992dcb5a9370287a6edc82e_prof);
+        $__internal_160f18cdcf1f939d6b8d33c379e1059d0646366f956b24142cc5203fa9783e24->leave($__internal_160f18cdcf1f939d6b8d33c379e1059d0646366f956b24142cc5203fa9783e24_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_781d9d14a2ff3333696ba6077fe7ca60ce14df2ffbb9043d753cc834e7521006 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_781d9d14a2ff3333696ba6077fe7ca60ce14df2ffbb9043d753cc834e7521006->enter($__internal_781d9d14a2ff3333696ba6077fe7ca60ce14df2ffbb9043d753cc834e7521006_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_f99d51f4ce5846466732ac6652b8e371001d3ecc38ad64afc60fc21cfba281e9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f99d51f4ce5846466732ac6652b8e371001d3ecc38ad64afc60fc21cfba281e9->enter($__internal_f99d51f4ce5846466732ac6652b8e371001d3ecc38ad64afc60fc21cfba281e9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo twig_escape_filter($this->env, (isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")), "html", null, true);
         
-        $__internal_781d9d14a2ff3333696ba6077fe7ca60ce14df2ffbb9043d753cc834e7521006->leave($__internal_781d9d14a2ff3333696ba6077fe7ca60ce14df2ffbb9043d753cc834e7521006_prof);
+        $__internal_f99d51f4ce5846466732ac6652b8e371001d3ecc38ad64afc60fc21cfba281e9->leave($__internal_f99d51f4ce5846466732ac6652b8e371001d3ecc38ad64afc60fc21cfba281e9_prof);
 
     }
 
     // line 6
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_45b36dc963c6e00a2d7afc3baf296cf5f503e70cdbf2ee1c0ed46b4cc6efd168 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_45b36dc963c6e00a2d7afc3baf296cf5f503e70cdbf2ee1c0ed46b4cc6efd168->enter($__internal_45b36dc963c6e00a2d7afc3baf296cf5f503e70cdbf2ee1c0ed46b4cc6efd168_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_9b1c3074258157dca2ea0a1c2f3679aad7f036bb49e63a5318de7b988c5a6d67 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9b1c3074258157dca2ea0a1c2f3679aad7f036bb49e63a5318de7b988c5a6d67->enter($__internal_9b1c3074258157dca2ea0a1c2f3679aad7f036bb49e63a5318de7b988c5a6d67_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
         // line 7
         echo "
@@ -55,38 +55,63 @@ class __TwigTemplate_f44074012e6ef3157c9fbc94e0dcfd0cb656840de612a95ae714648e2f0
    <h4>Nuovo ordine</h4>
 </section>
 <section class=\"form\">
-    <form method=\"post\" action=";
+    ";
         // line 12
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("nuovoordine");
-        echo ">
-          <table>
+        if ( !((isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")) == "allegato")) {
+            // line 13
+            echo "    <form method=\"post\" action=";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("nuovoordine");
+            echo ">
+    ";
+        } else {
+            // line 15
+            echo "    <form enctype=\"multipart/form-data\" method=\"post\" action=";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("nuovoordine");
+            echo ">
+    ";
+        }
+        // line 17
+        echo "        <table>
              <tbody>
                 <tr valign=\"form\">
                     <td height=\"254\" width=\"254\">
                         <div class=\"field-box\">
                             <label>";
-        // line 18
+        // line 22
         echo twig_escape_filter($this->env, (isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")), "html", null, true);
         echo ":</label>\t\t\t\t\t\t\t
                             <td height=\"300\" width=\"300\">
-                                <input name=";
-        // line 20
-        echo twig_escape_filter($this->env, (isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")), "html", null, true);
-        echo " id=\"extra\" placeholder=\"Inserisci ";
-        echo twig_escape_filter($this->env, (isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")), "html", null, true);
-        echo "...\" class=\"span8\" rows=\"8\" style=\"margin: 0px 0px 10px; height: 110px; width: 250px; position:static; resize:none;\"></textarea>
-                            </td>
+                                ";
+        // line 24
+        if ( !((isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")) == "allegato")) {
+            // line 25
+            echo "                                <input name=";
+            echo twig_escape_filter($this->env, (isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")), "html", null, true);
+            echo " id=\"extra\" placeholder=\"Inserisci ";
+            echo twig_escape_filter($this->env, (isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")), "html", null, true);
+            echo "...\" class=\"span8\" rows=\"8\" style=\"margin: 0px 0px 10px; height: 110px; width: 250px; position:static; resize:none;\">
+                                ";
+        } else {
+            // line 27
+            echo "                                <input type=\"file\" name=\"";
+            echo twig_escape_filter($this->env, (isset($context["dettaglio"]) ? $context["dettaglio"] : $this->getContext($context, "dettaglio")), "html", null, true);
+            echo "\" id=\"extra\"  class=\"span8\" rows=\"8\" style=\"margin: 0px 0px 10px; height: 110px; width: 250px; position:static; resize:none;\">
+                                ";
+        }
+        // line 29
+        echo "                            </td>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+                            
         <input type=\"submit\" class=\"btn-flat primary\" >  
     </form>
 </section>
 ";
         
-        $__internal_45b36dc963c6e00a2d7afc3baf296cf5f503e70cdbf2ee1c0ed46b4cc6efd168->leave($__internal_45b36dc963c6e00a2d7afc3baf296cf5f503e70cdbf2ee1c0ed46b4cc6efd168_prof);
+        $__internal_9b1c3074258157dca2ea0a1c2f3679aad7f036bb49e63a5318de7b988c5a6d67->leave($__internal_9b1c3074258157dca2ea0a1c2f3679aad7f036bb49e63a5318de7b988c5a6d67_prof);
 
     }
 
@@ -102,7 +127,7 @@ class __TwigTemplate_f44074012e6ef3157c9fbc94e0dcfd0cb656840de612a95ae714648e2f0
 
     public function getDebugInfo()
     {
-        return array (  74 => 20,  69 => 18,  60 => 12,  53 => 7,  47 => 6,  35 => 4,  11 => 2,);
+        return array (  102 => 29,  96 => 27,  88 => 25,  86 => 24,  81 => 22,  74 => 17,  68 => 15,  62 => 13,  60 => 12,  53 => 7,  47 => 6,  35 => 4,  11 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -126,21 +151,30 @@ class __TwigTemplate_f44074012e6ef3157c9fbc94e0dcfd0cb656840de612a95ae714648e2f0
    <h4>Nuovo ordine</h4>
 </section>
 <section class=\"form\">
+    {%if not(dettaglio==\"allegato\") %}
     <form method=\"post\" action={{path('nuovoordine')}}>
-          <table>
+    {%else%}
+    <form enctype=\"multipart/form-data\" method=\"post\" action={{path('nuovoordine')}}>
+    {%endif%}
+        <table>
              <tbody>
                 <tr valign=\"form\">
                     <td height=\"254\" width=\"254\">
                         <div class=\"field-box\">
                             <label>{{dettaglio}}:</label>\t\t\t\t\t\t\t
                             <td height=\"300\" width=\"300\">
-                                <input name={{dettaglio}} id=\"extra\" placeholder=\"Inserisci {{dettaglio}}...\" class=\"span8\" rows=\"8\" style=\"margin: 0px 0px 10px; height: 110px; width: 250px; position:static; resize:none;\"></textarea>
+                                {%if not(dettaglio==\"allegato\") %}
+                                <input name={{dettaglio}} id=\"extra\" placeholder=\"Inserisci {{dettaglio}}...\" class=\"span8\" rows=\"8\" style=\"margin: 0px 0px 10px; height: 110px; width: 250px; position:static; resize:none;\">
+                                {%else%}
+                                <input type=\"file\" name=\"{{dettaglio}}\" id=\"extra\"  class=\"span8\" rows=\"8\" style=\"margin: 0px 0px 10px; height: 110px; width: 250px; position:static; resize:none;\">
+                                {%endif%}
                             </td>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+                            
         <input type=\"submit\" class=\"btn-flat primary\" >  
     </form>
 </section>

@@ -182,11 +182,18 @@ class PrinkinoController extends Controller
     {
         $session= new session();
         $ordine=$session->get('ordine');
-        $dato=$this->getDoctrine()->getManager()->getRepository("AppBundle:Ordine")->DatoRequest($request);
+        $em=$this->getDoctrine()->getManager();
+        $dato=$this->getDoctrine()->getManager()->getRepository("AppBundle:Ordine")->DatoRequest($em,$request);
         if($dato!=null){
-            $ordine[$dato['tipo']]=$dato['dato'];
-            $session->set('ordine',$ordine);
-        }
+            if(!array_key_exists("tipo", $dato)){
+                foreach ($dato as $x){
+                    $ordine[$x['tipo']]=$x['dato'];
+                }
+            }else{
+                $ordine[$dato['tipo']]=$dato['dato'];    
+                }
+                $session->set('ordine',$ordine);
+            }
         $check=$this->getDoctrine()->getManager()->getRepository("AppBundle:Ordine")->CheckOrdine($ordine);
         if($check=="completo"){
             $ordine=$this->getDoctrine()->getManager()->getRepository("AppBundle:Ordine")->OrdineDaSessione($this->getDoctrine()->getManager(), $session);
