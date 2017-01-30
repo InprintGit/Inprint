@@ -99,6 +99,39 @@ class Prinkino
     private $cAP;
 
 
+         /**
+     * @var float
+     *
+     * @ORM\Column(name="Compenso", type="float", nullable=true)
+     */
+    private $compenso;
+    
+    /**
+     * Set compenso
+     *
+     * @param float $compenso
+     *
+     * @return Producibile
+     */
+    public function setCompenso($compenso)
+    {
+        $this->compenso = $compenso;
+
+        return $this;
+    }
+
+    /**
+     * Get compenso
+     *
+     * @return float
+     */
+    public function getCompenso()
+    {
+        return $this->Compenso;
+    }
+    
+    
+   
     /**
      * Get id
      *

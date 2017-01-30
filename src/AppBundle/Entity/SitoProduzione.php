@@ -100,6 +100,44 @@ class SitoProduzione
 
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="Compenso", type="float", nullable=true)
+     */
+    private $compenso;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Tipo", type="string", length=255)
+     */
+    private $tipo;
+    
+    /**
+     * Set compenso
+     *
+     * @param float $compenso
+     *
+     * @return Producibile
+     */
+    public function setCompenso($compenso)
+    {
+        $this->compenso = $compenso;
+
+        return $this;
+    }
+
+    /**
+     * Get compenso
+     *
+     * @return float
+     */
+    public function getCompenso()
+    {
+        return $this->Compenso;
+    }
+    
+    /**
      * Get id
      *
      * @return int
@@ -155,6 +193,16 @@ class SitoProduzione
     public function getPIva()
     {
         return $this->pIva;
+    }
+    
+    /**
+     * Get tipo
+     *
+     * @return string
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
     }
 
     /**
@@ -371,5 +419,19 @@ class SitoProduzione
     public function getVoto()
     {
         return $this->voto;
+    }
+    
+    /**
+     * Set tipo
+     *
+     * @param string $tipo
+     *
+     * @return SitoProduzione
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
+
+        return $this;
     }
 }

@@ -38,9 +38,9 @@ class Grafica
     /**
      * @var string
      *
-     * @ORM\Column(name="Stato", type="string", length=255)
+     * @ORM\Column(name="Tipo", type="string", length=255)
      */
-    private $stato;
+    private $tipo;
 
     /**
      * @var int
@@ -116,27 +116,27 @@ class Grafica
     }
     
     /**
-     * Set stato
+     * Set tipo
      *
-     * @param string $stato
+     * @param string $tipo
      *
      * @return Grafica
      */
-    public function setStato($stato)
+    public function setTipo($tipo)
     {
-        $this->stato = $stato;
+        $this->tipo = $tipo;
 
         return $this;
     }
 
     /**
-     * Get stato
+     * Get tipo
      *
      * @return string
      */
-    public function getStato()
+    public function getTipo()
     {
-        return $this->stato;
+        return $this->tipo;
     }
 
     /**
