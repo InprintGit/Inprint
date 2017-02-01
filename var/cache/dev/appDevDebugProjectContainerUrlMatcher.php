@@ -100,6 +100,82 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        if (0 === strpos($pathinfo, '/a')) {
+            // Ahome
+            if (rtrim($pathinfo, '/') === '/a/home') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'Ahome');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::homeAction',  '_route' => 'Ahome',);
+            }
+
+            if (0 === strpos($pathinfo, '/a/categoria')) {
+                // Acategorie
+                if (rtrim($pathinfo, '/') === '/a/categoria') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'Acategorie');
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::categorieAction',  '_route' => 'Acategorie',);
+                }
+
+                // AnuovaCategoria
+                if ($pathinfo === '/a/categoria/nuova') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::nuovaCategoriaAction',  '_route' => 'AnuovaCategoria',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/a/a')) {
+                if (0 === strpos($pathinfo, '/a/articoli')) {
+                    // Aarticoli
+                    if (rtrim($pathinfo, '/') === '/a/articoli') {
+                        if (substr($pathinfo, -1) !== '/') {
+                            return $this->redirect($pathinfo.'/', 'Aarticoli');
+                        }
+
+                        return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::articoliAction',  '_route' => 'Aarticoli',);
+                    }
+
+                    // AnuovoArticolo
+                    if ($pathinfo === '/a/articoli/nuovo') {
+                        return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::nuovoArticoloAction',  '_route' => 'AnuovoArticolo',);
+                    }
+
+                }
+
+                // Aattributi
+                if (rtrim($pathinfo, '/') === '/a/attributi') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'Aattributi');
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::attributiAction',  '_route' => 'Aattributi',);
+                }
+
+            }
+
+            // Aproducibili
+            if (rtrim($pathinfo, '/') === '/a/producibili') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'Aproducibili');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::producibiliAction',  '_route' => 'Aproducibili',);
+            }
+
+            // Aconferma
+            if (rtrim($pathinfo, '/') === '/a/conferma') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'Aconferma');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::confermaAction',  '_route' => 'Aconferma',);
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -109,9 +185,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // Ghome
-        if ($pathinfo === '/ghome') {
-            return array (  '_controller' => 'AppBundle\\Controller\\GraficoController::homeAction',  '_route' => 'Ghome',);
+        if (0 === strpos($pathinfo, '/g')) {
+            // Ghome
+            if ($pathinfo === '/g/home') {
+                return array (  '_controller' => 'AppBundle\\Controller\\GraficoController::homeAction',  '_route' => 'Ghome',);
+            }
+
+            // Gconclusi
+            if ($pathinfo === '/g/gconclusi') {
+                return array (  '_controller' => 'AppBundle\\Controller\\GraficoController::graficheAccettateAction',  '_route' => 'Gconclusi',);
+            }
+
+            // Lavinattesa
+            if ($pathinfo === '/g/lavinattesa') {
+                return array (  '_controller' => 'AppBundle\\Controller\\GraficoController::attesaAction',  '_route' => 'Lavinattesa',);
+            }
+
+            // Gcomunicazioni
+            if ($pathinfo === '/g/Gcomunicazioni') {
+                return array (  '_controller' => 'AppBundle\\Controller\\GraficoController::comunicazioniAction',  '_route' => 'Gcomunicazioni',);
+            }
+
+            // Gincorso
+            if ($pathinfo === '/g/lavinproduzione') {
+                return array (  '_controller' => 'AppBundle\\Controller\\GraficoController::incorsoAction',  '_route' => 'Gincorso',);
+            }
+
         }
 
         // login

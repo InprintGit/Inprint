@@ -1,0 +1,43 @@
+
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block title %} Nuova categoria visualizzazione{% endblock %}
+
+{% block corpo %}
+<div class="span12">
+    <h4>Categorie</h4>
+</div>
+<section>
+    <tr>
+        <td align="right">
+            <input autocomplete="off" id="cerca" class="search order-search" placeholder="Cerca per nome,cognome.." style="width:210px; height:27px; margin-right:8px;" value="" type="text">							<a href="nuovocliente.html" id="modal_addclient" class="btn-flat primary" role="button" style="border-radius:2px;">Ricerca</a>
+            <a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="{{ path('AnuovaCategoria') }}">+ Categoria</a>
+        </td>
+    </tr>
+</section>
+<section class="t1" >
+    <table class="table table-hover">
+        <thead> 
+            <tr>
+                <th class="span2">Id</th>
+                <th class="span2">Nome</th>
+                <th class="span2">Descrizione</th>
+                <th class="span2">Immagine</th>
+                <th class="span2">Padre</th> 
+            </tr>
+        </thead>
+        <tbody>
+        {%for item in categorie%}
+            <tr class="first">
+                <td> {{item.id}} </td>
+                <td>{{item.nome}}</td>
+                <td>{{item.descrizione}}</td>
+                <td>{{item.immagine}}</td>
+                <td>{{item.padre}}</td>
+                <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="ordine.html">Cambia</a></td>
+            </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+{% block title %}Riepilogo categoria{% endblock %}
+
+{% block corpo %}
+
+<section class="top">
+	<h4>Riepilogo inserimento categoria </h4>
+</section>
+
+<section class="form">
+    <table>
+        <tbody>
+            <tr valign="top">
+                <td height="260" width="285">
+                    <div class="field-box">
+                        <label>Nome:</label>
+                            <input type="text" name="textfield" disabled="true" placeholder="{{categoria.nome}}"> 									 
+                    </div>
+                    <div class="field-box">
+                        <label>Descrizione:</label>
+                            <input type="text" name="textfield" disabled="true" placeholder="{{categoria.descrizione}}"> 									
+                    </div>
+                    <div class="field-box">
+                        <label>File:</label>
+                        <input type="text" name="textfield" disabled="true" placeholder="{{categoria.file}}">									
+                    </div>
+                    <div class="field-box">
+                        <label>Padre:</label>
+                        <input type="text" name="textfield" disabled="true" placeholder="{{categoria.padre}}">									
+                    </div>
+                </td>
+            </tr>    
+        </tbody>
+    </table>
+    <a class="btn-flat primary" href="{{ path('Acategorie') }}">Annulla </a>
+    <a class="btn-flat primary" href="{{ path('Aconferma') }}">Conferma </a>
+</section>
+{% endblock %}
