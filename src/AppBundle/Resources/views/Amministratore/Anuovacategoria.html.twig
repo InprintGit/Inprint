@@ -1,0 +1,45 @@
+
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block title %}Nuova Categoria{% endblock %}
+
+{% block corpo %}
+
+<section class="top">
+	<h4>Nuovo Categoria</h4>
+</section>
+<section class="form">
+    <table>
+        <form method="post" action="" >
+            <tbody>
+                <tr valign="top">
+                    <td height="260" width="285">
+                        <div class="field-box">
+                            <label>Nome :</label>
+                            <input name="nome" id="name" value="" placeholder="" class="span6" style="width:240px" type="text">
+                        </div>
+                        <div class="field-box">
+                            <label>Breve descrizione:</label>
+                            <input name="descrizione" id="indirizzo_via" value="" class="span6" style="width:240px" type="text">
+                        </div>	
+                        <div class="field-box">
+                            <label>Inserisci immaggine:</label>
+                            <input name="immagine" type="file" id="indirizzo_via" value="" class="span6" style="width:240px" type="text">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>MaxiCategoria Padre:</label>
+                        <select style="width: 254px;" class="select2" id="selectCountry1470146739" name="padre">
+                            {% for item in categorie %}
+                            <option value="{{item.id}}">{{item.Nome}}</option>
+                            {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+            <input type="submit" class="btn-flat primary">
+        </form>	
+    </table>
+</section>
+{% endblock %}

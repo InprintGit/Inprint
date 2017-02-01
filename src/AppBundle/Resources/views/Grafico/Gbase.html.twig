@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grafico</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('Grafico/style/monitor.css') }}" media="screen">
+       {%endblock%}
+       <!-- Javascript -->
+        {% block js %}
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+            <script src="{{ asset('js/base.js') }}"></script>
+        {%endblock%}
+         </head>
+    <body>
+        <header>
+        	<img src="{{ asset('SitoProduzione/src/prink.png')}}" id="logo">
+        	<nav class="menu">
+        	<ul>
+                  <li><a href="{{ path('Ghome')}}">Home</a></li>
+                  <li><a href="{{ path('Gcomunicazioni')}}">Comunicazioni</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="conteiner">
+	        <div class="aside">  
+	                <nav class="menu" id="laterale">    
+	                    <ul>
+	                    <li><a href="{{ path("Ghome")}}"><img class="icon" src="{{ asset('Grafico/src/home.ico')}}">Home</a></li>
+	                    <li><a href="{{ path("Gincorso")}}"><img class="icon" src="{{ asset('Grafico/src/catalogo.ico')}}">Lavori in corso</a></li>
+	                        <li><a href="{{ path("Lavinattesa")}}"><img class="icon" src="{{ asset('Grafico/src/clienti.ico')}}">Lavori in attesa</a></li>
+	                        <li><a href="{{path("Gconclusi")}}"><img class="icon" src="{{ asset('Grafico/src/ordini.ico')}}">Lavori conclusi</a></li>	                        
+	                        <li><a href="{{ path("Gcomunicazioni")}}"><img class="icon" src="{{ asset('Grafico/src/catalogo.ico')}}">Operatori</a></li>
+	                    </ul> 
+	            	</nav>
+	            	 </div>
+                <div id="corpo">
+                    {% block corpo %}
+                    {%endblock%}    
+	        </div>
+	        <footer>
+            	<p> inprint s.r.l.</p>
+	        </footer>
+	    </div>
+    </body>
+</html>

@@ -40,7 +40,12 @@ public function showAction(Request $request)
                         }elseif($check and $check->getTipo()=="Grafico"){
                             return $this->redirect($this->generateUrl('Ghome',array('User' => $user, )));
                         }else{
-                               return $this->render('AppBundle:Login:login.html.twig');
+                               $check=$this->getDoctrine()->getManager()->getRepository("AppBundle:Amministratore")->findOneByUsername($user);
+                               if($check) {
+                                    return $this->redirect($this->generateUrl('Ahome',array('User' => $user, )));
+                               }else{
+                                    return $this->render('AppBundle:Login:login.html.twig');
+                               }
                             }
                     }
                 }

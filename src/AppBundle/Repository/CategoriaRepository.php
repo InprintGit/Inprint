@@ -34,4 +34,68 @@ class CategoriaRepository extends \Doctrine\ORM\EntityRepository
         $ris = $query->getResult();
         return $ris;
     }
+    
+    public function MostraCategorie($em){
+        $query = $em->createQuery(
+            'SELECT c.nome, c.descrizione, c.id, c.immagine, p.nome as padre
+            FROM AppBundle:Categoria c, AppBundle:Categoria p
+            WHERE c.categoriaPadreId=p.id ' 
+        );
+        $ris = $query->getResult();
+        return $ris;
+    }
+    
+    public function MostraMaxiCategorie($em){
+        $query =
+            'SELECT * 
+             FROM categoria 
+             WHERE id not in (SELECT producibile.CategoriaId 
+                              FROM producibile ) ' ;
+        
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    
+    public function checkInserimento($request){
+        $nome=$request->get('nome');
+        $descrizione=$request->get('descrizione');
+        $file=$request->get('file');
+        $padre=$request->get('padre');
+        return ($nome && $descrizione && $padre);
+    }
+    
+   public function creaCategoria($em,$categoria){
+        $unaCategoria= new \AppBundle\Entity\Categoria();
+        $unaCategoria->setNome($categoria['nome']);
+        $unaCategoria->setDescrizione($categoria['descrizione']);
+        $unaCategoria->setImmagine($categoria['file']);
+        $unaCategoria->setCategoriaPadreId($categoria['padre']);
+        $em->persist($unaCategoria);
+        $em->flush();
+        
+        return;
+   }
+   
+   public function CreaFigli($padre){
+       $figliC= $this->findBy("CategoriaPadre",$padre["id"]);
+       if($figliC){
+            foreach ($figliC as $x){
+                $ris["id"]=$x->getId();
+                $ris["nome"]=$x->getNome();
+                $ris["descrizione"]=$x->getDescrizione();
+                $ris["immagine"]=$x->getImmagine();
+                $ris["categoriapadre"]=$x->getCategoriaPadreId();
+                $ris["padre"]=$padre;
+            }
+       } else{
+           $ris=FALSE;
+       }
+       return $ris;
+   }
+   
+   public function CreaAlbero(){
+       $treeObject = Doctrine_Core::getTable('Category')->getTree();
+       return $treeObject;
+   }
 }

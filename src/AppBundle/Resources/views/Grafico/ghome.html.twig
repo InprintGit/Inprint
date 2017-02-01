@@ -1,5 +1,5 @@
 
-{% extends "::base.html.twig" %}
+{% extends "AppBundle:Grafico:Gbase.html.twig" %}
 
 {% block title %}Benvenuto grafico{% endblock %}
 
@@ -25,7 +25,7 @@
 					    	<tr class="first">
 						        <td>{{item.cliente}}</td>
 						        <td>{{item.codicelavorazione}}</td>
-						        <td><time datetime="2016-07-20">{{item.data}}</time></td>
+						        <td><time datetime="{{item.data|date('d-m-Y')}}">{{item.data|date('d-m-Y')}}</time></td>
 						        <td>	       
         						<a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="lavoro.html"><i class="icon-zoom-in"></i> Analizza</a>
 								</td>
@@ -45,7 +45,7 @@
 						    	<tr class="first">
 							        <td>{{item.cliente}}</td>
 							        <td>{{item.codicelavorazione}}</td>
-							        <td><time datetime="2016-07-20">{{item.data}}</time></td>
+							        <td><time datetime="{{item.data|date('d-m-Y')}}">{{item.data|date('d-m-Y')}}</time></td>
 							        <td>	       
 	        						<a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="lavoro.html"><i class="icon-zoom-in"></i> Analizza</a>
 									</td>
@@ -66,7 +66,7 @@
 						    	<tr class="first">
 							        <td>{{item.cliente}}</td>
 							        <td>{{item.codicelavorazione}}</td>
-							        <td><time datetime="2016-07-20">{{item.data}}</time></td>
+							        <td><time datetime="{{item.data|date('d-m-Y')}}">{{item.data|date('d-m-Y')}}</time></td>
 							        <td>	       
 	        						<a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="lavoro.html"><i class="icon-zoom-in"></i> Analizza</a>
 									</td>
@@ -87,7 +87,7 @@
 						    	<tr class="first">
 							        <td>{{item.cliente}}</td>
 							        <td>{{item.codicelavorazione}}</td>
-							        <td><time datetime="2016-07-20">{{item.data}}</time></td>
+							        <td><time datetime="{{item.data|date('d-m-Y')}}">{{item.data|date('d-m-Y')}}</time></td>
 							        <td>	       
 	        						<a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="lavoro.html"><i class="icon-zoom-in"></i> Analizza</a>
 									</td>

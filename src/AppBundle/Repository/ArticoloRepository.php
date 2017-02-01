@@ -70,5 +70,16 @@ class ArticoloRepository extends \Doctrine\ORM\EntityRepository
         }
         return($ris);
     }
+   
+    public  function MostraDati($em){
+        $query = $em->createQuery(
+            'SELECT a.denominazione, a.prezzoVendita, a.id, a.producibileId, c.nome as categoria
+            FROM AppBundle:Categoria c, AppBundle:Producibile p, AppBundle:Articolo a
+            WHERE a.producibileId=p.id and p.categoriaId=c.id ' 
+        );
+        $ris = $query->getResult();
+        return $ris;
+    }
+    
     
 }

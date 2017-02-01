@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="categoria")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoriaRepository")
  */
-class Categoria
+class Categoria 
 {
     /**
      * @var int
@@ -38,7 +38,7 @@ class Categoria
     /**
      * @var int
      *
-     * @ORM\Column(name="IndexSx", type="integer", unique=true)
+     * @ORM\Column(name="IndexSx", type="integer", nullable=true)
      */
     private $indexSx;
 
@@ -215,5 +215,15 @@ class Categoria
     public function getImmagine()
     {
         return $this->immagine;
-    }    
+    }
+
+    public function setTableDefinition()
+    {
+        $this->hasColumn('name', 'string', 255);
+    }
+
+    public function setUp()
+    {
+        $this->actAs('NestedSet');
+    }
 }

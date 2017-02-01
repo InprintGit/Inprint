@@ -1,6 +1,8 @@
 <?php
 
 namespace AppBundle\Repository;
+use Doctrine\ORM\Query\ResultSetMapping;
+
 
 /**
  * GraficoRepository
@@ -22,7 +24,7 @@ class GraficoRepository extends \Doctrine\ORM\EntityRepository
         $query = $em->createQuery(
             'SELECT g.id
             FROM AppBundle:Grafico g
-            WHERE g.username = :user'
+            WHERE g.username = :user '
         )->setParameter('user', $user);
         return($query->getSingleScalarResult());
     }
@@ -30,56 +32,62 @@ class GraficoRepository extends \Doctrine\ORM\EntityRepository
     public function tabellaEseguire($em, $user, $n){
         
         $id= $this->getIdByUsername($em,$user);
-        $query = $em->createQuery(
-            'SELECT c.Nome, c.Cognome, o.id, o.Data
-            FROM Appbundle:Ordine o, AppBundle:Cliente c, AppBundle:Grafica g
-            WHERE c.id = o.ClienteId AND o.GraficaId = g.id AND (o.StatoId = 9 AND g.GraficoId = :id)' 
-        )->setParameter('id', $id); 
-
-        $eseguire = $query->setMaxResults($n)->getResult();
-        return $eseguire;
+        $query='
+            SELECT odp.codicecliente as cliente, odp.codiceordine as codicelavorazione, odp.data as data 
+            FROM OrdineDatiPrincipali odp, grafica g
+            WHERE odp.idgrafica=g.id and odp.idstato=9 and g.GraficoId='.$id.'
+            Limit '.$n;
+        
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
 
     }
     
     public function tabellaInLavorazione($em, $user, $n){
         
         $id= $this->getIdByUsername($em,$user);
-        $query = $em->createQuery(
-            'SELECT c.Nome, c.Cognome, o.id, e.Data
-            FROM Appbundle:Ordine o, AppBundle:Cliente c, AppBundle:Grafica g, AppBundle:EventoGrafica e
-            WHERE c.id = o.ClienteId AND o.GraficaId = g.id AND (g.GraficoId = :id AND o.StatoId = 10)' 
-        )->setParameter('id', $id);
-        
-        $lavorazione = $query->setMaxResults($n)->getResult();
-        return $lavorazione;
+        $query='
+            SELECT odp.codicecliente as cliente, odp.codiceordine as codicelavorazione, odp.data as data 
+            FROM OrdineDatiPrincipali odp, grafica g
+            WHERE odp.idgrafica=g.id and odp.idstato=10 and g.GraficoId='.$id.'
+            Limit '.$n;
+
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+
 
     }
     
     public function tabellaDaRieseguire ($em, $user, $n){
         
         $id= $this->getIdByUsername($em,$user);
-        $query = $em->createQuery(
-            'SELECT c.Nome, c.Cognome, o.id, o.Data
-            FROM Appbundle:Ordine o, AppBundle:Cliente c, AppBundle:Grafica g
-            WHERE c.id = o.ClienteId AND o.GraficaId = g.id AND (g.GraficoId = :id AND o.StatoId = 12)' 
-        )->setParameter('id', $id);
-        
-        $rieseguire = $query->setMaxResults($n)->getResult();
-        return $rieseguire;
+        $query='
+            SELECT odp.codicecliente as cliente, odp.codiceordine as codicelavorazione, odp.data as data 
+            FROM OrdineDatiPrincipali odp, grafica g
+            WHERE odp.idgrafica=g.id and odp.idstato=12 and g.GraficoId='.$id.'
+            Limit '.$n;
+
+
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
 
     }
     
     public function tabellaInAttesa ($em, $user, $n){
         
-        $id= $this->getIdByUsername($em,$user);   
-        $query = $em->createQuery(
-            'SELECT c.Nome, c.Cognome, o.id, o.Data
-            FROM Appbundle:Ordine o, AppBundle:Cliente c, AppBundle:Grafica g
-            WHERE c.id = o.ClienteId AND o.GraficaId = g.id AND (o.StatoId = 11 AND g.GraficoId = 0)' 
-        )->setParameter('id', $id);
-        
-        $attesa = $query->setMaxResults($n)->getResult();
-        return $attesa;
+        $id= $this->getIdByUsername($em,$user);
+        $query='
+            SELECT odp.codicecliente as cliente, odp.codiceordine as codicelavorazione, odp.data as data 
+            FROM OrdineDatiPrincipali odp, grafica g
+            WHERE odp.idgrafica=g.id and odp.idstato=11 and g.GraficoId='.$id.'
+            Limit '.$n;
+
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
         
     }
 

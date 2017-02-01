@@ -42,12 +42,7 @@ class Producibile
      */
     private $gruppoId;
     
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="CategoriaId", type="integer", nullable=true)
-     */
-    private $categoriaId;
+    
     
     /**
      * @var string
@@ -56,6 +51,14 @@ class Producibile
      */
     private $descrizione;
 
+      /**
+     * @var float
+     *
+     * @ORM\Column(name="CompensoGrafico", type="float", nullable=true)
+     */
+    private $compensoGrafico;
+    
+    
     /**
      * Get id
      *
@@ -66,12 +69,6 @@ class Producibile
         return $this->id;
     }
 
-      /**
-     * @var float
-     *
-     * @ORM\Column(name="CompensoGrafico", type="float", nullable=true)
-     */
-    private $compensoGrafico;
     
     /**
      * Set compensoGrafico
@@ -169,30 +166,6 @@ class Producibile
     public function getGruppoId()
     {
         return $this->gruppoId;
-    }
-    
-    /**
-     * Get CategoriaId
-     *
-     * @return int
-     */
-    public function getCategoriaId()
-    {
-        return $this->categoriaId;
-    }
-
-    /**
-     * Set CategoriaId
-     *
-     * @param int CategoriaId
-     *
-     * @return Producibile
-     */
-    public function setCategoriaId($categoria)
-    {
-        $this->categoriaId = $categoria;
-
-        return $this;
     }
     
     /**

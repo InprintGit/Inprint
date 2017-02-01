@@ -10,4 +10,47 @@ namespace AppBundle\Repository;
  */
 class GraficaRepository extends \Doctrine\ORM\EntityRepository
 {
+    
+    public function getIdByUsername($em,$user){
+        
+        $query = $em->createQuery(
+            'SELECT g.id
+            FROM AppBundle:Grafico g
+            WHERE g.username = :user '
+        )->setParameter('user', $user);
+        return($query->getSingleScalarResult());
+    } 
+    
+        public function tabellaAccettate($em, $user, $n){
+        
+        $id= $this->getIdByUsername($em,$user);
+        $query=
+            'SELECT odp.descrizione as descrizione, odp.codiceordine as codicelavorazione, odp.data as data 
+            FROM OrdineDatiPrincipali odp, grafica g
+            WHERE odp.idgrafica=g.id and odp.idstato>18 and g.GraficoId='.$id;
+
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+
+
+    }
+    
+        public function tabellaAttesa($em, $user, $n){
+        
+        $id= $this->getIdByUsername($em,$user);
+        $query='
+            SELECT odp.descrizione as descrizione, odp.codiceordine as codicelavorazione, odp.data as data 
+            FROM OrdineDatiPrincipali odp, grafica g
+            WHERE odp.idgrafica=g.id and odp.idstato=18 and g.GraficoId='.$id;
+
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+
+    }
+    
+    
+
+    
 }
