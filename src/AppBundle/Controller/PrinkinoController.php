@@ -353,4 +353,107 @@ class PrinkinoController extends Controller
         }
         return $this->redirect($this->generateUrl('riepilogo',array("riepilogo" => $riepilogo)));
     }
+    
+    //Ricerca con JS probabilmente posso addattarla a tutti le ricerche fulltext
+    /**
+     * @Route("/prova", name="prova")
+     */
+    public function  provaAction(Request $request){
+        $str=$request->get("searchText")."%";
+        $em= $this->getDoctrine()->getManager();
+        $clienti= $em->getRepository("AppBundle:Cliente")->RicercaFullText($em,$str);
+        $template = $this->render('AppBundle:Prinkino:prova.html.twig', array("clienti"=>$clienti))->getContent();
+
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+    
+     /**
+     * @Route("/categoriaJson", name="JsonCategoria")
+     */
+     public function catalogoJson(Request $request){
+         $em= $this->getDoctrine()->getManager();
+         $idCategoria=$request->get('idCategoria');
+         $categorie=$em->getRepository("AppBundle:Categoria")->RicercaSottoCategorie($em,$idCategoria);
+        if($categorie==0){
+            //reindirizzare a articolo
+            $template="";
+        } else{
+            $template = $this->render('AppBundle:Prinkino:categoria.html.twig', array("catalogo"=>$categorie))->getContent();
+        }
+        
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+     }
+     
+     /**
+     * @Route("/categoriaNomeJson", name="JsonNomeCategoria")
+     */
+     public function nomeCategoriaJson(Request $request){
+         $idCategoria=$request->get("idCategoria");
+         $Categoria= $this->getDoctrine()->getManager()->getRepository("AppBundle:Categoria")->find($idCategoria)->getNome();
+         $json = json_encode($Categoria);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+                 
+     }
+     
+      /**
+     * @Route("/ProdotticategoriaNomeJson", name="JsonProdottiCategoria")
+     */
+     public function ProdottiCategoriaJson(Request $request){
+         $idCategoria=$request->get("idCategoria");
+         $em=$this->getDoctrine()->getManager();
+         $Prodotti=$em->getRepository("AppBundle:Articolo")->RicercaTramiteCategoria($em,$idCategoria);
+         $template= $this->render("AppBundle:Prinkino:tabellaProdotti.html.twig", array("prodotti"=>$Prodotti))->getContent();
+         $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+                 
+     }
+     
+         /**
+     * @Route("/articoloJson", name="articoloJSON")
+     */
+    
+    public function articoloJSONAction(Request $request){
+       $this->em = $this->getDoctrine()->getManager();
+       $idproducibile= $request->get('idproducibile'); 
+       $precedente= $request->get('precedente');
+       $session=new session();
+       if($precedente==0){
+           $valorip=array();
+       } elseif($precedente==1) {
+           $valorip[0]=$request->get('pval');
+       }else {
+           $valorip=$session->get('valori');
+           $valorip[]=$request->get('pval');
+       }
+        $session->set('valori',$valorip);
+        $precedente++;   
+        $attributo= $this->em->getRepository('AppBundle:Articolo')->RicercaAttributiArticoliProducibiliByValori($this->em,$idproducibile, $valorip );
+        if(count($attributo)==0){
+            $articolo=$this->em->getRepository('AppBundle:Articolo')->ArticoliProducibiliByValori($this->em, $valorip );
+            $conferma=$this->em->getRepository('AppBundle:Articolo')->ConfermaArticolo($articolo);
+            $template[]=$this->render('AppBundle:Prinkino:riepilogoProdottoJSON.html.twig', array("riepilogo"=>$conferma,"idproducibile"=>$idproducibile,"idarticolo"=>$articolo[0]['id']))->getContent();
+            $template[]=false;
+            $json = json_encode($template);
+            $response = new Response($json, 200);
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
+        }
+        $valori= $this->em->getRepository('AppBundle:Valore')->RicercaValoriByAttributo($this->em,$attributo[0]['idattributo']);
+        $template[]=$this->render('AppBundle:Prinkino:attributo.html.twig', array("attributo"=>$attributo[0],"valori"=>$valori,"precedente"=>$precedente,"idproducibile"=>$idproducibile))->getContent();
+        $template[]=true;
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+       }
 }

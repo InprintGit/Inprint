@@ -2,35 +2,52 @@
 
 {% block stylesheets %}
      {{ parent() }}
-      <link href="{{ asset('prinkino/style/catalogo.css') }}" rel="stylesheet" />
+            <link rel="shortcut icon" href="../favicon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{{asset("prinkino/css/normalize.css")}}" />
+		<link rel="stylesheet" type="text/css" href="{{asset("prinkino/css/demo.css")}}" />
+		<link rel="stylesheet" type="text/css" href="{{asset("prinkino/css/cs-select.css")}}" />
+		<link rel="stylesheet" type="text/css" href="{{asset("prinkino/css/cs-skin-boxes.css")}}" />
 {% endblock %}
 
 {% block title %}Catalogo Prodotti{% endblock %}
 
 {% block corpo %}
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel b-a">
-                <div class="panel-heading b-b">
-                    <span class="font-bold">Catalogo prodotti</span>
-                </div>
-                {%for item in catalogo%}
-                <div class="row m-n">
-                    <div class="col-md-3 b-b b-r" onmouseover="$(this).find('#hover-rotate').addClass('hovered');" onmouseout="$(this).find('#hover-rotate').removeClass('hovered');">
-                        <a href={{ path('catalogo', {'idCategoria': item.id})}} class="block padder-v hover">
-                            <span class="i-s i-s-2x pull-left m-r-sm">
-                                <img src="{{ asset(item.immagine)}}" class="i hover-rotate" id="hover-rotate">
-                            </span>
-                            <span class="clear">
-                                <span class="h3 block m-t-xs texta-primary block-title">{{item.descrizione}}</span>
-                                <span class="h3 block m-t-xs texta-primary">{{item.nome}}</span>
-                                <small class="text-muted text-u-c"> codice categoria {{item.id}}</small>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                {%endfor%}
-            </div>
-        </div>
-    </div>
+    <body class="color-7">
+		<div class="container">
+			
+			<div class="codrops-header">
+                            <div id="precedente">
+				<h1>Seleziona Categoria</h1>
+                            </div>
+			</div>
+			<div id="selezione">
+				<select class="cs-select cs-skin-boxes" onclick="SottoCategorie(1)" >
+                                    <option name"" value="" disabled selected>Seleziona Categoria</option>
+                                    {%for item in catalogo%}
+                                    <option name="{{item.nome}}" value="{{item.id}}" data-class="color-588c75">{{item.nome}}</option>
+                                    {%endfor%}
+				</select>
+                        </div>
+                        <section id="producibili">
+                                
+                        </section>
+
+							
+		</div>
+		<script src="prinkino/js/classie.js"></script>
+		<script src="prinkino/js/selectFx.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx(el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+                                                        SottoCategorie(val);
+						}
+					});
+				} );
+			})();
+		</script>
+	</body>  
 {% endblock %}

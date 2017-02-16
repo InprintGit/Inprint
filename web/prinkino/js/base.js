@@ -16,12 +16,14 @@ function dettagli(riga, tabella) {
 //effettua le ricerche all'interno delle tabelle della pagina-------- non utilizzato
 function searchtab(n){
 	$(document).ready(function(){
+            console.log("ciao");
 				var cont;
 				var corrispondenze;
 				var exp;
 				var codAscii;		
 				$('#cerca').keyup(function(event){
 					if(!checkKey(event)){
+                                                console.log("ciao");
 						if($(this).val().length>=3)
 							filtra($(this).val());
 					}

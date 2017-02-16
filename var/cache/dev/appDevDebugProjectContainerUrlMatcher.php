@@ -174,6 +174,44 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::confermaAction',  '_route' => 'Aconferma',);
             }
 
+            // albero
+            if ($pathinfo === '/a/treeJs') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::TreeJsAction',  '_route' => 'albero',);
+            }
+
+            if (0 === strpos($pathinfo, '/a/nuov')) {
+                // nuovaCategoriaJson
+                if ($pathinfo === '/a/nuovaCategoriaJson') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::nuovaCategoriaJson',  '_route' => 'nuovaCategoriaJson',);
+                }
+
+                // Anuovoattributo
+                if ($pathinfo === '/a/nuovoattributo') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::nuovoAttributo',  '_route' => 'Anuovoattributo',);
+                }
+
+            }
+
+            // Acaricanattributo
+            if ($pathinfo === '/a/caricaAttributi') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::caricaNuoviAttributi',  '_route' => 'Acaricanattributo',);
+            }
+
+            // Asalvattributo
+            if ($pathinfo === '/a/salvaAttributi') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::salvaNuoviAttributi',  '_route' => 'Asalvattributo',);
+            }
+
+            // AgruppoAttributo
+            if ($pathinfo === '/a/GruppiAttributo') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::GruppiAction',  '_route' => 'AgruppoAttributo',);
+            }
+
+            // AnuovoProducibile
+            if ($pathinfo === '/a/Producibli/nuovo') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::nuovoProducibileAction',  '_route' => 'AnuovoProducibile',);
+            }
+
         }
 
         // homepage
@@ -320,6 +358,34 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // visualizza
         if ($pathinfo === '/visualizza') {
             return array (  '_controller' => 'AppBundle\\Controller\\PrinkinoController::visualizzaAction',  '_route' => 'visualizza',);
+        }
+
+        // prova
+        if ($pathinfo === '/prova') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PrinkinoController::provaAction',  '_route' => 'prova',);
+        }
+
+        if (0 === strpos($pathinfo, '/categoria')) {
+            // JsonCategoria
+            if ($pathinfo === '/categoriaJson') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PrinkinoController::catalogoJson',  '_route' => 'JsonCategoria',);
+            }
+
+            // JsonNomeCategoria
+            if ($pathinfo === '/categoriaNomeJson') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PrinkinoController::nomeCategoriaJson',  '_route' => 'JsonNomeCategoria',);
+            }
+
+        }
+
+        // JsonProdottiCategoria
+        if ($pathinfo === '/ProdotticategoriaNomeJson') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PrinkinoController::ProdottiCategoriaJson',  '_route' => 'JsonProdottiCategoria',);
+        }
+
+        // articoloJSON
+        if ($pathinfo === '/articoloJson') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PrinkinoController::articoloJSONAction',  '_route' => 'articoloJSON',);
         }
 
         if (0 === strpos($pathinfo, '/SP')) {

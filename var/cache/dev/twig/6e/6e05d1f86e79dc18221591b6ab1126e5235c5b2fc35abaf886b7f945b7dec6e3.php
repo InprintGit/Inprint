@@ -22,32 +22,32 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_65014c9bdc91653aeeb35dc377d877b514bf818c1327891e05578a6dd664ce97 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_65014c9bdc91653aeeb35dc377d877b514bf818c1327891e05578a6dd664ce97->enter($__internal_65014c9bdc91653aeeb35dc377d877b514bf818c1327891e05578a6dd664ce97_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:clienti.html.twig"));
+        $__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94->enter($__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:clienti.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_65014c9bdc91653aeeb35dc377d877b514bf818c1327891e05578a6dd664ce97->leave($__internal_65014c9bdc91653aeeb35dc377d877b514bf818c1327891e05578a6dd664ce97_prof);
+        $__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94->leave($__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_515a992e5694fd16dfdd647feacadfecf0ee4894f1ec53a5080a8a884c7c4c49 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_515a992e5694fd16dfdd647feacadfecf0ee4894f1ec53a5080a8a884c7c4c49->enter($__internal_515a992e5694fd16dfdd647feacadfecf0ee4894f1ec53a5080a8a884c7c4c49_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870->enter($__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Rubrica Clienti";
         
-        $__internal_515a992e5694fd16dfdd647feacadfecf0ee4894f1ec53a5080a8a884c7c4c49->leave($__internal_515a992e5694fd16dfdd647feacadfecf0ee4894f1ec53a5080a8a884c7c4c49_prof);
+        $__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870->leave($__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870_prof);
 
     }
 
     // line 5
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_dfe4f2062d1ab44988d781387f438a63bf0327357ec17996434806d60a01f088 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dfe4f2062d1ab44988d781387f438a63bf0327357ec17996434806d60a01f088->enter($__internal_dfe4f2062d1ab44988d781387f438a63bf0327357ec17996434806d60a01f088_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3->enter($__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
         // line 6
         echo "
@@ -63,7 +63,7 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
                     <tr>
                         <td align=\"right\">
                             <form method=\"post\" action=\"clienti\">
-                                <input name=\"criterio\" autocomplete=\"off\" id=\"searchField\" class=\"search order-search\" placeholder=\"Filtra per nome,cognome..\" style=\"width:210px; height:26px; margin-right:8px;\" value=\"\" type=\"text\">
+                                <input id=\"cerca\" name=\"criterio\" autocomplete=\"off\"  class=\"search order-search\" placeholder=\"Filtra per nome,cognome..\" style=\"width:210px; height:26px; margin-right:8px;\" value=\"\" type=\"text\">
                                 <input type=\"submit\" class=\"btn-flat success\" onclick=\"location.href='importer-clients';\" style=\"border-radius:2px; cursor:pointer; margin-right:8px;\">
                             </form>
                             <a href=\"nuovocliente\" id=\"modal_addclient\" class=\"btn-flat primary\" role=\"button\" style=\"border-radius:2px;\">+ Cliente</a>
@@ -71,8 +71,8 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
                     </tr>
                     <tr valign=\"top\">
     \t\t\t<td style=\"width:50%;\">
-                            <div class=\"row-fluid\" id=\"boxTable\">
-                                <table class=\"table table-hover\">
+                            <div class=\"row-fluid\" id=\"boxTable\" name=\"\"boxTable\"\">
+                                <table id=\"tabella\" class=\"table table-hover\">
                                     <thead>
                                         <tr>
                                             <th class=\"span3\">Nome</th>
@@ -131,7 +131,7 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
     </div>
 ";
         
-        $__internal_dfe4f2062d1ab44988d781387f438a63bf0327357ec17996434806d60a01f088->leave($__internal_dfe4f2062d1ab44988d781387f438a63bf0327357ec17996434806d60a01f088_prof);
+        $__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3->leave($__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3_prof);
 
     }
 
@@ -178,7 +178,7 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
                     <tr>
                         <td align=\"right\">
                             <form method=\"post\" action=\"clienti\">
-                                <input name=\"criterio\" autocomplete=\"off\" id=\"searchField\" class=\"search order-search\" placeholder=\"Filtra per nome,cognome..\" style=\"width:210px; height:26px; margin-right:8px;\" value=\"\" type=\"text\">
+                                <input id=\"cerca\" name=\"criterio\" autocomplete=\"off\"  class=\"search order-search\" placeholder=\"Filtra per nome,cognome..\" style=\"width:210px; height:26px; margin-right:8px;\" value=\"\" type=\"text\">
                                 <input type=\"submit\" class=\"btn-flat success\" onclick=\"location.href='importer-clients';\" style=\"border-radius:2px; cursor:pointer; margin-right:8px;\">
                             </form>
                             <a href=\"nuovocliente\" id=\"modal_addclient\" class=\"btn-flat primary\" role=\"button\" style=\"border-radius:2px;\">+ Cliente</a>
@@ -186,8 +186,8 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
                     </tr>
                     <tr valign=\"top\">
     \t\t\t<td style=\"width:50%;\">
-                            <div class=\"row-fluid\" id=\"boxTable\">
-                                <table class=\"table table-hover\">
+                            <div class=\"row-fluid\" id=\"boxTable\" name=\"\"boxTable\"\">
+                                <table id=\"tabella\" class=\"table table-hover\">
                                     <thead>
                                         <tr>
                                             <th class=\"span3\">Nome</th>

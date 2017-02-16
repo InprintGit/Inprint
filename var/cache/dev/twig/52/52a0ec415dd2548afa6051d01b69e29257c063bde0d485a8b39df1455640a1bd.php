@@ -22,32 +22,32 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_46aa25f1b95821f76634a42b7dc8922851f6d794d8c1819a3384445bc6538b2f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_46aa25f1b95821f76634a42b7dc8922851f6d794d8c1819a3384445bc6538b2f->enter($__internal_46aa25f1b95821f76634a42b7dc8922851f6d794d8c1819a3384445bc6538b2f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:Aarticoli.html.twig"));
+        $__internal_2a558dba80bf2cede444f48c21ebde7a493e2a02b5a487a1c779c3564e53d661 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2a558dba80bf2cede444f48c21ebde7a493e2a02b5a487a1c779c3564e53d661->enter($__internal_2a558dba80bf2cede444f48c21ebde7a493e2a02b5a487a1c779c3564e53d661_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:Aarticoli.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_46aa25f1b95821f76634a42b7dc8922851f6d794d8c1819a3384445bc6538b2f->leave($__internal_46aa25f1b95821f76634a42b7dc8922851f6d794d8c1819a3384445bc6538b2f_prof);
+        $__internal_2a558dba80bf2cede444f48c21ebde7a493e2a02b5a487a1c779c3564e53d661->leave($__internal_2a558dba80bf2cede444f48c21ebde7a493e2a02b5a487a1c779c3564e53d661_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_f881339ecc37544428876c61696f8cfd8b9ee123932e54d43c5e290dda202ed6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f881339ecc37544428876c61696f8cfd8b9ee123932e54d43c5e290dda202ed6->enter($__internal_f881339ecc37544428876c61696f8cfd8b9ee123932e54d43c5e290dda202ed6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_c7442a2fccdd3da1ec42dba8a52601c7518ed195b9cf9bc527bbc9fb0d920404 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c7442a2fccdd3da1ec42dba8a52601c7518ed195b9cf9bc527bbc9fb0d920404->enter($__internal_c7442a2fccdd3da1ec42dba8a52601c7518ed195b9cf9bc527bbc9fb0d920404_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Articoli visualizzazione";
         
-        $__internal_f881339ecc37544428876c61696f8cfd8b9ee123932e54d43c5e290dda202ed6->leave($__internal_f881339ecc37544428876c61696f8cfd8b9ee123932e54d43c5e290dda202ed6_prof);
+        $__internal_c7442a2fccdd3da1ec42dba8a52601c7518ed195b9cf9bc527bbc9fb0d920404->leave($__internal_c7442a2fccdd3da1ec42dba8a52601c7518ed195b9cf9bc527bbc9fb0d920404_prof);
 
     }
 
     // line 5
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_0d10e7fee9868e3fc35179600ceb9f5ecec45aec29e82ebb2060a80523a1bbf8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_0d10e7fee9868e3fc35179600ceb9f5ecec45aec29e82ebb2060a80523a1bbf8->enter($__internal_0d10e7fee9868e3fc35179600ceb9f5ecec45aec29e82ebb2060a80523a1bbf8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_7af62e18b960338a23340506cf4371b02d839c6d850a43fb81b5ac516531c6a7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7af62e18b960338a23340506cf4371b02d839c6d850a43fb81b5ac516531c6a7->enter($__internal_7af62e18b960338a23340506cf4371b02d839c6d850a43fb81b5ac516531c6a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
         // line 6
         echo "
@@ -62,7 +62,7 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
             <a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"";
         // line 15
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("AnuovoArticolo");
-        echo "\">+ Categoria</a>
+        echo "\">+ Articolo</a>
         </td>
     </tr>
 </section>
@@ -74,7 +74,7 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
                 <th class=\"span2\">Denominazione</th>
                 <th class=\"span2\">Prezzo vendita</th>
                 <th class=\"span2\"> Gruppo attributi</th>
-                <th class=\"span2\">Categoria</th>
+                <th class=\"span2\"></th>
             </tr>
         </thead>
         <tbody>
@@ -101,10 +101,6 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
             // line 36
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "producibileId", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 37
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "categoria", array()), "html", null, true);
-            echo "</td>
                 <td><a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"ordine.html\">Cambia</a></td>
             </tr>
             ";
@@ -112,13 +108,13 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 40
         echo "        </tbody>
     </table>
 </section>
 ";
         
-        $__internal_0d10e7fee9868e3fc35179600ceb9f5ecec45aec29e82ebb2060a80523a1bbf8->leave($__internal_0d10e7fee9868e3fc35179600ceb9f5ecec45aec29e82ebb2060a80523a1bbf8_prof);
+        $__internal_7af62e18b960338a23340506cf4371b02d839c6d850a43fb81b5ac516531c6a7->leave($__internal_7af62e18b960338a23340506cf4371b02d839c6d850a43fb81b5ac516531c6a7_prof);
 
     }
 
@@ -134,7 +130,7 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
 
     public function getDebugInfo()
     {
-        return array (  116 => 41,  106 => 37,  102 => 36,  98 => 35,  94 => 34,  90 => 33,  87 => 32,  83 => 31,  64 => 15,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  112 => 40,  102 => 36,  98 => 35,  94 => 34,  90 => 33,  87 => 32,  83 => 31,  64 => 15,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -161,7 +157,7 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
         <td align=\"right\">
             <input autocomplete=\"off\" id=\"cerca\" class=\"search order-search\" placeholder=\"Cerca per nome,cognome..\" style=\"width:210px; height:27px; margin-right:8px;\" value=\"\" type=\"text\">\t        \t\t\t    \t\t\t\t        \t\t\t            \t
             <a href=\"nuovocliente.html\" id=\"modal_addclient\" class=\"btn-flat primary\" role=\"button\" style=\"border-radius:2px;\">Ricerca</a>
-            <a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"{{ path('AnuovoArticolo') }}\">+ Categoria</a>
+            <a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"{{ path('AnuovoArticolo') }}\">+ Articolo</a>
         </td>
     </tr>
 </section>
@@ -173,7 +169,7 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
                 <th class=\"span2\">Denominazione</th>
                 <th class=\"span2\">Prezzo vendita</th>
                 <th class=\"span2\"> Gruppo attributi</th>
-                <th class=\"span2\">Categoria</th>
+                <th class=\"span2\"></th>
             </tr>
         </thead>
         <tbody>
@@ -183,7 +179,6 @@ class __TwigTemplate_3d9d168c3c8ecd37b75ba5cad4b18be46f791ebd4662a5fe7d0ab30acd6
                 <td>{{item.denominazione}}</td>
                 <td>{{item.prezzoVendita}}</td>
                 <td>{{item.producibileId}}</td>
-                <td>{{item.categoria}}</td>
                 <td><a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"ordine.html\">Cambia</a></td>
             </tr>
             {%endfor%}

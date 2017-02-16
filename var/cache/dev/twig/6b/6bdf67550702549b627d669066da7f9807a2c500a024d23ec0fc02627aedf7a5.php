@@ -23,32 +23,32 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1651fe6a7218ace1954998405c30e05dad9645d5e23d8c81dc096c42c6f5298d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1651fe6a7218ace1954998405c30e05dad9645d5e23d8c81dc096c42c6f5298d->enter($__internal_1651fe6a7218ace1954998405c30e05dad9645d5e23d8c81dc096c42c6f5298d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:prodotto.html.twig"));
+        $__internal_e5ede8f5e68e03bfbd3acd051c70bfae4e6a0baf69bb2d9898dd3d734341ac81 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e5ede8f5e68e03bfbd3acd051c70bfae4e6a0baf69bb2d9898dd3d734341ac81->enter($__internal_e5ede8f5e68e03bfbd3acd051c70bfae4e6a0baf69bb2d9898dd3d734341ac81_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:prodotto.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1651fe6a7218ace1954998405c30e05dad9645d5e23d8c81dc096c42c6f5298d->leave($__internal_1651fe6a7218ace1954998405c30e05dad9645d5e23d8c81dc096c42c6f5298d_prof);
+        $__internal_e5ede8f5e68e03bfbd3acd051c70bfae4e6a0baf69bb2d9898dd3d734341ac81->leave($__internal_e5ede8f5e68e03bfbd3acd051c70bfae4e6a0baf69bb2d9898dd3d734341ac81_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_cc96ec37038594ca45ffda9e2cb458774b45819e0ece6412521dd9faecfa4b82 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cc96ec37038594ca45ffda9e2cb458774b45819e0ece6412521dd9faecfa4b82->enter($__internal_cc96ec37038594ca45ffda9e2cb458774b45819e0ece6412521dd9faecfa4b82_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_553452cfbe25bf41f3e283403546ba9608d36d75dc9d26c8063242a1a4eb5763 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_553452cfbe25bf41f3e283403546ba9608d36d75dc9d26c8063242a1a4eb5763->enter($__internal_553452cfbe25bf41f3e283403546ba9608d36d75dc9d26c8063242a1a4eb5763_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Prodotto'";
         
-        $__internal_cc96ec37038594ca45ffda9e2cb458774b45819e0ece6412521dd9faecfa4b82->leave($__internal_cc96ec37038594ca45ffda9e2cb458774b45819e0ece6412521dd9faecfa4b82_prof);
+        $__internal_553452cfbe25bf41f3e283403546ba9608d36d75dc9d26c8063242a1a4eb5763->leave($__internal_553452cfbe25bf41f3e283403546ba9608d36d75dc9d26c8063242a1a4eb5763_prof);
 
     }
 
     // line 5
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_ecbd34ca4755781e5f40a70dbb3f795e254977b0c2dfc049f1aba00caed3b5ef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ecbd34ca4755781e5f40a70dbb3f795e254977b0c2dfc049f1aba00caed3b5ef->enter($__internal_ecbd34ca4755781e5f40a70dbb3f795e254977b0c2dfc049f1aba00caed3b5ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_2e5dd3193d34c044587defc8277d91a3a01e18dda501f76e82b7bf4fd11d23f3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2e5dd3193d34c044587defc8277d91a3a01e18dda501f76e82b7bf4fd11d23f3->enter($__internal_2e5dd3193d34c044587defc8277d91a3a01e18dda501f76e82b7bf4fd11d23f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 6
         echo "     ";
@@ -60,15 +60,15 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
         echo "\" rel=\"stylesheet\" />
 ";
         
-        $__internal_ecbd34ca4755781e5f40a70dbb3f795e254977b0c2dfc049f1aba00caed3b5ef->leave($__internal_ecbd34ca4755781e5f40a70dbb3f795e254977b0c2dfc049f1aba00caed3b5ef_prof);
+        $__internal_2e5dd3193d34c044587defc8277d91a3a01e18dda501f76e82b7bf4fd11d23f3->leave($__internal_2e5dd3193d34c044587defc8277d91a3a01e18dda501f76e82b7bf4fd11d23f3_prof);
 
     }
 
     // line 9
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_9b89fce00c465f6dc29087ff830222d863371f9a4e66e27c87c24689b7f4713b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9b89fce00c465f6dc29087ff830222d863371f9a4e66e27c87c24689b7f4713b->enter($__internal_9b89fce00c465f6dc29087ff830222d863371f9a4e66e27c87c24689b7f4713b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_166f0b046c6b776e1cb72fc3eaff3f0fd8fb94bc96b2055e3c2d72a5cbc9efa8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_166f0b046c6b776e1cb72fc3eaff3f0fd8fb94bc96b2055e3c2d72a5cbc9efa8->enter($__internal_166f0b046c6b776e1cb72fc3eaff3f0fd8fb94bc96b2055e3c2d72a5cbc9efa8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
         // line 10
         echo "
@@ -84,12 +84,9 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
                 </div>
             </div>
             <div class=\"panel panel-default feature feature-gallery\" id=\"ui-11360\">
-                <div class=\"panel-heading\">
-                    <form action=";
-        // line 21
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("articolo", array("idproducibile" => (isset($context["idproducibile"]) ? $context["idproducibile"] : $this->getContext($context, "idproducibile")), "precedente" => (isset($context["precedente"]) ? $context["precedente"] : $this->getContext($context, "precedente")))), "html", null, true);
-        echo ">
-                        <div class=\"row\">
+                <div class=\"panel-heading\" id=\"attributo\">
+                    <form id=\"form\">
+                        <div id=\"select\" class=\"row\">
                             <h4>";
         // line 23
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["attributo"]) ? $context["attributo"] : $this->getContext($context, "attributo")), "Nome", array()), "html", null, true);
@@ -100,8 +97,8 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
                                         <div class=\"slick-track\" style=\"opacity: 1; width: 236px; left: 0px;\" role=\"listbox\">
                                             <div class=\"item col-xs-6 col-sm-3 col-md-1-5th  slick-slide slick-current slick-active\" id=\"11362\" data-slick-index=\"0\" aria-hidden=\"false\" tabindex=\"-1\" role=\"option\" aria-describedby=\"slick-slide10\" style=\"width: 118px;\">
                                                 <div class=\"field-box\" align=\"left\">                                    
-                                                    <div style=\"width: 254px\" id=\"s2id_selectCountry1470146739\" class=\"select2-container select2\"> 
-                                                        <select name=\"pval\" style=\"width: 254px;\" class=\"select2\" id=\"selectCountry1470146739\">
+                                                    <div style=\"width: 254px\" class=\"select2-container select2\"> 
+                                                        <select name=\"pval\" style=\"width: 254px;\" class=\"select2\" id=\"pval1\">
                                                         ";
         // line 32
         $context['_parent'] = $context;
@@ -131,7 +128,10 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
                         <div class=\"panel panel-default feature feature-select\" id=\"ui-9853\">
                             <div class=\"panel-heading\">
                                 <div class=\"row\">
-                                    <input type=\"submit\" style=\"color: rgb(70, 70, 70); font-weight: bold; \" href=\"NewOrdineCatalogo/clienti.html\" class=\"add_carrello btn btn-lg col-xs-10 col-sm-12 col-xs-offset-1 col-sm-offset-0 top-20 bottom-5 btn-cart-custom\" data-invalid=\"vai avanti\" data-valid=\"Vai avanti\" data-position=\"right-btn\">
+                                    <a id=\"ok\" type=\"submit\" onclick=attributo(";
+        // line 47
+        echo twig_escape_filter($this->env, (isset($context["idproducibile"]) ? $context["idproducibile"] : $this->getContext($context, "idproducibile")), "html", null, true);
+        echo ") style=\"color: rgb(70, 70, 70); font-weight: bold; \"  class=\"add_carrello btn btn-lg col-xs-10 col-sm-12 col-xs-offset-1 col-sm-offset-0 top-20 bottom-5 btn-cart-custom\" data-invalid=\"vai avanti\" data-valid=\"Vai avanti\" data-position=\"right-btn\"> ok</a>
                                 </div>
                             </div>
                         </div>
@@ -140,9 +140,10 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
             </div>
         </div>\t        
     </div>
+</div>
 ";
         
-        $__internal_9b89fce00c465f6dc29087ff830222d863371f9a4e66e27c87c24689b7f4713b->leave($__internal_9b89fce00c465f6dc29087ff830222d863371f9a4e66e27c87c24689b7f4713b_prof);
+        $__internal_166f0b046c6b776e1cb72fc3eaff3f0fd8fb94bc96b2055e3c2d72a5cbc9efa8->leave($__internal_166f0b046c6b776e1cb72fc3eaff3f0fd8fb94bc96b2055e3c2d72a5cbc9efa8_prof);
 
     }
 
@@ -158,7 +159,7 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
 
     public function getDebugInfo()
     {
-        return array (  122 => 35,  111 => 33,  107 => 32,  95 => 23,  90 => 21,  82 => 16,  74 => 10,  68 => 9,  59 => 7,  54 => 6,  48 => 5,  36 => 4,  11 => 2,);
+        return array (  133 => 47,  119 => 35,  108 => 33,  104 => 32,  92 => 23,  82 => 16,  74 => 10,  68 => 9,  59 => 7,  54 => 6,  48 => 5,  36 => 4,  11 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -190,9 +191,9 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
                 </div>
             </div>
             <div class=\"panel panel-default feature feature-gallery\" id=\"ui-11360\">
-                <div class=\"panel-heading\">
-                    <form action={{ path('articolo', {'idproducibile':idproducibile, 'precedente':precedente})}}>
-                        <div class=\"row\">
+                <div class=\"panel-heading\" id=\"attributo\">
+                    <form id=\"form\">
+                        <div id=\"select\" class=\"row\">
                             <h4>{{attributo.Nome}}</h4>
                             <div class=\"col-xs-12\">
                                 <div class=\"feature-slick slick slick-initialized slick-slider\" id=\"11360\">
@@ -200,8 +201,8 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
                                         <div class=\"slick-track\" style=\"opacity: 1; width: 236px; left: 0px;\" role=\"listbox\">
                                             <div class=\"item col-xs-6 col-sm-3 col-md-1-5th  slick-slide slick-current slick-active\" id=\"11362\" data-slick-index=\"0\" aria-hidden=\"false\" tabindex=\"-1\" role=\"option\" aria-describedby=\"slick-slide10\" style=\"width: 118px;\">
                                                 <div class=\"field-box\" align=\"left\">                                    
-                                                    <div style=\"width: 254px\" id=\"s2id_selectCountry1470146739\" class=\"select2-container select2\"> 
-                                                        <select name=\"pval\" style=\"width: 254px;\" class=\"select2\" id=\"selectCountry1470146739\">
+                                                    <div style=\"width: 254px\" class=\"select2-container select2\"> 
+                                                        <select name=\"pval\" style=\"width: 254px;\" class=\"select2\" id=\"pval1\">
                                                         {%for item in valori%}
                                                             <option value={{item.idvalore}}>{{item.valore}}</option>
                                                         {%endfor%}
@@ -217,7 +218,7 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
                         <div class=\"panel panel-default feature feature-select\" id=\"ui-9853\">
                             <div class=\"panel-heading\">
                                 <div class=\"row\">
-                                    <input type=\"submit\" style=\"color: rgb(70, 70, 70); font-weight: bold; \" href=\"NewOrdineCatalogo/clienti.html\" class=\"add_carrello btn btn-lg col-xs-10 col-sm-12 col-xs-offset-1 col-sm-offset-0 top-20 bottom-5 btn-cart-custom\" data-invalid=\"vai avanti\" data-valid=\"Vai avanti\" data-position=\"right-btn\">
+                                    <a id=\"ok\" type=\"submit\" onclick=attributo({{idproducibile}}) style=\"color: rgb(70, 70, 70); font-weight: bold; \"  class=\"add_carrello btn btn-lg col-xs-10 col-sm-12 col-xs-offset-1 col-sm-offset-0 top-20 bottom-5 btn-cart-custom\" data-invalid=\"vai avanti\" data-valid=\"Vai avanti\" data-position=\"right-btn\"> ok</a>
                                 </div>
                             </div>
                         </div>
@@ -226,6 +227,7 @@ class __TwigTemplate_f323969a455b740557175a1580769f88dd87ab76b034c109b8098898872
             </div>
         </div>\t        
     </div>
+</div>
 {% endblock %}                        ", "AppBundle:Prinkino:prodotto.html.twig", "C:\\Users\\inprink1\\Documents\\NetBeansProjects\\Inprint\\src\\AppBundle/Resources/views/Prinkino/prodotto.html.twig");
     }
 }

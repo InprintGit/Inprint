@@ -1,4 +1,4 @@
-/*Layout della pagina*/
+/*Layout della pagina tolti h4*/  
 html, body
 {height: 100%;
 width: 100%;
@@ -416,7 +416,7 @@ body {
 	/*-webkit-font-smoothing: antialiased;*/
 }
 
-/*Formattazione titoli H*/
+/*Formattazione titoli H
 h1,
 h2,
 h3,
@@ -716,6 +716,8 @@ section.form table{position: relative; left: 2%;}
   /*---- fine formatazzione progress bar ordine*/  
   
   
-
+  nascondi {
+      display: none;
+  }
  
 

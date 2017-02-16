@@ -7,8 +7,8 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
     {
         parent::__construct($env);
 
-        // line 2
-        $this->parent = $this->loadTemplate("AppBundle:Amministratore:Abase.html.twig", "AppBundle:Amministratore:Acategorie.html.twig", 2);
+        // line 1
+        $this->parent = $this->loadTemplate("AppBundle:Amministratore:Abase.html.twig", "AppBundle:Amministratore:Acategorie.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'corpo' => array($this, 'block_corpo'),
@@ -22,34 +22,34 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9aca987399901f452567f65da0d5d2ce31645b52d95d6ec8f2df3f331960b09d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9aca987399901f452567f65da0d5d2ce31645b52d95d6ec8f2df3f331960b09d->enter($__internal_9aca987399901f452567f65da0d5d2ce31645b52d95d6ec8f2df3f331960b09d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:Acategorie.html.twig"));
+        $__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592->enter($__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:Acategorie.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_9aca987399901f452567f65da0d5d2ce31645b52d95d6ec8f2df3f331960b09d->leave($__internal_9aca987399901f452567f65da0d5d2ce31645b52d95d6ec8f2df3f331960b09d_prof);
+        $__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592->leave($__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592_prof);
 
     }
 
-    // line 4
+    // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_e7df70468a7084f2739339046c66697be6514f6988cd10010f8c5459ab67c70c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e7df70468a7084f2739339046c66697be6514f6988cd10010f8c5459ab67c70c->enter($__internal_e7df70468a7084f2739339046c66697be6514f6988cd10010f8c5459ab67c70c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662->enter($__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Nuova categoria visualizzazione";
         
-        $__internal_e7df70468a7084f2739339046c66697be6514f6988cd10010f8c5459ab67c70c->leave($__internal_e7df70468a7084f2739339046c66697be6514f6988cd10010f8c5459ab67c70c_prof);
+        $__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662->leave($__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662_prof);
 
     }
 
-    // line 6
+    // line 5
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_006630d296365a01dbd8ea48507b1d2ceef8a6ae67b7a8e2ed00958b6d06eef9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_006630d296365a01dbd8ea48507b1d2ceef8a6ae67b7a8e2ed00958b6d06eef9->enter($__internal_006630d296365a01dbd8ea48507b1d2ceef8a6ae67b7a8e2ed00958b6d06eef9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047->enter($__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
-        // line 7
+        // line 6
         echo "<div class=\"span12\">
     <h4>Categorie</h4>
 </div>
@@ -58,7 +58,7 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
         <td align=\"right\">
             <input autocomplete=\"off\" id=\"cerca\" class=\"search order-search\" placeholder=\"Cerca per nome,cognome..\" style=\"width:210px; height:27px; margin-right:8px;\" value=\"\" type=\"text\">\t\t\t\t\t\t\t<a href=\"nuovocliente.html\" id=\"modal_addclient\" class=\"btn-flat primary\" role=\"button\" style=\"border-radius:2px;\">Ricerca</a>
             <a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"";
-        // line 14
+        // line 13
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("AnuovaCategoria");
         echo "\">+ Categoria</a>
         </td>
@@ -77,30 +77,30 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
         </thead>
         <tbody>
         ";
-        // line 30
+        // line 29
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["categorie"]) ? $context["categorie"] : $this->getContext($context, "categorie")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 31
+            // line 30
             echo "            <tr class=\"first\">
                 <td> ";
-            // line 32
+            // line 31
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "id", array()), "html", null, true);
             echo " </td>
                 <td>";
-            // line 33
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "nome", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 34
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "descrizione", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 35
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "immagine", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 36
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "padre", array()), "html", null, true);
             echo "</td>
                 <td><a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"ordine.html\">Cambia</a></td>
@@ -110,13 +110,13 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 39
         echo "        </tbody>
     </table>
 </section>
 ";
         
-        $__internal_006630d296365a01dbd8ea48507b1d2ceef8a6ae67b7a8e2ed00958b6d06eef9->leave($__internal_006630d296365a01dbd8ea48507b1d2ceef8a6ae67b7a8e2ed00958b6d06eef9_prof);
+        $__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047->leave($__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047_prof);
 
     }
 
@@ -132,7 +132,7 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
 
     public function getDebugInfo()
     {
-        return array (  114 => 40,  104 => 36,  100 => 35,  96 => 34,  92 => 33,  88 => 32,  85 => 31,  81 => 30,  62 => 14,  53 => 7,  47 => 6,  35 => 4,  11 => 2,);
+        return array (  114 => 39,  104 => 35,  100 => 34,  96 => 33,  92 => 32,  88 => 31,  85 => 30,  81 => 29,  62 => 13,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -145,8 +145,7 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
 
     public function getSourceContext()
     {
-        return new Twig_Source("
-{% extends \"AppBundle:Amministratore:Abase.html.twig\" %}
+        return new Twig_Source("{% extends \"AppBundle:Amministratore:Abase.html.twig\" %}
 
 {% block title %} Nuova categoria visualizzazione{% endblock %}
 

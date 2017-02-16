@@ -10,4 +10,12 @@ namespace AppBundle\Repository;
  */
 class GruppoRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function DatiGruppo($em){
+        $query=$em->createQuery('   SELECT g.*, count(ga.*) 
+                                    FROM AppBundle:gruppo g, AppBundle:gruppo__attributi ga 
+                                    WHERE g.id=ga.GruppoId 
+                                    GROUP BY g.id'
+                );
+        return $query->getResult() ;        
+    }
 }

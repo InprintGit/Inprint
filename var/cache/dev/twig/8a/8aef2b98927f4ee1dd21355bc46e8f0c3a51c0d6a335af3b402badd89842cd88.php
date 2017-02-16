@@ -7,10 +7,11 @@ class __TwigTemplate_b34067a69bfa55dd46e1a959a12e7687b553761b6353907b511a7a390be
     {
         parent::__construct($env);
 
-        // line 2
-        $this->parent = $this->loadTemplate("AppBundle:Amministratore:Abase.html.twig", "AppBundle:Amministratore:Anuovacategoria.html.twig", 2);
+        // line 1
+        $this->parent = $this->loadTemplate("AppBundle:Amministratore:Abase.html.twig", "AppBundle:Amministratore:Anuovacategoria.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
+            'stylesheets' => array($this, 'block_stylesheets'),
             'corpo' => array($this, 'block_corpo'),
         );
     }
@@ -22,89 +23,116 @@ class __TwigTemplate_b34067a69bfa55dd46e1a959a12e7687b553761b6353907b511a7a390be
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_629e3a400f1147e2681ab186e96f03181cef9119b3bc6baa2fa83bbe37def2ef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_629e3a400f1147e2681ab186e96f03181cef9119b3bc6baa2fa83bbe37def2ef->enter($__internal_629e3a400f1147e2681ab186e96f03181cef9119b3bc6baa2fa83bbe37def2ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:Anuovacategoria.html.twig"));
+        $__internal_211405702c95f4985aa99b5408ccf23c3a1f39b2f1cbfe7630bd0e8ac85680eb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_211405702c95f4985aa99b5408ccf23c3a1f39b2f1cbfe7630bd0e8ac85680eb->enter($__internal_211405702c95f4985aa99b5408ccf23c3a1f39b2f1cbfe7630bd0e8ac85680eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:Anuovacategoria.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_629e3a400f1147e2681ab186e96f03181cef9119b3bc6baa2fa83bbe37def2ef->leave($__internal_629e3a400f1147e2681ab186e96f03181cef9119b3bc6baa2fa83bbe37def2ef_prof);
+        $__internal_211405702c95f4985aa99b5408ccf23c3a1f39b2f1cbfe7630bd0e8ac85680eb->leave($__internal_211405702c95f4985aa99b5408ccf23c3a1f39b2f1cbfe7630bd0e8ac85680eb_prof);
 
     }
 
-    // line 4
+    // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_cea90cd4dff45fd6bb88c11f69d264033b99d3dca99c46f907abc176461281d7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cea90cd4dff45fd6bb88c11f69d264033b99d3dca99c46f907abc176461281d7->enter($__internal_cea90cd4dff45fd6bb88c11f69d264033b99d3dca99c46f907abc176461281d7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_bae9d6d2bdab66edcb8feb7be0ee5407c563afc2101a7f9d5a650327020d5ee8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bae9d6d2bdab66edcb8feb7be0ee5407c563afc2101a7f9d5a650327020d5ee8->enter($__internal_bae9d6d2bdab66edcb8feb7be0ee5407c563afc2101a7f9d5a650327020d5ee8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Nuova Categoria";
         
-        $__internal_cea90cd4dff45fd6bb88c11f69d264033b99d3dca99c46f907abc176461281d7->leave($__internal_cea90cd4dff45fd6bb88c11f69d264033b99d3dca99c46f907abc176461281d7_prof);
+        $__internal_bae9d6d2bdab66edcb8feb7be0ee5407c563afc2101a7f9d5a650327020d5ee8->leave($__internal_bae9d6d2bdab66edcb8feb7be0ee5407c563afc2101a7f9d5a650327020d5ee8_prof);
 
     }
 
-    // line 6
+    // line 5
+    public function block_stylesheets($context, array $blocks = array())
+    {
+        $__internal_a72a2ff8a5b52b3460b4f68c8da824c98b56721b7016c56baf5f4f4abb4f8325 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a72a2ff8a5b52b3460b4f68c8da824c98b56721b7016c56baf5f4f4abb4f8325->enter($__internal_a72a2ff8a5b52b3460b4f68c8da824c98b56721b7016c56baf5f4f4abb4f8325_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 6
+        echo "    ";
+        $this->displayParentBlock("stylesheets", $context, $blocks);
+        echo "
+    <script type=\"text/javascript\" charset=\"utf8\" src=\"http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js\"></script>
+
+    <script src=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Amministratore/dist/jstree.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Amministratore/js/salvaCategoria.js"), "html", null, true);
+        echo "\"></script>
+     <script src=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Amministratore/js/AlberoCategorie.js"), "html", null, true);
+        echo "\"></script>
+";
+        
+        $__internal_a72a2ff8a5b52b3460b4f68c8da824c98b56721b7016c56baf5f4f4abb4f8325->leave($__internal_a72a2ff8a5b52b3460b4f68c8da824c98b56721b7016c56baf5f4f4abb4f8325_prof);
+
+    }
+
+    // line 14
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_6eae0aa8f3af6eacf83c0322311fd6a9c921c9ffd561110bc6ff80b3865f5153 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6eae0aa8f3af6eacf83c0322311fd6a9c921c9ffd561110bc6ff80b3865f5153->enter($__internal_6eae0aa8f3af6eacf83c0322311fd6a9c921c9ffd561110bc6ff80b3865f5153_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_9fbb22e057ab2791133c7df5130eea22a9ea99ab6a36bbfd0a705018de21de25 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9fbb22e057ab2791133c7df5130eea22a9ea99ab6a36bbfd0a705018de21de25->enter($__internal_9fbb22e057ab2791133c7df5130eea22a9ea99ab6a36bbfd0a705018de21de25_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
-        // line 7
+        // line 15
         echo "
 <section class=\"top\">
 \t<h4>Nuovo Categoria</h4>
 </section>
-<section class=\"form\">
+<section class=\"form\" id=\"content\">
     <table>
         <form method=\"post\" action=\"\" >
             <tbody>
                 <tr valign=\"top\">
-                    <td height=\"260\" width=\"285\">
-                        <div class=\"field-box\">
+                    <td>
+                        <div class=\"field-box\" id='divNome'>
                             <label>Nome :</label>
-                            <input name=\"nome\" id=\"name\" value=\"\" placeholder=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
+                            <input name=\"nome\" id=\"nome\" value=\"\" placeholder=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
                         </div>
-                        <div class=\"field-box\">
+                        <div class=\"field-box\" id='divDescrizione'>
                             <label>Breve descrizione:</label>
-                            <input name=\"descrizione\" id=\"indirizzo_via\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
+                            <input name=\"descrizione\" id=\"descrizione\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
                         </div>\t
-                        <div class=\"field-box\">
+                        <div class=\"field-box\" id=\"divImmagine\">
                             <label>Inserisci immaggine:</label>
-                            <input name=\"immagine\" type=\"file\" id=\"indirizzo_via\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
+                            <input name=\"immagine\" type=\"file\" id=\"immagine\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id=\"divAlbero\">
                         <label>MaxiCategoria Padre:</label>
-                        <select style=\"width: 254px;\" class=\"select2\" id=\"selectCountry1470146739\" name=\"padre\">
-                            ";
-        // line 35
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categorie"]) ? $context["categorie"] : $this->getContext($context, "categorie")));
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 36
-            echo "                            <option value=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "id", array()), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "Nome", array()), "html", null, true);
-            echo "</option>
-                            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
-        echo "                    </td>
+                        <div id=\"tree-container\">
+                            <!-- L'abero verrà caricato qui, non inserire codice in questo div -->
+                        </div>
+                    </td>
                 </tr>
             </tbody>
-            <input type=\"submit\" class=\"btn-flat primary\">
+            <a id=\"invia\" type=\"submit\" class=\"btn-flat primary\" onclick=salva();>Invia</a>
         </form>\t
     </table>
 </section>
+    <script>
+        \$(\"#divAlbero\").toggle();
+        \$(\"#divImmagine\").toggle();
+        \$(\"#divDescrizione\").toggle();
+        
+        \$(\"#tree-container\").on(\"select_node.jstree\",
+     function(evt, data){
+         \$(\"#invia\").show();
+          console.log(\$(\"#tree-container\").jstree('get_selected'));
+     }
+);
+    </script>
 ";
         
-        $__internal_6eae0aa8f3af6eacf83c0322311fd6a9c921c9ffd561110bc6ff80b3865f5153->leave($__internal_6eae0aa8f3af6eacf83c0322311fd6a9c921c9ffd561110bc6ff80b3865f5153_prof);
+        $__internal_9fbb22e057ab2791133c7df5130eea22a9ea99ab6a36bbfd0a705018de21de25->leave($__internal_9fbb22e057ab2791133c7df5130eea22a9ea99ab6a36bbfd0a705018de21de25_prof);
 
     }
 
@@ -120,7 +148,7 @@ class __TwigTemplate_b34067a69bfa55dd46e1a959a12e7687b553761b6353907b511a7a390be
 
     public function getDebugInfo()
     {
-        return array (  98 => 38,  87 => 36,  83 => 35,  53 => 7,  47 => 6,  35 => 4,  11 => 2,);
+        return array (  84 => 15,  78 => 14,  69 => 11,  65 => 10,  61 => 9,  54 => 6,  48 => 5,  36 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -133,50 +161,69 @@ class __TwigTemplate_b34067a69bfa55dd46e1a959a12e7687b553761b6353907b511a7a390be
 
     public function getSourceContext()
     {
-        return new Twig_Source("
-{% extends \"AppBundle:Amministratore:Abase.html.twig\" %}
+        return new Twig_Source("{% extends \"AppBundle:Amministratore:Abase.html.twig\" %}
 
 {% block title %}Nuova Categoria{% endblock %}
+
+{% block stylesheets %}
+    {{parent()}}
+    <script type=\"text/javascript\" charset=\"utf8\" src=\"http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js\"></script>
+
+    <script src=\"{{ asset(\"Amministratore/dist/jstree.min.js\") }}\"></script>
+    <script src=\"{{ asset(\"Amministratore/js/salvaCategoria.js\") }}\"></script>
+     <script src=\"{{ asset(\"Amministratore/js/AlberoCategorie.js\") }}\"></script>
+{% endblock %}
 
 {% block corpo %}
 
 <section class=\"top\">
 \t<h4>Nuovo Categoria</h4>
 </section>
-<section class=\"form\">
+<section class=\"form\" id=\"content\">
     <table>
         <form method=\"post\" action=\"\" >
             <tbody>
                 <tr valign=\"top\">
-                    <td height=\"260\" width=\"285\">
-                        <div class=\"field-box\">
+                    <td>
+                        <div class=\"field-box\" id='divNome'>
                             <label>Nome :</label>
-                            <input name=\"nome\" id=\"name\" value=\"\" placeholder=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
+                            <input name=\"nome\" id=\"nome\" value=\"\" placeholder=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
                         </div>
-                        <div class=\"field-box\">
+                        <div class=\"field-box\" id='divDescrizione'>
                             <label>Breve descrizione:</label>
-                            <input name=\"descrizione\" id=\"indirizzo_via\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
+                            <input name=\"descrizione\" id=\"descrizione\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
                         </div>\t
-                        <div class=\"field-box\">
+                        <div class=\"field-box\" id=\"divImmagine\">
                             <label>Inserisci immaggine:</label>
-                            <input name=\"immagine\" type=\"file\" id=\"indirizzo_via\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
+                            <input name=\"immagine\" type=\"file\" id=\"immagine\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id=\"divAlbero\">
                         <label>MaxiCategoria Padre:</label>
-                        <select style=\"width: 254px;\" class=\"select2\" id=\"selectCountry1470146739\" name=\"padre\">
-                            {% for item in categorie %}
-                            <option value=\"{{item.id}}\">{{item.Nome}}</option>
-                            {% endfor %}
+                        <div id=\"tree-container\">
+                            <!-- L'abero verrà caricato qui, non inserire codice in questo div -->
+                        </div>
                     </td>
                 </tr>
             </tbody>
-            <input type=\"submit\" class=\"btn-flat primary\">
+            <a id=\"invia\" type=\"submit\" class=\"btn-flat primary\" onclick=salva();>Invia</a>
         </form>\t
     </table>
 </section>
+    <script>
+        \$(\"#divAlbero\").toggle();
+        \$(\"#divImmagine\").toggle();
+        \$(\"#divDescrizione\").toggle();
+        
+        \$(\"#tree-container\").on(\"select_node.jstree\",
+     function(evt, data){
+         \$(\"#invia\").show();
+          console.log(\$(\"#tree-container\").jstree('get_selected'));
+     }
+);
+    </script>
 {% endblock %}", "AppBundle:Amministratore:Anuovacategoria.html.twig", "C:\\Users\\inprink1\\Documents\\NetBeansProjects\\Inprint\\src\\AppBundle/Resources/views/Amministratore/Anuovacategoria.html.twig");
     }
 }

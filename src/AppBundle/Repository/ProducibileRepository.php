@@ -10,4 +10,11 @@ namespace AppBundle\Repository;
  */
 class ProducibileRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function MostraDati($em){
+        $query=$em->createQuery(" SELECT p.id, p.nome, p.descrizione, p.gruppoId, p.compensoGrafico, COUNT(a.id) as numArt "
+                . "               FROM AppBundle:Producibile p, AppBundle:Articolo a "
+                . "               WHERE a.producibileId=p.id group by p.id");
+        
+        return $query->getResult();
+    }
 }

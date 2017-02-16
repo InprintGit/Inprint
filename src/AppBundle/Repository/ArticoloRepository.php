@@ -15,7 +15,7 @@ class ArticoloRepository extends \Doctrine\ORM\EntityRepository
        if($numValori==0){
            $query=' SELECT DISTINCT att.id as idattributo, att.Nome,p.Nome as producibile, p.Descrizione
                     FROM producibile p, attributi att, gruppo__attributi ga
-                    WHERE  p.GruppoId=ga.GruppoId AND ga.AttributoId=att.id AND p.categoriaId='.$idproducibile.'
+                    WHERE  p.GruppoId=ga.GruppoId AND ga.AttributoId=att.id AND p.id='.$idproducibile.'
                     LIMIT 0,1';
        }else{
             $str="(".$valori[0];
@@ -73,11 +73,22 @@ class ArticoloRepository extends \Doctrine\ORM\EntityRepository
    
     public  function MostraDati($em){
         $query = $em->createQuery(
-            'SELECT a.denominazione, a.prezzoVendita, a.id, a.producibileId, c.nome as categoria
-            FROM AppBundle:Categoria c, AppBundle:Producibile p, AppBundle:Articolo a
-            WHERE a.producibileId=p.id and p.categoriaId=c.id ' 
+            'SELECT a.denominazione, a.prezzoVendita, a.id, a.producibileId
+            FROM  AppBundle:Producibile p, AppBundle:Articolo a
+            WHERE a.producibileId=p.id ' 
         );
         $ris = $query->getResult();
+        return $ris;
+    }
+    
+    public function RicercaTramiteCategoria($em,$idCategoria){
+         $query = $em->createQuery(
+            'SELECT p.nome, p.id
+            FROM AppBundle:Producibile p, AppBundle:Appartenere a
+            WHERE p.id=a.idProducibile and a.idCategoria=:id' 
+        )->setParameter('id',$idCategoria);
+
+        $ris = $query->setMaxResults(25)->getResult();
         return $ris;
     }
     
