@@ -1,0 +1,27 @@
+<!-- Gestione tabella ricerca clienti!-->
+<div class="row-fluid" id="boxTable">
+                                <table id="tabella" class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="span3">Nome</th>
+                                            <th class="span2"><span class="line"></span>Codice Cliente</th>
+                                            <th class="span2"><span class="line"></span>Codice Fiscale</th>
+                                            <th class="span2"><span class="line"></span>Mail</th>
+                                            <th class="span2"><span class="line"></span>Ordini effettuati</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {%for item in clienti%}
+                                            <tr class="first">
+            					<td style="cursor:pointer;" >{{item.nome}} {{item.cognome}}</td>
+                                                <td style="cursor:pointer;">{{item.codicecliente}}</td>
+                                                <td style="cursor:pointer;">{{item.codiceFiscale}}</td>
+                                                <td style="cursor:pointer;" >{{item.mail}}</td>
+                                                <td style="cursor:pointer;">
+                                                    <a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('cliente', {'idcliente': item.codicecliente})}}><i class="icon-zoom-in"></i> Analizza</a>
+                                                </td>
+                                            </tr>
+                                        {%endfor%}
+                                    </tbody>
+                                </table>
+                            </div>

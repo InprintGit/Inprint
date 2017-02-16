@@ -1,0 +1,20 @@
+<section id="selezione">
+    <select class="cs-select cs-skin-boxes" onclick="SottoCategorie(1)" >
+        <option name"" value="" disabled selected>Seleziona Categoria</option>
+        {%for item in catalogo%}
+            <option name="{{item.nome}}" value="{{item.id}}" data-class="color-588c75">{{item.nome}}</option>
+        {%endfor%}
+    </select>
+    <script>
+			(function() {
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx(el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+                                                        SottoCategorie(val);
+						}
+					});
+				} );
+			})();
+		</script>
+</section>

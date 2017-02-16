@@ -1,0 +1,45 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block title %} Articoli - Producibili{% endblock %}
+
+{% block corpo %}
+<div class="span12">
+    <h4>Categorie</h4>
+</div>
+<section>
+    <tr>
+        <td align="right">
+            <input autocomplete="off" id="cerca" class="search order-search" placeholder="Cerca per nome,cognome.." style="width:210px; height:27px; margin-right:8px;" value="" type="text">							<a href="nuovocliente.html" id="modal_addclient" class="btn-flat primary" role="button" style="border-radius:2px;">Ricerca</a>
+            <a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="{{ path('AnuovoProducibile') }}">+ Producibile</a>
+        </td>
+    </tr>
+</section>
+<section class="t1" >
+    <table class="table table-hover">
+        <thead> 
+            <tr>
+                <th class="span2">Codice</th>
+                <th class="span2">Nome</th>
+                <th class="span2">Descrizione</th>
+                <th class="span2">Numero Articoli</th>
+                <th class="span2">Gruppo</th>
+                <th class="span2">Compenso Grafico</th>
+                <th class="span2"></th>  
+            </tr>
+        </thead>
+        <tbody>
+        {%for item in producibili%}
+            <tr class="first">
+                <td> {{item.id}} </td>
+                <td>{{item.nome}}</td>
+                <td>{{item.descrizione}}</td>
+                <td>{{item.numArt}}</td>
+                <td>{{item.gruppoId}}</td>
+                <td>{{item.compensoGrafico}}</td>
+                <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="ordine.html">Cambia</a></td>
+            </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

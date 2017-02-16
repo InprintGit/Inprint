@@ -9,17 +9,21 @@
         <title>{% block title %}Amministratore{% endblock %}</title>
         {% block stylesheets %}
             <link href="{{ asset('Amministratore/style/monitor.css') }}" rel="stylesheet" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{{ asset("Amministratore/dist/style.min.css") }}" />
         {% endblock %}
         {% block javascripts %}
-            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
             <script src="{{ asset('Amministratore/js/base.js') }}"></script>
+    
+     
+            
         {% endblock %}
   </head>
     <body>
     {% block body %}
         <header>
             {% block header%}
-        	<img src="{{ asset('Operatore/src/prink.png')}}" id="logo">
+        	<img src="{{ asset('Amministratore/src/prink.png')}}" id="logo">
         	<nav class="menu">
             {%endblock%}
         </header>
@@ -32,7 +36,8 @@
                             <li><a href="{{ path('Aarticoli') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci articolo</a></li>                 
                             <li><a href="{{ path('Aattributi') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci attributi</a></li> 	                        
                             <li><a href="{{ path('Acategorie') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci categoria</a></li>
-                            <li><a href="{{ path('Aproducibili') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci producibili</a></li> 	                            
+                            <li><a href="{{ path('Aproducibili') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci producibili</a></li>
+                            <li><a href="{{ path('Aproducibili') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci producibili</a></li> 
                         </ul> 
 	            </nav>
                     {% endblock%}
