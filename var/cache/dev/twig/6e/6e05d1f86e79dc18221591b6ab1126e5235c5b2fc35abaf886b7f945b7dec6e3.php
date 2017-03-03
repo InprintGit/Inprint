@@ -22,32 +22,32 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94->enter($__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:clienti.html.twig"));
+        $__internal_585f87f81c026093e601c27c80d2d7cbe5ded166596e0fe7998fa2e785325bb8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_585f87f81c026093e601c27c80d2d7cbe5ded166596e0fe7998fa2e785325bb8->enter($__internal_585f87f81c026093e601c27c80d2d7cbe5ded166596e0fe7998fa2e785325bb8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:clienti.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94->leave($__internal_c3867861e109b2c3ba1b0854d43d2ff635834e2241c7765768a7e490ca973b94_prof);
+        $__internal_585f87f81c026093e601c27c80d2d7cbe5ded166596e0fe7998fa2e785325bb8->leave($__internal_585f87f81c026093e601c27c80d2d7cbe5ded166596e0fe7998fa2e785325bb8_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870->enter($__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_94b166e1d38024a3a032d1b04ff5dad5c053a94c6961b581f2b2d1c7a9d3d23a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_94b166e1d38024a3a032d1b04ff5dad5c053a94c6961b581f2b2d1c7a9d3d23a->enter($__internal_94b166e1d38024a3a032d1b04ff5dad5c053a94c6961b581f2b2d1c7a9d3d23a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Rubrica Clienti";
         
-        $__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870->leave($__internal_1c66b28f88fcd7d83032858a07fe49260ccf50b12a68032a7cc513855abe3870_prof);
+        $__internal_94b166e1d38024a3a032d1b04ff5dad5c053a94c6961b581f2b2d1c7a9d3d23a->leave($__internal_94b166e1d38024a3a032d1b04ff5dad5c053a94c6961b581f2b2d1c7a9d3d23a_prof);
 
     }
 
     // line 5
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3->enter($__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_21df473a700dfccdc39da378d4b304f827ab235ccf9e70acd4e6d64594772a5b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_21df473a700dfccdc39da378d4b304f827ab235ccf9e70acd4e6d64594772a5b->enter($__internal_21df473a700dfccdc39da378d4b304f827ab235ccf9e70acd4e6d64594772a5b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
         // line 6
         echo "
@@ -71,7 +71,7 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
                     </tr>
                     <tr valign=\"top\">
     \t\t\t<td style=\"width:50%;\">
-                            <div class=\"row-fluid\" id=\"boxTable\" name=\"\"boxTable\"\">
+                            <div class=\"row-fluid\" id=\"boxTable\" name=\"boxTable\">
                                 <table id=\"tabella\" class=\"table table-hover\">
                                     <thead>
                                         <tr>
@@ -131,7 +131,7 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
     </div>
 ";
         
-        $__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3->leave($__internal_40af8099fb297c1f9202566ba9911b3a8d2914e511434b66892aa65dc9cc8dd3_prof);
+        $__internal_21df473a700dfccdc39da378d4b304f827ab235ccf9e70acd4e6d64594772a5b->leave($__internal_21df473a700dfccdc39da378d4b304f827ab235ccf9e70acd4e6d64594772a5b_prof);
 
     }
 
@@ -186,7 +186,7 @@ class __TwigTemplate_c44b0b9182519493760a06f4dfee41c1e703854beae457e7f5d5d07bfaf
                     </tr>
                     <tr valign=\"top\">
     \t\t\t<td style=\"width:50%;\">
-                            <div class=\"row-fluid\" id=\"boxTable\" name=\"\"boxTable\"\">
+                            <div class=\"row-fluid\" id=\"boxTable\" name=\"boxTable\">
                                 <table id=\"tabella\" class=\"table table-hover\">
                                     <thead>
                                         <tr>

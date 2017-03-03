@@ -18,4 +18,39 @@ class GruppoRepository extends \Doctrine\ORM\EntityRepository
                 );
         return $query->getResult() ;        
     }
+    
+    public function PrelevaAttributiRequest($request,$numVal){
+        for ($c=1; $c<=$numVal; $c++){
+            if($request->get($c)){
+                $ris[]=$request->get($c);
+            }
+        }
+        return $ris;
+    }
+    public  function creaGruppo($em,$nome){
+        $unGruppo= new \AppBundle\Entity\Gruppo();
+        $unGruppo->setNome($nome);
+        $em->persist($unGruppo);
+        $em->flush();
+        return $unGruppo;
+    }
+    
+    public function RicercaFullText($em,$str){
+        $str=$str."%"; 
+       $query = $em->createQuery(
+            'SELECT g.id, g.nome
+            FROM AppBundle:Gruppo g
+            WHERE g.id LIKE :str or g.nome LIKE :str ' 
+        )->setParameter('str',$str);
+        $ris = $query->getResult();
+        return $ris;
+        
+    }
+    
+     public function elimina($em,$idSet){
+        $gruppo= $this->find($idSet); 
+        $em->remove($gruppo);
+        $em->flush();
+        return "Cancellazione andata a buon fine";
+    }
 }

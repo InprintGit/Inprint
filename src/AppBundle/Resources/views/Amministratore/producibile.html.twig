@@ -1,0 +1,76 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block javascripts %}
+    {{parent()}}
+
+    <script src="{{ asset("Amministratore/js/salvaProducibile.js") }}"></script>
+{% endblock %}
+
+{% block title %}Producibile id{% endblock %}
+
+{% block corpo %}
+
+<div id="content" class="container-fluid" style="">
+    <div style="margin-top:20px;" align="center">
+        <h3 style="font-weight: 300; margin-top:10px;">Producibile -{{producibile.id}}</h3>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="span2"><span class="line"></span>Immagine</th>
+                <th class="span2"><span class="line"></span>Descrizione</th>
+                <th class="span2"><span class="line"></span>Compenso grafico</th>
+                <th class="span2"><span class="line"></span>Set Attributi</th>
+                <th class="span2"><span class="line"></span>Numero Articoli</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="first" style="font-size:14px; cursor:pointer; ">
+                <td>{{producibile.immagine}}</td>
+                <td>{{producibile.descrizione}}</td>
+                <td>{{producibile.compensografico}}</td>
+                <td>{{producibile.gruppoId}}</td>
+                <td id="articolo">{{articoli|length}}</td>
+            </tr>							    			
+        </tbody>
+    </table>
+    <table class="table table-hover">
+        <caption><h4>Articoli</h4></caption>
+        <thead>
+            <tr>
+                <th class="span2"> Articoli</th>
+                <th class="span2"> </th>				        				
+            </tr>
+        </thead>
+        <tbody>
+        {%for item in articoli%}
+            <tr class="first" style="font-size:14px; cursor:pointer; ">
+                <td>{{item.id}}</td>
+                <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('Aarticolo', {'idArticolo': item.id})}}>Vedi</a></td>											
+            </tr>
+        {%endfor%}					    			
+        </tbody>
+    </table>
+    <table class="table table-hover">
+        <caption><h4>Categorie</h4></caption>
+        <thead>
+            <tr>
+                <th class="span2"> Articoli</th>
+                <th class="span2"> </th>				        				
+            </tr>
+        </thead>
+        <tbody>
+        {%for item in categorie%}
+            <tr class="first" style="font-size:14px; cursor:pointer; ">
+                <td>{{item.id}}</td>
+                <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('Acategoria', {'idCategoria': item.id})}}>Vedi</a></td>											
+            </tr>
+        {%endfor%}					    			
+        </tbody>
+    </table>
+</div>
+<div style="margin-top:15px;" align="right">
+    <a class="btn-flat success" style="border-radius:2px; cursor:pointer;" onclick="elimina({{producibile.id}});"><i class="icon-mail-forward"></i>Elimina</a>
+    <a class="btn-flat success" style="border-radius:2px; cursor:pointer;" onclick="modifica({{producibile.id}});"><i class="icon-mail-forward"></i> Modifica</a>
+</div>	
+{% endblock %}

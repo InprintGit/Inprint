@@ -13,8 +13,9 @@
             <link rel="stylesheet" href="{{ asset("Amministratore/dist/style.min.css") }}" />
         {% endblock %}
         {% block javascripts %}
+            <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
             <script src="{{ asset('Amministratore/js/base.js') }}"></script>
-    
+            <script src="{{ asset('Amministratore/js/SearchAmministratore.js') }}"></script>
      
             
         {% endblock %}
@@ -37,7 +38,7 @@
                             <li><a href="{{ path('Aattributi') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci attributi</a></li> 	                        
                             <li><a href="{{ path('Acategorie') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci categoria</a></li>
                             <li><a href="{{ path('Aproducibili') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci producibili</a></li>
-                            <li><a href="{{ path('Aproducibili') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci producibili</a></li> 
+                            <li><a href="{{ path('Aset') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci set-attributi</a></li> 
                         </ul> 
 	            </nav>
                     {% endblock%}

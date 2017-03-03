@@ -11,7 +11,7 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
         $this->parent = $this->loadTemplate("AppBundle:Amministratore:Abase.html.twig", "AppBundle:Amministratore:nuovoProducibile.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'stylesheets' => array($this, 'block_stylesheets'),
+            'javascripts' => array($this, 'block_javascripts'),
             'corpo' => array($this, 'block_corpo'),
         );
     }
@@ -23,64 +23,63 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a03180dca0ba9368ab9c876c756903f8022710776bd6db14cd1fa9886b11b908 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a03180dca0ba9368ab9c876c756903f8022710776bd6db14cd1fa9886b11b908->enter($__internal_a03180dca0ba9368ab9c876c756903f8022710776bd6db14cd1fa9886b11b908_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:nuovoProducibile.html.twig"));
+        $__internal_8186665be8131a62ee0cc24dc212d8f6e2e60c3bc1cc0b27c269202f2556d706 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_8186665be8131a62ee0cc24dc212d8f6e2e60c3bc1cc0b27c269202f2556d706->enter($__internal_8186665be8131a62ee0cc24dc212d8f6e2e60c3bc1cc0b27c269202f2556d706_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:nuovoProducibile.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a03180dca0ba9368ab9c876c756903f8022710776bd6db14cd1fa9886b11b908->leave($__internal_a03180dca0ba9368ab9c876c756903f8022710776bd6db14cd1fa9886b11b908_prof);
+        $__internal_8186665be8131a62ee0cc24dc212d8f6e2e60c3bc1cc0b27c269202f2556d706->leave($__internal_8186665be8131a62ee0cc24dc212d8f6e2e60c3bc1cc0b27c269202f2556d706_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_90a68601be19bcfd61eee1b47b81853edbdab271fc00c561dc1093b03d99dde9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_90a68601be19bcfd61eee1b47b81853edbdab271fc00c561dc1093b03d99dde9->enter($__internal_90a68601be19bcfd61eee1b47b81853edbdab271fc00c561dc1093b03d99dde9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_d9cca61116948536de9dabf091c3300cd5794587f45e6e3652942f50ae0e8700 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d9cca61116948536de9dabf091c3300cd5794587f45e6e3652942f50ae0e8700->enter($__internal_d9cca61116948536de9dabf091c3300cd5794587f45e6e3652942f50ae0e8700_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Nuova Producibile";
         
-        $__internal_90a68601be19bcfd61eee1b47b81853edbdab271fc00c561dc1093b03d99dde9->leave($__internal_90a68601be19bcfd61eee1b47b81853edbdab271fc00c561dc1093b03d99dde9_prof);
+        $__internal_d9cca61116948536de9dabf091c3300cd5794587f45e6e3652942f50ae0e8700->leave($__internal_d9cca61116948536de9dabf091c3300cd5794587f45e6e3652942f50ae0e8700_prof);
 
     }
 
     // line 5
-    public function block_stylesheets($context, array $blocks = array())
+    public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_652f6339f7f8d5cff07d87b581e5407023d3f8c42305cb8f6d268b37e84917cb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_652f6339f7f8d5cff07d87b581e5407023d3f8c42305cb8f6d268b37e84917cb->enter($__internal_652f6339f7f8d5cff07d87b581e5407023d3f8c42305cb8f6d268b37e84917cb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_2ab3f2e8c67f38ff3d8440fe08af84a6e9c91a8407e6786af33ff103960d2cfc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2ab3f2e8c67f38ff3d8440fe08af84a6e9c91a8407e6786af33ff103960d2cfc->enter($__internal_2ab3f2e8c67f38ff3d8440fe08af84a6e9c91a8407e6786af33ff103960d2cfc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 6
         echo "    ";
-        $this->displayParentBlock("stylesheets", $context, $blocks);
+        $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
-    <script type=\"text/javascript\" charset=\"utf8\" src=\"http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js\"></script>
 
     <script src=\"";
-        // line 9
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Amministratore/dist/jstree.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 10
+        // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Amministratore/js/salvaProducibile.js"), "html", null, true);
         echo "\"></script>
      <script src=\"";
-        // line 11
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Amministratore/js/AlberoCategorieCheck.js"), "html", null, true);
         echo "\"></script>
 ";
         
-        $__internal_652f6339f7f8d5cff07d87b581e5407023d3f8c42305cb8f6d268b37e84917cb->leave($__internal_652f6339f7f8d5cff07d87b581e5407023d3f8c42305cb8f6d268b37e84917cb_prof);
+        $__internal_2ab3f2e8c67f38ff3d8440fe08af84a6e9c91a8407e6786af33ff103960d2cfc->leave($__internal_2ab3f2e8c67f38ff3d8440fe08af84a6e9c91a8407e6786af33ff103960d2cfc_prof);
 
     }
 
-    // line 14
+    // line 13
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_13b585a654747c648b8169ead782fc301073cb24c3a341a74755700430cded9e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_13b585a654747c648b8169ead782fc301073cb24c3a341a74755700430cded9e->enter($__internal_13b585a654747c648b8169ead782fc301073cb24c3a341a74755700430cded9e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_903f7fb6e7d50480c84ecfae67427b679eaaa19ee88c7d9744d1b77ddff443a9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_903f7fb6e7d50480c84ecfae67427b679eaaa19ee88c7d9744d1b77ddff443a9->enter($__internal_903f7fb6e7d50480c84ecfae67427b679eaaa19ee88c7d9744d1b77ddff443a9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
-        // line 15
+        // line 14
         echo "
 <section class=\"top\">
 \t<h4>Nuovo Producibile</h4>
@@ -98,20 +97,24 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
                         <div class=\"field-box\" id='divDescrizione'>
                             <label>Breve descrizione:</label>
                             <input name=\"descrizione\" id=\"descrizione\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
-                        </div>\t
+                        </div>
+                         <div class=\"field-box\" id=\"divCompenso\">
+                            <label>Inserisci Compenso Grafico:</label>
+                            <input name=\"compenso\" type=\"number\" step=\"0.01\" id=\"compenso\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
+                        </div>
                         <div class=\"field-box\" id=\"divImmagine\">
                             <label>Inserisci immaggine:</label>
                             <input name=\"immagine\" type=\"file\" id=\"immagine\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
-                        </div>
+                        </div> 
                         <div class=\"field-box\" id='divGruppo'>
                             <label>Seleziona Gruppo-Attributi:</label>
                             <select id=\"gruppo\">
                                 ";
-        // line 40
+        // line 43
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["Gruppi"]) ? $context["Gruppi"] : $this->getContext($context, "Gruppi")));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 41
+            // line 44
             echo "                                <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "id", array()), "html", null, true);
             echo "\">";
@@ -122,7 +125,7 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 46
         echo "                            </select>
                         </div>\t
                     </td>
@@ -142,8 +145,9 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
     </table>
 </section>
     <script>
-        
+        var categorieAlbero;
         \$(\"#divAlbero\").toggle();
+        \$(\"#divCompenso\").toggle();
         \$(\"#divImmagine\").toggle();
         \$(\"#divDescrizione\").toggle();
         \$(\"#divGruppo\").toggle();
@@ -155,14 +159,14 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
             console.log(\$(\"#tree-container\").jstree('get_bottom_checked'));
             categorie=\$(\"#tree-container\").jstree('get_bottom_checked');
             temp=\"Categorie selezionate:  \";
+            categorieAlbero=categorie;
             for(i=0 ; i < categorie.length ; i++){
                 node = \$('#tree-container').jstree(true).get_node(categorie[i]);
                 temp=temp+\"      \"+node.text;
-                
-                categorie=categorie.concat(node.parents)
+                categorieAlbero=categorieAlbero.concat(node.parents)
                 
                 }
-            console.log(categorie);
+            console.log(categorieAlbero);
             temp=temp + \"</br> appartiene, inoltre a tutte le categorie superiori a quelle selezionate.\"
             \$(\"#divCategorie\").html(temp);
     }
@@ -171,7 +175,7 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
     </script>
 ";
         
-        $__internal_13b585a654747c648b8169ead782fc301073cb24c3a341a74755700430cded9e->leave($__internal_13b585a654747c648b8169ead782fc301073cb24c3a341a74755700430cded9e_prof);
+        $__internal_903f7fb6e7d50480c84ecfae67427b679eaaa19ee88c7d9744d1b77ddff443a9->leave($__internal_903f7fb6e7d50480c84ecfae67427b679eaaa19ee88c7d9744d1b77ddff443a9_prof);
 
     }
 
@@ -187,7 +191,7 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
 
     public function getDebugInfo()
     {
-        return array (  126 => 43,  115 => 41,  111 => 40,  84 => 15,  78 => 14,  69 => 11,  65 => 10,  61 => 9,  54 => 6,  48 => 5,  36 => 3,  11 => 1,);
+        return array (  129 => 46,  118 => 44,  114 => 43,  83 => 14,  77 => 13,  68 => 10,  64 => 9,  60 => 8,  54 => 6,  48 => 5,  36 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -204,9 +208,8 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
 
 {% block title %}Nuova Producibile{% endblock %}
 
-{% block stylesheets %}
+{% block javascripts %}
     {{parent()}}
-    <script type=\"text/javascript\" charset=\"utf8\" src=\"http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js\"></script>
 
     <script src=\"{{ asset(\"Amministratore/dist/jstree.min.js\") }}\"></script>
     <script src=\"{{ asset(\"Amministratore/js/salvaProducibile.js\") }}\"></script>
@@ -231,11 +234,15 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
                         <div class=\"field-box\" id='divDescrizione'>
                             <label>Breve descrizione:</label>
                             <input name=\"descrizione\" id=\"descrizione\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
-                        </div>\t
+                        </div>
+                         <div class=\"field-box\" id=\"divCompenso\">
+                            <label>Inserisci Compenso Grafico:</label>
+                            <input name=\"compenso\" type=\"number\" step=\"0.01\" id=\"compenso\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
+                        </div>
                         <div class=\"field-box\" id=\"divImmagine\">
                             <label>Inserisci immaggine:</label>
                             <input name=\"immagine\" type=\"file\" id=\"immagine\" value=\"\" class=\"span6\" style=\"width:240px\" type=\"text\">
-                        </div>
+                        </div> 
                         <div class=\"field-box\" id='divGruppo'>
                             <label>Seleziona Gruppo-Attributi:</label>
                             <select id=\"gruppo\">
@@ -261,8 +268,9 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
     </table>
 </section>
     <script>
-        
+        var categorieAlbero;
         \$(\"#divAlbero\").toggle();
+        \$(\"#divCompenso\").toggle();
         \$(\"#divImmagine\").toggle();
         \$(\"#divDescrizione\").toggle();
         \$(\"#divGruppo\").toggle();
@@ -274,14 +282,14 @@ class __TwigTemplate_caa0da490b91d5876d5f3131ee0393e3e791647573e4ca9f6e8f64e94ca
             console.log(\$(\"#tree-container\").jstree('get_bottom_checked'));
             categorie=\$(\"#tree-container\").jstree('get_bottom_checked');
             temp=\"Categorie selezionate:  \";
+            categorieAlbero=categorie;
             for(i=0 ; i < categorie.length ; i++){
                 node = \$('#tree-container').jstree(true).get_node(categorie[i]);
                 temp=temp+\"      \"+node.text;
-                
-                categorie=categorie.concat(node.parents)
+                categorieAlbero=categorieAlbero.concat(node.parents)
                 
                 }
-            console.log(categorie);
+            console.log(categorieAlbero);
             temp=temp + \"</br> appartiene, inoltre a tutte le categorie superiori a quelle selezionate.\"
             \$(\"#divCategorie\").html(temp);
     }

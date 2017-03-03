@@ -23,20 +23,20 @@ class __TwigTemplate_e86c6c06de8a22c10822aa25b436ca8a2d9b92decabf8ffe0d04883931e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_dae056ae6997db01c64d49b51f7eea5bce1bcc9a07144ac55317ab233e0e2055 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dae056ae6997db01c64d49b51f7eea5bce1bcc9a07144ac55317ab233e0e2055->enter($__internal_dae056ae6997db01c64d49b51f7eea5bce1bcc9a07144ac55317ab233e0e2055_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:catalogo.html.twig"));
+        $__internal_ab13a44823dcfc04276c98783ec73dc4e269afebec4ebffbbed697f20a9fbb2b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ab13a44823dcfc04276c98783ec73dc4e269afebec4ebffbbed697f20a9fbb2b->enter($__internal_ab13a44823dcfc04276c98783ec73dc4e269afebec4ebffbbed697f20a9fbb2b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Prinkino:catalogo.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_dae056ae6997db01c64d49b51f7eea5bce1bcc9a07144ac55317ab233e0e2055->leave($__internal_dae056ae6997db01c64d49b51f7eea5bce1bcc9a07144ac55317ab233e0e2055_prof);
+        $__internal_ab13a44823dcfc04276c98783ec73dc4e269afebec4ebffbbed697f20a9fbb2b->leave($__internal_ab13a44823dcfc04276c98783ec73dc4e269afebec4ebffbbed697f20a9fbb2b_prof);
 
     }
 
     // line 3
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_5c71edf9df9d2b925a27ff765af1155b9cc46f14a8f9f2d30ba5dcb20c272214 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5c71edf9df9d2b925a27ff765af1155b9cc46f14a8f9f2d30ba5dcb20c272214->enter($__internal_5c71edf9df9d2b925a27ff765af1155b9cc46f14a8f9f2d30ba5dcb20c272214_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_4448fe2fd1113b548f12e391172df76028a3ea518cc0c1bc4b073c8e30453a6d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_4448fe2fd1113b548f12e391172df76028a3ea518cc0c1bc4b073c8e30453a6d->enter($__internal_4448fe2fd1113b548f12e391172df76028a3ea518cc0c1bc4b073c8e30453a6d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 4
         echo "     ";
@@ -62,27 +62,27 @@ class __TwigTemplate_e86c6c06de8a22c10822aa25b436ca8a2d9b92decabf8ffe0d04883931e
         echo "\" />
 ";
         
-        $__internal_5c71edf9df9d2b925a27ff765af1155b9cc46f14a8f9f2d30ba5dcb20c272214->leave($__internal_5c71edf9df9d2b925a27ff765af1155b9cc46f14a8f9f2d30ba5dcb20c272214_prof);
+        $__internal_4448fe2fd1113b548f12e391172df76028a3ea518cc0c1bc4b073c8e30453a6d->leave($__internal_4448fe2fd1113b548f12e391172df76028a3ea518cc0c1bc4b073c8e30453a6d_prof);
 
     }
 
     // line 13
     public function block_title($context, array $blocks = array())
     {
-        $__internal_b6e3caba19795d77a8382d7e61092c9bdc80f33ee8b474f6d855c4360f83b3f7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b6e3caba19795d77a8382d7e61092c9bdc80f33ee8b474f6d855c4360f83b3f7->enter($__internal_b6e3caba19795d77a8382d7e61092c9bdc80f33ee8b474f6d855c4360f83b3f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_eabaee40e5f723c40201de67ace4b8f74235cfda1cffa9cf382b945015c75875 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_eabaee40e5f723c40201de67ace4b8f74235cfda1cffa9cf382b945015c75875->enter($__internal_eabaee40e5f723c40201de67ace4b8f74235cfda1cffa9cf382b945015c75875_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Catalogo Prodotti";
         
-        $__internal_b6e3caba19795d77a8382d7e61092c9bdc80f33ee8b474f6d855c4360f83b3f7->leave($__internal_b6e3caba19795d77a8382d7e61092c9bdc80f33ee8b474f6d855c4360f83b3f7_prof);
+        $__internal_eabaee40e5f723c40201de67ace4b8f74235cfda1cffa9cf382b945015c75875->leave($__internal_eabaee40e5f723c40201de67ace4b8f74235cfda1cffa9cf382b945015c75875_prof);
 
     }
 
     // line 15
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_69272242d4a539740e09b78ad19754ee8962db689503aaa7d4d431a847a35c24 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_69272242d4a539740e09b78ad19754ee8962db689503aaa7d4d431a847a35c24->enter($__internal_69272242d4a539740e09b78ad19754ee8962db689503aaa7d4d431a847a35c24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_904cbaa5f25f7a4cc66ad15763c1d480383cfcafd51aa492986642ad5609ca49 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_904cbaa5f25f7a4cc66ad15763c1d480383cfcafd51aa492986642ad5609ca49->enter($__internal_904cbaa5f25f7a4cc66ad15763c1d480383cfcafd51aa492986642ad5609ca49_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
         // line 16
         echo "    <body class=\"color-7\">
@@ -137,10 +137,10 @@ class __TwigTemplate_e86c6c06de8a22c10822aa25b436ca8a2d9b92decabf8ffe0d04883931e
 \t\t\t\t} );
 \t\t\t})();
 \t\t</script>
-\t</body>
+\t</body>  
 ";
         
-        $__internal_69272242d4a539740e09b78ad19754ee8962db689503aaa7d4d431a847a35c24->leave($__internal_69272242d4a539740e09b78ad19754ee8962db689503aaa7d4d431a847a35c24_prof);
+        $__internal_904cbaa5f25f7a4cc66ad15763c1d480383cfcafd51aa492986642ad5609ca49->leave($__internal_904cbaa5f25f7a4cc66ad15763c1d480383cfcafd51aa492986642ad5609ca49_prof);
 
     }
 
@@ -220,7 +220,7 @@ class __TwigTemplate_e86c6c06de8a22c10822aa25b436ca8a2d9b92decabf8ffe0d04883931e
 \t\t\t\t} );
 \t\t\t})();
 \t\t</script>
-\t</body>
+\t</body>  
 {% endblock %}", "AppBundle:Prinkino:catalogo.html.twig", "C:\\Users\\inprink1\\Documents\\NetBeansProjects\\Inprint\\src\\AppBundle/Resources/views/Prinkino/catalogo.html.twig");
     }
 }

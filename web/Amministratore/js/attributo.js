@@ -52,3 +52,35 @@ function conferma(){
     }
     
 }
+
+function elimina(idAttributo){
+    numProd=$("#numSet").html();
+    if(numProd>0){
+        alert("L'attributo presenta "+numProd+" producibili associati. Non è possibile eliminarlo");
+    } else{
+        $.ajax({       
+                       type: "GET",
+                       url: "/a/eliminaAttributoJSON",
+                       dataType: "json",
+                       data: {idAttributo: idAttributo},
+                       success : function(response) 
+                         {
+                           $("#content").html(response);
+                        }
+                           });
+    }
+}   
+    function modifica(idAttributo){
+    
+        $.ajax({       
+                       type: "GET",
+                       url: "/a/elilominaAttributoJSON",
+                       dataType: "json",
+                       data: {idAttributo: idAttributo},
+                       success : function(response) 
+                         {
+                           $("#content").html(response);
+                        }
+                           });
+}
+        

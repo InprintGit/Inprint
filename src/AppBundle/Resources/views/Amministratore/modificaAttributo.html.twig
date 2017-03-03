@@ -1,0 +1,42 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block stylesheets %}
+    {{parent()}}
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+
+    <script src="{{ asset("Amministratore/js/attributo.js") }}"></script>
+{% endblock %}
+
+
+{% block title %}Nuovo attributo{% endblock %}
+
+{% block corpo %}
+<section class="top">
+    <h4>Nuovo attributo </h4>
+</section>
+<section class="form">
+    <table>
+        <form method="post">
+            <tbody>
+                <tr valign="top">
+                    <td height="260" width="285">
+                        <div id="cont"> 
+                            <div class="field-box">
+                                <label>Nome :</label>
+                                <input id="{{attributo}}" value="{{attributo.nome}}" placeholder="" class="span6" style="width:240px" type="text" required>
+                            </div>
+                            {%for item in valori%}
+                            <div class="field-box">
+                                <label>Valore {{loop.index}} :</label>
+                                <input id="{{loop.index}}}" value="{{item.nome}}" placeholder="" class="span6" style="width:240px" type="text">
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </td>
+                    <a id="modifica" class="btn-flat primary" onclick="modifica({{attributo.id}})">Modifica</a>
+                </tr>
+            </tbody>
+        </form>
+    </table>
+</section>
+{% endblock %}

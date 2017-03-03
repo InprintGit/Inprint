@@ -1,0 +1,6 @@
+il prodotto "{{producibile.nome}}" è stato inserito con codice: {{producibile.id}}
+<br>inoltre, appartiene alle categorie:
+
+{%for item in appartenere%}
+    <br> {{item.idCategoria}} 
+{%endfor%}

@@ -35,19 +35,8 @@ class Categoria
      */
     private $categoriaPadreId;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="IndexSx", type="integer", nullable=true)
-     */
-    private $indexSx;
+  
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="IndexDx", type="integer", unique=true)
-     */
-    private $indexDx;
 
     /**
      * @var string
@@ -121,54 +110,6 @@ class Categoria
         return $this->categoriaPadreId;
     }
 
-    /**
-     * Set indexSx
-     *
-     * @param integer $indexSx
-     *
-     * @return Categoria
-     */
-    public function setIndexSx($indexSx)
-    {
-        $this->indexSx = $indexSx;
-
-        return $this;
-    }
-
-    /**
-     * Get indexSx
-     *
-     * @return int
-     */
-    public function getIndexSx()
-    {
-        return $this->indexSx;
-    }
-
-    /**
-     * Set indexDx
-     *
-     * @param integer $indexDx
-     *
-     * @return Categoria
-     */
-    public function setIndexDx($indexDx)
-    {
-        $this->indexDx = $indexDx;
-
-        return $this;
-    }
-
-    /**
-     * Get indexDx
-     *
-     * @return int
-     */
-    public function getIndexDx()
-    {
-        return $this->indexDx;
-    }
-    
     /**
      * Set descrizione
      *

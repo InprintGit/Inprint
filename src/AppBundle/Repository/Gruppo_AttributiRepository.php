@@ -10,4 +10,51 @@ namespace AppBundle\Repository;
  */
 class Gruppo_AttributiRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function collegaAttributi($em,$unGruppo,$attributi){
+        foreach ($attributi as $x) {
+            $unGruppoAttributo = new \AppBundle\Entity\Gruppo_Attributi();
+            $unGruppoAttributo->setAttributoId($x);
+            $unGruppoAttributo->setGruppoId($unGruppo->getId());
+            $em->persist($unGruppoAttributo);
+            $em->flush();
+        }
+        return;    
+    }
+    
+    public function CaricaAttributiValori($em,$idProducibile){
+        $idattributi= $this->findBy(array("gruppoId"=>$idProducibile));
+        foreach ($idattributi as $x) {
+            $nome=$em->getRepository("AppBundle:Attributi")->find($x->getAttributoId())->getNome();
+            $valori=$em->getRepository("AppBundle:Valore")->findBy(array("attributoId"=>$x->getAttributoId()));
+            $temp[]=array("id" => $x->getAttributoId(), "nome"=>$nome, "valori" => $valori);
+            
+        }
+        return $temp;
+    }
+    
+    public function getAttributi($em,$idGruppo){
+        $query=$em->createQuery(" SELECT a.id, a.nome  
+                                  FROM AppBundle:Attributi a, AppBundle:Gruppo_Attributi ga
+                                  WHERE a.id=ga.attributoId and ga.gruppoId=:idGruppo   ")->setParameter("idGruppo",$idGruppo);
+        
+        return $query->getResult();
+    }
+    
+    public function elimina($em,$idSet){
+        $GA= $this->findBy(array("gruppoId"=>$idSet));
+        foreach ($GA as $x){
+            $em->remove($x);
+        }
+        $em->flush();
+        return;
+    }
+    
+    public  function ricercaGruppiDaAttributo($em,$idAtt){
+       $query=$em->createQuery("SELECT g.id, g.nome
+                                FROM AppBundle:Gruppo g, AppBundle:Gruppo_Attributi ga
+                                WHERE g.id=ga.gruppoId AND ga.attributoId=:idAtt    ")->setParameter("idAtt",$idAtt);
+        
+        return $query->getResult(); 
+    }
+
 }

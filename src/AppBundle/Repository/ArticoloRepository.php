@@ -74,8 +74,8 @@ class ArticoloRepository extends \Doctrine\ORM\EntityRepository
     public  function MostraDati($em){
         $query = $em->createQuery(
             'SELECT a.denominazione, a.prezzoVendita, a.id, a.producibileId
-            FROM  AppBundle:Producibile p, AppBundle:Articolo a
-            WHERE a.producibileId=p.id ' 
+            FROM  AppBundle:Articolo a
+            ' 
         );
         $ris = $query->getResult();
         return $ris;
@@ -92,5 +92,74 @@ class ArticoloRepository extends \Doctrine\ORM\EntityRepository
         return $ris;
     }
     
+    public function salvaArticolo($em,$datiArticolo){
+        $unArticolo= new \AppBundle\Entity\Articolo();
+        $unArticolo->setDenominazione($datiArticolo[0]);
+        $unArticolo->setPrezzoVendita($datiArticolo[1]);
+        $unArticolo->setProducibileId($datiArticolo[2]);
+        $em->persist($unArticolo);
+        $em->flush();
+        
+        for($c=3;$c<count($datiArticolo);$c++){
+            $unVA= new \AppBundle\Entity\Valori_Articolo();
+            $unVA->setArticoloId($unArticolo->getId());
+            $unVA->setValoreId($datiArticolo[$c]);
+            $em->persist($unVA);
+            
+            
+        }
+        $em->flush();
+        return $unArticolo;
+    }
+    
+    public function RicercaFullText($em,$str){
+        $str=$str."%";
+        $query = $em->createQuery(
+            'SELECT a.denominazione, a.prezzoVendita, a.id, a.producibileId
+            FROM  AppBundle:Articolo a
+            WHERE a.denominazione LIKE :str or a.prezzoVendita LIKE :str or a.id LIKE :str or a.producibileId LIKE :str
+            ' 
+        )->setParameter('str',$str);
+        $ris = $query->getResult();
+        return $ris;
+    }
+    
+    public function ordiniInCorso($em,$idArticolo){
+        $query="SELECT COUNT(OD.codiceordine) as num "
+                . "FROM OrdineDati OD "
+                . "WHERE OD.articolo=".$idArticolo." and (OD.idstato not IN (26, 31))";
+        $stmt = $em->getConnection()->prepare($query);
+        $stmt->execute();
+        $ris=$stmt->fetchAll();
+        return $ris[0]["num"];
+    }
+    
+    public function AttributiValori($em,$idArticolo) {
+        $query=$em->createQuery("SELECT a.id as idAttributo, a.nome nomeAttributo, v.id as idValore, v.nome as nomeValore
+                                FROM AppBundle:Attributi a, AppBundle:Valore v, AppBundle:Valori_Articolo va
+                                WHERE va.articoloId=:idArticolo and va.valoreId=v.id and a.id=v.attributoId");
+        $query->setParameter("idArticolo",$idArticolo);
+        $ris = $query->getResult();
+        return $ris;
+    }
+    
+    public function elimina($em, $idArticolo){
+        $inCorso=$this->ordiniInCorso($em, $idArticolo);
+        if($inCorso>0){
+            $response="Cancellazione non effettuata";
+        } else { 
+            //collego gli ordini dell'articolo ad un articolo fittizio non disponibile
+            $ordini=$em->getRepository("AppBundle:Ordine")->findBy(array("articoloId"=>$idArticolo));
+            foreach ($ordini as $x){
+                $x->setArticoloId(0);
+                $em->flush();
+            }
+            $articolo=$this->find($idArticolo);
+            $em->remove($articolo);
+            $em->flush();
+            $response= "cancellazione andata a buon fine";
+        }
+        return $response;
+    }
     
 }

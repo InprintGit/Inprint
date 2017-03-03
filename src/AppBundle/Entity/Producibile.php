@@ -79,7 +79,7 @@ class Producibile
      */
     public function setCompensoGrafico($compensoGrafico)
     {
-        $this->compensoGragico = $compensoGrafico;
+        $this->compensoGrafico = $compensoGrafico;
 
         return $this;
     }
@@ -91,7 +91,7 @@ class Producibile
      */
     public function getCompensoGrafico()
     {
-        return $this->CompensoGrafico;
+        return $this->compensoGrafico;
     }
     
     

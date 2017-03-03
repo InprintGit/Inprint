@@ -1,0 +1,44 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block javascripts %}
+    {{parent()}}
+
+    <script src="{{ asset("Amministratore/js/set.js") }}"></script>
+{% endblock %}
+
+{% block title %}Set-Attributi visualizzazione{% endblock %}
+
+{% block corpo %}
+<div class="span12">
+	<h4>Set-Attributi</h4>
+</div>
+<section>
+    <tr>
+        <td align="right">
+            <input autocomplete="off" id="cercaGruppo" class="search order-search" placeholder="Cerca per nome,cognome.." style="width:210px; height:27px; margin-right:8px;" value="" type="text">	        			    				        			            	
+            <a href="nuovocliente.html" id="modal_addclient" class="btn-flat primary" role="button" style="border-radius:2px;">Ricerca</a>
+            <a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="{{ path('AnuovoGruppo') }}">+ Gruppo</a>
+        </td>
+    </tr>
+</section>
+<div class="t1" id="boxTable" >
+    <table class="table table-hover">
+        <thead> 
+            <tr>
+                <th class="span2">Id</th>
+                <th class="span2">Nome</th>
+                <th class="span2"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {%for item in set%}
+            <tr class="first">
+                <td> {{item.id}} </td>
+                <td>{{item.nome}}</td>						        
+                <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('ASetAttributi', {'idSetAttributi': item.id})}}>Apri</a></td>
+            </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

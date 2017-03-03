@@ -35,12 +35,6 @@ class Articolo
      */
     private $prezzoVendita;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="PrezzoPrinkino", type="float")
-     */
-    private $prezzoPrinkino;
 
     /**
      * @var int
@@ -108,29 +102,6 @@ class Articolo
         return $this->prezzoVendita;
     }
 
-    /**
-     * Set prezzoPrinkino
-     *
-     * @param float $prezzoPrinkino
-     *
-     * @return Articolo
-     */
-    public function setPrezzoPrinkino($prezzoPrinkino)
-    {
-        $this->prezzoPrinkino = $prezzoPrinkino;
-
-        return $this;
-    }
-
-    /**
-     * Get prezzoPrinkino
-     *
-     * @return float
-     */
-    public function getPrezzoPrinkino()
-    {
-        return $this->prezzoPrinkino;
-    }
 
     /**
      * Set producibileId

@@ -212,6 +212,131 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::nuovoProducibileAction',  '_route' => 'AnuovoProducibile',);
             }
 
+            // AnuovoProducibileJson
+            if ($pathinfo === '/a/nuovoProducibileJson') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::nuovoProducibileJsonAction',  '_route' => 'AnuovoProducibileJson',);
+            }
+
+            // Aset
+            if ($pathinfo === '/a/setAttributi') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::setAttributiAction',  '_route' => 'Aset',);
+            }
+
+            if (0 === strpos($pathinfo, '/a/nuovo/set')) {
+                // AnuovoGruppo
+                if ($pathinfo === '/a/nuovo/set') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::nuovoGruppoAction',  '_route' => 'AnuovoGruppo',);
+                }
+
+                // AcreaSet
+                if ($pathinfo === '/a/nuovo/set2') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::creaGruppoAction',  '_route' => 'AcreaSet',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/a/s')) {
+                // AspecificheJSON
+                if ($pathinfo === '/a/specifiche') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::caricaSpecificheJSON',  '_route' => 'AspecificheJSON',);
+                }
+
+                // nuovoArticoloJSON
+                if ($pathinfo === '/a/salvaArticoloJson') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::salvaArticoloJson',  '_route' => 'nuovoArticoloJSON',);
+                }
+
+            }
+
+            // ricercaArticolo
+            if ($pathinfo === '/articolo/SearchJSON') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::articoloSearchAction',  '_route' => 'ricercaArticolo',);
+            }
+
+            // ricercaAttributo
+            if ($pathinfo === '/attributo/SearchJSON') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::attributoSearchAction',  '_route' => 'ricercaAttributo',);
+            }
+
+        }
+
+        // ricercaCategoria
+        if ($pathinfo === '/categoria/SearchJSON') {
+            return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::categoriaSearchAction',  '_route' => 'ricercaCategoria',);
+        }
+
+        // ricercaProducibile
+        if ($pathinfo === '/producibile/SearchJSON') {
+            return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::producibileSearchAction',  '_route' => 'ricercaProducibile',);
+        }
+
+        // ricercaSetAttributi
+        if ($pathinfo === '/setAttributi/SearchJSON') {
+            return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::setAttributiSearchAction',  '_route' => 'ricercaSetAttributi',);
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/a/categoria')) {
+                // Acategoria
+                if (preg_match('#^/a/categoria/(?P<idCategoria>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'Acategoria')), array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::showCategoriaAction',));
+                }
+
+                // AEliminaCategoria
+                if ($pathinfo === '/a/categoriaeliminaJSON') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::eliminaCategoriaAction',  '_route' => 'AEliminaCategoria',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/a/articolo')) {
+                // Aarticolo
+                if (preg_match('#^/a/articolo/(?P<idArticolo>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'Aarticolo')), array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::showArticoloAction',));
+                }
+
+                // AEliminaArticolo
+                if ($pathinfo === '/a/articoloEliminaJSON') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::eliminaArticoloAction',  '_route' => 'AEliminaArticolo',);
+                }
+
+            }
+
+            // Aproducibile
+            if (0 === strpos($pathinfo, '/a/producibile') && preg_match('#^/a/producibile/(?P<idProducibile>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'Aproducibile')), array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::showProducibileAction',));
+            }
+
+            // AEliminaProducibile
+            if ($pathinfo === '/a/eliminaProducibileJson') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::eliminaProducibileAction',  '_route' => 'AEliminaProducibile',);
+            }
+
+            // ASetAttributi
+            if (0 === strpos($pathinfo, '/a/setAttributo') && preg_match('#^/a/setAttributo/(?P<idSetAttributi>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ASetAttributi')), array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::showSetAttributiAction',));
+            }
+
+            // AEliminaSet
+            if ($pathinfo === '/a/eliminaSetJSON') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::eliminaSetAction',  '_route' => 'AEliminaSet',);
+            }
+
+            // AAttributo
+            if (0 === strpos($pathinfo, '/a/Attributo') && preg_match('#^/a/Attributo/(?P<idAttributo>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'AAttributo')), array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::showAttributoAction',));
+            }
+
+            // AEliminaAttributo
+            if ($pathinfo === '/a/eliminaAttributoJSON') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::eliminaAttributoAction',  '_route' => 'AEliminaAttributo',);
+            }
+
+            // AModificaAttributo
+            if (0 === strpos($pathinfo, '/a/Attributo/modifica') && preg_match('#^/a/Attributo/modifica/(?P<idAttributo>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'AModificaAttributo')), array (  '_controller' => 'AppBundle\\Controller\\AmministratoreController::modificaAttributoAction',));
+            }
+
         }
 
         // homepage

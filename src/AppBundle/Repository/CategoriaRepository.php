@@ -134,4 +134,64 @@ class CategoriaRepository extends \Doctrine\ORM\EntityRepository
        $em->flush();
        return $unaCategoria;
    }
+   
+   public function RicercaFullText($em,$str){
+       $str=$str."%"; 
+       $query = $em->createQuery(
+            'SELECT c.nome, c.descrizione, c.id, c.immagine, p.nome as padre
+            FROM AppBundle:Categoria c, AppBundle:Categoria p
+            WHERE c.categoriaPadreId=p.id and(c.nome LIKE :str or c.descrizione LIKE :str or c.id LIKE :str or p.nome LIKE :str) ' 
+        )->setParameter('str',$str);
+        $ris = $query->getResult();
+        return $ris;
+    }
+    
+     public function numeroFigli($em,$idCategoria){
+        $query = $em->createQuery(
+            'SELECT count(c.id) as sottocategoria
+            FROM AppBundle:Categoria c, AppBundle:Categoria p
+            WHERE c.categoriaPadreId=p.id and p.id=:idCategoria 
+            ' 
+        )->setParameter("idCategoria",$idCategoria);
+        $ris = $query->getSingleScalarResult();
+        return $ris;
+     }
+     
+     public function numeroProducibili($em,$idCategoria){
+          $query = $em->createQuery(
+            'SELECT count(c.id) as producibili
+            FROM AppBundle:Categoria c, AppBundle:Appartenere a
+            WHERE a.idCategoria=c.id and c.id=:idCategoria 
+            ' 
+        )->setParameter("idCategoria",$idCategoria);
+        $ris = $query->getSingleScalarResult();
+        return $ris;
+     }
+     
+       public function SottoCategorie($em,$padre){
+            $query = $em->createQuery(
+            'SELECT c.nome, c.descrizione, c.id, c.immagine
+            FROM AppBundle:Categoria c
+            WHERE c.categoriaPadreId= :str ' 
+        )->setParameter('str',$padre);
+        $ris = $query->getResult();
+        return $ris;
+    }
+    
+    public function elimina($em,$idCategoria){
+        $numFigli= $this->numeroFigli($em, $idCategoria);
+        $numProd= $this->numeroProducibili($em, $idCategoria);
+        if($numFigli==0 && $numProd==0){
+            $categoria=$this->find($idCategoria);
+            $em->remove($categoria);
+            $em->flush();
+            $response= "cancellazione andata a buon fine";
+        } else{
+            $response= "la cancellazione non è andata a buon fine";
+        }
+        return $response;
+    }
+    
+   
+        
 }

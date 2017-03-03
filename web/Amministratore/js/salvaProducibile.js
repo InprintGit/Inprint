@@ -3,40 +3,63 @@ var categoria= [];
 function salva(){
     c++;
     if(c==1){
-        categoria["nome"]=document.getElementById("nome").value;
+        categoria[0]=document.getElementById("nome").value;
         document.getElementById("nome").disabled=true;
         $("#divDescrizione").toggle();
     }
     if(c==2){
-        categoria["descrizione"]=document.getElementById("descrizione").value;
+        categoria[1]=document.getElementById("descrizione").value;
         document.getElementById("descrizione").disabled=true;
+        $("#divCompenso").toggle();
+    }
+    if(c==3){
+        categoria[2]=document.getElementById("compenso").value;
+        document.getElementById("compenso").disabled=true;
         $("#divImmagine").toggle();
     }
-     if(c==3){
-        categoria["immagine"]=document.getElementById("immagine").value;
+     if(c==4){
+        categoria[3]=document.getElementById("immagine").value;
         document.getElementById("immagine").disabled=true;
         $("#divGruppo").toggle();
     }
-    if(c==4){
-        categoria["gruppo"]=document.getElementById("gruppo").value;
+    if(c==5){
+        categoria[4]=document.getElementById("gruppo").value;
         document.getElementById("gruppo").disabled=true;
         $("#divAlbero").toggle();
         $("#invia").toggle();
     }
-    if(c>=5){
-        categoria["padre"]=$("#tree-container").jstree('get_selected');
+    if(c>=6){
+        var jsonProducibile = JSON.stringify(categoria);
+        var  jsonAlbero= JSON.stringify(categorieAlbero);
         console.log(categoria);
-        
-      //  $.ajax({       
-      //                 type: "GET",
-      //                 url: "/a/nuovaCategoriaJson",
-        //               dataType: "json",
-          //             data: {"nome":categoria["nome"], "descrizione":categoria["descrizione"],"immagine":categoria["immagine"],"padre":categoria["padre"]},
-            //           success : function(response) 
-              //           {
-                //           $("#content").html(response);
-                  //      }
-                    //       });
+        console.log(jsonProducibile);
+        $.ajax({
+                 type: "POST",
+                 url: "/a/nuovoProducibileJson",
+                 dataType: "json",
+                 data: { producibile :jsonProducibile, albero:jsonAlbero}, 
+                 success: function(response){
+                 $("#content").html(response);
+              }
+        });
     }
 };
+
+function elimina(idProducibile){
+    articoli=$("#articolo").html();
+    if(articoli>0){
+        alert("Il producibile ha "+articoli+" articoli. non può essere cancellato");
+    }else{
+        $.ajax({
+                 type: "POST",
+                 url: "/a/eliminaProducibileJson",
+                 dataType: "json",
+                 data: { idProducibile: idProducibile}, 
+                 success: function(response){
+                 $("#content").html(response);
+              }
+        });
+    }
+    
+}
 

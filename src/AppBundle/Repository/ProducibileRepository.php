@@ -11,10 +11,46 @@ namespace AppBundle\Repository;
 class ProducibileRepository extends \Doctrine\ORM\EntityRepository
 {
     public function MostraDati($em){
-        $query=$em->createQuery(" SELECT p.id, p.nome, p.descrizione, p.gruppoId, p.compensoGrafico, COUNT(a.id) as numArt "
-                . "               FROM AppBundle:Producibile p, AppBundle:Articolo a "
-                . "               WHERE a.producibileId=p.id group by p.id");
+        $query=$em->createQuery(" SELECT p.id, p.nome, p.descrizione, p.gruppoId, p.compensoGrafico  "
+                . "               FROM AppBundle:Producibile p"
+                . "              ");
         
         return $query->getResult();
+    }
+    
+    public function preparaCategorie($padri){
+        foreach (array_keys($padri, '#') as $key) {
+            unset($padri[$key]);
+        }
+        return array_unique($padri);
+    }
+    
+    public function creaProducibile($em,$producibile){
+        $unProducibile= new \AppBundle\Entity\Producibile();
+        $unProducibile->setNome($producibile[0]);
+        $unProducibile->setDescrizione($producibile[1]);
+        $unProducibile->setCompensoGrafico($producibile[2]);
+        $unProducibile->setImmagine($producibile[3]);
+        $unProducibile->setGruppoId($producibile[4]);
+        $em->persist($unProducibile);
+        $em->flush();
+        return $unProducibile;
+    }
+    
+     public function RicercaFullText($em,$str){
+        $str=$str."%";
+         $query=$em->createQuery(" SELECT p.id, p.nome, p.descrizione, p.gruppoId, p.compensoGrafico  "
+                . "               FROM AppBundle:Producibile p"
+                . "               WHERE p.id LIKE :str or p.nome LIKE :str or p.descrizione LIKE :str or p.gruppoId LIKE :str or p.compensoGrafico LIKE :str")->setParameter('str',$str);
+        
+        return $query->getResult();
+    }
+    
+     public function elimina($em,$idProducibile){
+        $producibile=$this->find($idProducibile);
+        $em->remove($producibile);
+        $em->flush();
+        $response= "cancellazione andata a buon fine";
+        return $response;
     }
 }

@@ -1,0 +1,90 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block title %}Attributo{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+
+    <script src="{{ asset("Amministratore/js/attributo.js") }}"></script>
+{% endblock %}
+
+{% block corpo %}
+
+<div id="content" class="container-fluid" style="">
+    <div style="margin-top:20px;" align="center">
+        <h3 style="font-weight: 300; margin-top:10px;">Attributo - {{attributo.id}}</h3>
+    </div>
+    <table class="table table-hover">
+        <caption><h4><h4>
+            <thead>
+                <tr>
+                    <th class="span1">Nome</th>
+                    <th class="span1"><span class="line"></span>Numero set</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="first" style="font-size:14px; cursor:pointer; ">
+                    <td>{{attributo.nome}}</td>
+                    <td id="numSet">{{setattributi|length}}</td>													
+                </tr>
+            </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr valign="top">
+                <td style="width: 1400px;" width="100%">
+                    <table class="table table-hover">
+                        <caption><h4>Valori<h4></caption>
+                        <thead>
+                            <tr>
+                                <th class="span4">Id</th>
+                                <th class="span4"><span class="line"></span>Nome</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {%for item in valori%}
+                            <tr class="first" style="font-size:14px; cursor:pointer; ">
+                                <td>{{item.id}}</td>
+                                <td>{{item.nome}}</td>												
+                            </tr>
+                        {%endfor%}
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                            <tr valign="top">
+                                <td style="width: 1400px;" width="100%"><div class="row-fluid" id="boxTable" style="margin-top:30px;">
+                                    <table class="table table-hover">
+                                        <caption><h4>Set attributi<h4></caption>
+                                        <thead>
+                                            <tr>
+                                                <th class="span4">Id</th>
+                                                <th class="span4"><span class="line"></span>Nome</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {%for item in setattributi%}
+                                            <tr class="first" style="font-size:14px; cursor:pointer; ">
+                                                <td>{{item.id}}</td>
+                                                <td>{{item.nome}}</td>
+                                                <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('ASetAttributi', {'idSetAttributi': item.id})}}>Apri</a></td>												
+                                            </tr>
+                                        {%endfor%}							        		
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-top:15px;" align="right">
+                                        <a class="btn-flat success" onclick="elimina({{attributo.id}});" style="border-radius:2px; cursor:pointer;"><i class="icon-mail-forward"></i>Elimina</a>
+                                        <a class="btn-flat success" href="{{ path('AModificaAttributo', {'idAttributo': attributo.id})}}" style="border-radius:2px; cursor:pointer;"><i class="icon-mail-forward"></i> Modifica </a>
+                                    </div>
+                                </td> 
+                            </tr>
+                        </tbody> 
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>	    
+{% endblock %}

@@ -1,0 +1,10 @@
+{%for item in attributi%}
+ <div id="Attributo{{loop.index}}"
+    <label>Attributo {{loop.index}}:  {{item.nome}}</label>
+    <select id="valAttributo{{loop.index}}" name="valAttributo{{loop.index}}">
+    {%for item2 in item.valori%}
+        <option value="{{item2.id}}">{{item2.nome}}</option>
+    {% endfor %}
+    </select>
+ </div>   
+{% endfor %}

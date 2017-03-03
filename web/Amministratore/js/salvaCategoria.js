@@ -35,4 +35,28 @@ function salva(){
     }
 };
 
+function elimina(idCategoria){
+    numFigli=$("#sottocategorie").html();
+    if(numFigli>0){
+        alert("La categoria presenta "+numFigli+" sottocategorie non è possibile eliminarla");
+    } else{
+        numProd=$("#articoli").html();
+        if(numProd>0){
+            alert("La categoria presenta "+numProd+" producibili non è possibile eliminarla");
+        }else{
+            $.ajax({       
+                       type: "GET",
+                       url: "/a/categoriaeliminaJSON",
+                       dataType: "json",
+                       data: {idCategoria: idCategoria},
+                       success : function(response) 
+                         {
+                           $("#content").html(response);
+                        }
+                           });
+        }
+    }
+        
+}
+
 

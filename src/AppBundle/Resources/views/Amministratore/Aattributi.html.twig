@@ -9,13 +9,13 @@
 <section>
     <tr>
         <td align="right">
-            <input autocomplete="off" id="cerca" class="search order-search" placeholder="Cerca per nome,cognome.." style="width:210px; height:27px; margin-right:8px;" value="" type="text">	        			    				        			            	
+            <input autocomplete="off" id="cercaAttributi" class="search order-search" placeholder="Cerca per nome,cognome.." style="width:210px; height:27px; margin-right:8px;" value="" type="text">	        			    				        			            	
             <a href="nuovocliente.html" id="modal_addclient" class="btn-flat primary" role="button" style="border-radius:2px;">Ricerca</a>
             <a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="{{ path('Anuovoattributo') }}">+ Attributo</a>
         </td>
     </tr>
 </section>
-<section class="t1" >
+<section class="t1" id="boxTable" >
     <table class="table table-hover">
         <thead> 
             <tr><th class="span2">Id</th><th class="span2">Nome</th><th class="span2">Numero valori</th></tr>
@@ -26,7 +26,7 @@
                 <td> {{item.id}} </td>
                 <td>{{item.nome}}</td>
                 <td>{{item.valori}}</td>						        
-                <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="ordine.html">Cambia</a></td>
+                <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('AAttributo', {'idAttributo': item.id})}}>Apri</a></td>
             </tr>
         {%endfor%}
         </tbody>

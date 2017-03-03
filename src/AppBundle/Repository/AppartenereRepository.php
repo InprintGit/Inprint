@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class AppartenereRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function associaCategorieProducibile($em,$unProducibile,$categorie){
+        foreach ($categorie as $x) {
+            $Categoria_Producibile= new \AppBundle\Entity\Appartenere();
+            $Categoria_Producibile->setIdCategoria($x);
+            $Categoria_Producibile->setIdProducibile($unProducibile->getId());
+            $em->persist($Categoria_Producibile);
+            $em->flush();
+            $appartenere[]=$Categoria_Producibile;
+        }
+        return $appartenere;
+    }
 }

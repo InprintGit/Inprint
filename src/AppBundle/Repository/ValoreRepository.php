@@ -20,4 +20,13 @@ class ValoreRepository extends \Doctrine\ORM\EntityRepository
         $ris = $query->setMaxResults(25)->getResult();
         return $ris;
     }
+    
+     public function elimina($em,$idAttributo){
+        $valori= $this->findBy(array("attributoId"=>$idAttributo));
+        foreach ($valori as $x){
+            $em->remove($x);
+        }
+        $em->flush();
+        return;
+    }
 }

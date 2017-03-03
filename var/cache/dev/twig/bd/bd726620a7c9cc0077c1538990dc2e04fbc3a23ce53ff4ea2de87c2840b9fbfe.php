@@ -22,32 +22,32 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592->enter($__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:Acategorie.html.twig"));
+        $__internal_0bbff2068590371e05ba7dcd854e56132d4e53fe7d645dd6df57a16e16ff03b6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0bbff2068590371e05ba7dcd854e56132d4e53fe7d645dd6df57a16e16ff03b6->enter($__internal_0bbff2068590371e05ba7dcd854e56132d4e53fe7d645dd6df57a16e16ff03b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:Amministratore:Acategorie.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592->leave($__internal_5f3efa8a80775dd47603e58fd1a43e6155b5f1a5910e53c87041ec2bdf289592_prof);
+        $__internal_0bbff2068590371e05ba7dcd854e56132d4e53fe7d645dd6df57a16e16ff03b6->leave($__internal_0bbff2068590371e05ba7dcd854e56132d4e53fe7d645dd6df57a16e16ff03b6_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662->enter($__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_cb0a5f13f0e64e1f9686c13a7fa07f1b5b01a61fa9e41762df2d5daca31616f0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_cb0a5f13f0e64e1f9686c13a7fa07f1b5b01a61fa9e41762df2d5daca31616f0->enter($__internal_cb0a5f13f0e64e1f9686c13a7fa07f1b5b01a61fa9e41762df2d5daca31616f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Nuova categoria visualizzazione";
         
-        $__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662->leave($__internal_77515743c2e67dbc54c5f0e250db7a501ce7e580b987410acc2a88febdd6f662_prof);
+        $__internal_cb0a5f13f0e64e1f9686c13a7fa07f1b5b01a61fa9e41762df2d5daca31616f0->leave($__internal_cb0a5f13f0e64e1f9686c13a7fa07f1b5b01a61fa9e41762df2d5daca31616f0_prof);
 
     }
 
     // line 5
     public function block_corpo($context, array $blocks = array())
     {
-        $__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047->enter($__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
+        $__internal_609ef4c39db4a044524cd82b7f4d7976d003636c51ece6ab37500e1bea414a9a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_609ef4c39db4a044524cd82b7f4d7976d003636c51ece6ab37500e1bea414a9a->enter($__internal_609ef4c39db4a044524cd82b7f4d7976d003636c51ece6ab37500e1bea414a9a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corpo"));
 
         // line 6
         echo "<div class=\"span12\">
@@ -56,7 +56,7 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
 <section>
     <tr>
         <td align=\"right\">
-            <input autocomplete=\"off\" id=\"cerca\" class=\"search order-search\" placeholder=\"Cerca per nome,cognome..\" style=\"width:210px; height:27px; margin-right:8px;\" value=\"\" type=\"text\">\t\t\t\t\t\t\t<a href=\"nuovocliente.html\" id=\"modal_addclient\" class=\"btn-flat primary\" role=\"button\" style=\"border-radius:2px;\">Ricerca</a>
+            <input autocomplete=\"off\" id=\"cercaCategorie\" class=\"search order-search\" placeholder=\"Cerca per nome,cognome..\" style=\"width:210px; height:27px; margin-right:8px;\" value=\"\" type=\"text\">\t\t\t\t\t\t\t<a href=\"nuovocliente.html\" id=\"modal_addclient\" class=\"btn-flat primary\" role=\"button\" style=\"border-radius:2px;\">Ricerca</a>
             <a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"";
         // line 13
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("AnuovaCategoria");
@@ -64,7 +64,7 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
         </td>
     </tr>
 </section>
-<section class=\"t1\" >
+<div class=\"t1\" id=\"boxTable\">
     <table class=\"table table-hover\">
         <thead> 
             <tr>
@@ -103,7 +103,10 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
             // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "padre", array()), "html", null, true);
             echo "</td>
-                <td><a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"ordine.html\">Cambia</a></td>
+                <td><a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=";
+            // line 36
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Acategoria", array("idCategoria" => $this->getAttribute($context["item"], "id", array()))), "html", null, true);
+            echo ">Apri</a></td>
             </tr>
         ";
         }
@@ -113,10 +116,10 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
         // line 39
         echo "        </tbody>
     </table>
-</section>
+</div>
 ";
         
-        $__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047->leave($__internal_1e081fb2e95cd4ba821d9b2a29f2d7f77ae93b73bb0f21803bf36fba56caf047_prof);
+        $__internal_609ef4c39db4a044524cd82b7f4d7976d003636c51ece6ab37500e1bea414a9a->leave($__internal_609ef4c39db4a044524cd82b7f4d7976d003636c51ece6ab37500e1bea414a9a_prof);
 
     }
 
@@ -132,7 +135,7 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
 
     public function getDebugInfo()
     {
-        return array (  114 => 39,  104 => 35,  100 => 34,  96 => 33,  92 => 32,  88 => 31,  85 => 30,  81 => 29,  62 => 13,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  117 => 39,  108 => 36,  104 => 35,  100 => 34,  96 => 33,  92 => 32,  88 => 31,  85 => 30,  81 => 29,  62 => 13,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -156,12 +159,12 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
 <section>
     <tr>
         <td align=\"right\">
-            <input autocomplete=\"off\" id=\"cerca\" class=\"search order-search\" placeholder=\"Cerca per nome,cognome..\" style=\"width:210px; height:27px; margin-right:8px;\" value=\"\" type=\"text\">\t\t\t\t\t\t\t<a href=\"nuovocliente.html\" id=\"modal_addclient\" class=\"btn-flat primary\" role=\"button\" style=\"border-radius:2px;\">Ricerca</a>
+            <input autocomplete=\"off\" id=\"cercaCategorie\" class=\"search order-search\" placeholder=\"Cerca per nome,cognome..\" style=\"width:210px; height:27px; margin-right:8px;\" value=\"\" type=\"text\">\t\t\t\t\t\t\t<a href=\"nuovocliente.html\" id=\"modal_addclient\" class=\"btn-flat primary\" role=\"button\" style=\"border-radius:2px;\">Ricerca</a>
             <a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"{{ path('AnuovaCategoria') }}\">+ Categoria</a>
         </td>
     </tr>
 </section>
-<section class=\"t1\" >
+<div class=\"t1\" id=\"boxTable\">
     <table class=\"table table-hover\">
         <thead> 
             <tr>
@@ -180,12 +183,12 @@ class __TwigTemplate_9c18d877d9563508b1a774873b20e43947b47f4aa894001e4d00770f5ad
                 <td>{{item.descrizione}}</td>
                 <td>{{item.immagine}}</td>
                 <td>{{item.padre}}</td>
-                <td><a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href=\"ordine.html\">Cambia</a></td>
+                <td><a class=\"btn-flat primary\" style=\"border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;\" href={{ path('Acategoria', {'idCategoria': item.id})}}>Apri</a></td>
             </tr>
         {%endfor%}
         </tbody>
     </table>
-</section>
+</div>
 {% endblock %}", "AppBundle:Amministratore:Acategorie.html.twig", "C:\\Users\\inprink1\\Documents\\NetBeansProjects\\Inprint\\src\\AppBundle/Resources/views/Amministratore/Acategorie.html.twig");
     }
 }

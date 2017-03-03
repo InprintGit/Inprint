@@ -1,0 +1,22 @@
+<table  class="table table-hover">
+    <thead> 
+        <tr>
+            <th class="span2">Id</th>
+            <th class="span2">Denominazione</th>
+            <th class="span2">Prezzo vendita</th>
+            <th class="span2"> Gruppo attributi</th>
+            <th class="span2"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for item in articoli%}
+        <tr class="first">
+            <td> {{item.id}} </td>
+            <td>{{item.denominazione}}</td>
+            <td>{{item.prezzoVendita}}</td>
+            <td>{{item.producibileId}}</td>
+            <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="ordine.html">Cambia</a></td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>

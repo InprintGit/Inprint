@@ -34,4 +34,21 @@ class AttributiRepository extends \Doctrine\ORM\EntityRepository
         }
         return $unAttributo;
     }
+    
+    public function RicercaFullText($em,$str){
+         $str=$str."%";
+        $query=$em->createQuery('Select a.id, a.nome, count(v.id) as valori
+                          From AppBundle:Attributi a, AppBundle:Valore v
+                          Where a.id=v.attributoId and (a.id LIKE :str or a.nome LIKE :str)  
+                          Group By a.id')->setParameter('str',$str);
+        
+        return $query->getResult(); 
+    }
+    
+      public function elimina($em,$idAttributo){
+          $attributo= $this->find($idAttributo);
+          $em->remove($attributo);
+          $em->flush();
+          return "Cancellazione effettuata Correttamente";
+      }
 }

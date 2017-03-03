@@ -1,0 +1,68 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block title %}Articolo id{% endblock %}
+
+
+{% block javascripts %}
+    {{parent()}}
+    <script src="{{ asset("Amministratore/js/articolo.js") }}"></script>
+{%endblock%}
+
+{% block corpo %}
+
+<div id="content" class="container-fluid" style="">
+    <div style="margin-top:20px;" align="center">
+        <h3 style="font-weight: 300; margin-top:10px;">Articolo - {{articolo.id}}</h3>	
+    </div>
+    <table>
+        <tbody>
+            <tr valign="top">
+                <td style="width: 1400px;" width="100%">
+                    <table class="table table-hover">
+                        <caption><h4><h4>
+                            <div class="field-box">
+                                <label>Descrizone:</label>
+                                <label>{{articolo.denominazione}}</label>
+                            </div> 
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="span2">Producibile</th>
+                                <th class="span2"><span class="line"></span>Prezzo</th>
+                                <th class="span2"><span class="line"></span>Ordini in corso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="first" style="font-size:14px; cursor:pointer; ">
+                                <td>{{articolo.producibileId}}</td>
+                                <td>{{articolo.prezzoVendita}}</td>
+                                <td id="inCorso">{{inCorso}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="span2">Attributi</th>
+                                <th class="span2">Valori</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {%for item in AttributoValore%}
+                            <tr class="first" style="font-size:14px; cursor:pointer; ">
+                                <td>{{item.nomeAttributo}}</td>
+                                <td>{{item.nomeValore}}</td>
+                            </tr>							    		
+                        {%endfor%}
+                        </tbody>
+                    </table>
+                    <div style="margin-top:15px;" align="right">
+                        <a class="btn-flat success" onclick="elimina({{articolo.id}});" style="border-radius:2px; cursor:pointer;"><i class="icon-mail-forward"></i>Elimina</a>
+                        <a class="btn-flat success" onclick="modifica({{articolo.id}});" style="border-radius:2px; cursor:pointer;"><i class="icon-mail-forward"></i> Modifica</a>
+                    </div>
+                </td> 
+            </tr>
+        </tbody> 
+    </table>
+</div>	
+{% endblock %}
