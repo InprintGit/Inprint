@@ -1,0 +1,35 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block javascripts %}
+    {{parent()}}
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+{% endblock %}
+
+
+{% block title %}Modifica Set-attributi{% endblock %}
+
+{% block corpo %}
+<div id="content" class="top">
+    <h4>Nuovo Set </h4>
+<section class="form">
+    <table>
+        <form  method="post">
+            <tbody>
+                <tr valign="top">
+                    <td height="260" width="285">
+                        <div id="cont"> 
+                            <div class="field-box">
+                                <label>Nome :</label>
+                                <input name="name" id="nome" value="{{gruppo.nome}}" placeholder="" class="span6" style="width:240px" type="text" >
+                            </div>
+                            <a id="modifica" class="btn-flat primary" onclick="modifica({{gruppo.id}});">Modifica</a>
+                            <input type="submit"  class="btn-flat primary"  />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </form>
+    </table>
+</section>
+</div>
+{% endblock %}

@@ -51,4 +51,18 @@ class AttributiRepository extends \Doctrine\ORM\EntityRepository
           $em->flush();
           return "Cancellazione effettuata Correttamente";
       }
+      
+      public function modifica($em,$idAttributo,$attributo,$valori){
+        $unAttributo= $this->find($idAttributo);
+        $unAttributo->setNome($attributo);
+        $em->flush();
+        $vecchiValori=$em->getRepository("AppBundle:Valore")->findBy(array("idAttributo"=>$idAttributo));
+        $i=0;
+        foreach ($vecchiValori as $x){
+            $x->setNome($valori[$i]);
+            $em->flush();
+        }
+        return "Modifica completata correttamente";
+      }
+      
 }

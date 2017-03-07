@@ -14,5 +14,18 @@ function elimina(idSet,num){
                         }
                            });
      }
-        
+}
+
+   function modifica(idGruppo){
+        nome= $("#nome").val();
+        $.ajax({       
+                       type: "GET",
+                       url: "/a/Set/modificaJSON",
+                       dataType: "json",
+                       data: {idGruppo: idGruppo, nome: nome},
+                       success : function(response) 
+                         {
+                           $("#content").html(response);
+                        }
+                           });
 }

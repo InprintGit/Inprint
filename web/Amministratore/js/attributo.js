@@ -70,13 +70,17 @@ function elimina(idAttributo){
                            });
     }
 }   
-    function modifica(idAttributo){
-    
+    function modifica(idAttributo,num){
+        attributo= $("#attributo").val();
+        var valori = [];
+        for (i=0; i<=num; i++){
+            valori[i]=$("#"+(i+1));
+        }
         $.ajax({       
                        type: "GET",
-                       url: "/a/elilominaAttributoJSON",
+                       url: "/a/Attributo/modificaJSON",
                        dataType: "json",
-                       data: {idAttributo: idAttributo},
+                       data: {idAttributo: idAttributo, attributo: attributo, valori: valori},
                        success : function(response) 
                          {
                            $("#content").html(response);

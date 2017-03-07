@@ -53,4 +53,11 @@ class GruppoRepository extends \Doctrine\ORM\EntityRepository
         $em->flush();
         return "Cancellazione andata a buon fine";
     }
+    
+    public function modifica($em,$idGruppo,$nome){
+        $unGruppo=  $this->find($idGruppo);
+        $unGruppo->setNome($nome);
+        $em->flush();
+        return "inserimento completato";
+    }
 }

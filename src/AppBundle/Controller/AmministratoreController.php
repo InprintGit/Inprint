@@ -485,6 +485,45 @@ class AmministratoreController extends Controller
      }
   
      
+    /**
+     * @Route("/a/Attributo/modificaJSON", name="ASalvaModificaAttributo")
+     */
+     public function salvaModificaAttributoAction(Request $request){
+        $em= $this->getDoctrine()->getManager();
+        $idAttributo=$request->get("idAttributo");
+        $attributo=$request->get("attributo");
+        $valori= $request->get("valori");
+        $template=$em->getRepository("AppBundle:Attributi")->modifica($em,$idAttributo,$attributo,$valori);
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+     }
+     
+     /**
+     * @Route("/a/Set/modifica/{idSet}", name="AModificaSet")
+     */
+     public function modificaSetAction(Request $request){
+         $em= $this->getDoctrine()->getManager();
+         $idSet=$request->get('idSet');
+         $gruppo=$em->getRepository("AppBundle:Gruppo")->find($idSet);
+         return $this->render("AppBundle:Amministratore:modificaSet.html.twig", array("gruppo"=>$gruppo));
+     }
+  
+     
+    /**
+     * @Route("/a/Set/modificaJSON", name="ASalvaModificaSet")
+     */
+     public function salvaModificaGruppoAction(Request $request){
+        $em= $this->getDoctrine()->getManager();
+        $idGruppo=$request->get("idGruppo");
+        $nome=$request->get("nome");
+        $template=$em->getRepository("AppBundle:Gruppo")->modifica($em,$idGruppo,$nome);
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+     }
 }
 
 
