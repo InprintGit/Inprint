@@ -192,6 +192,13 @@ class CategoriaRepository extends \Doctrine\ORM\EntityRepository
         return $response;
     }
     
-   
+   public function modifica($em,$idCategoria,$categoria){
+       $unaCategoria= $this->find($idCategoria);
+       $unaCategoria->setNome($categoria[0]);
+       $unaCategoria->setDescrizione($categoria[1]);
+       $unaCategoria->setImmagine($categoria[2]);
+       $em->flush();
+       return "Modifica Completata";
+   }
         
 }

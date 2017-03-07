@@ -62,4 +62,21 @@ function elimina(idProducibile){
     }
     
 }
+var producibile= [];
+function modifica(idproducibile){
+        producibile[0]=document.getElementById("nome").value;
+        producibile[1]=document.getElementById("descrizione").value;
+        producibile[2]=document.getElementById("compenso").value;
+        producibile[3]=document.getElementById("immagine").value;
+        $.ajax({
+                 type: "POST",
+                 url: "/a/Producibile/salvaModificaJson",
+                 dataType: "json",
+                 data: { producibile : producibile, idProduciile: idProducibile
+                 }, 
+                 success: function(response){
+                 $("#content").html(response);
+              }
+        });
+    };
 

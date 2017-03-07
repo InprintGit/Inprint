@@ -524,6 +524,81 @@ class AmministratoreController extends Controller
         $response->headers->set('Content-Type', 'application/json');
         return $response;
      }
+     
+     /**
+     * @Route("/a/Producibile/modifica/{idProducibile}", name="AModificaProducibile")
+     */
+     public function modificaProducibileAction(Request $request){
+         $em= $this->getDoctrine()->getManager();
+         $idProducibile=$request->get('idProducibile');
+         $gruppo=$em->getRepository("AppBundle:Producibile")->find($idProducibile);
+         return $this->render("AppBundle:Amministratore:modificaProducibile.html.twig", array("producibile"=>$producibile));
+     }
+  
+     
+    /**
+     * @Route("/a/Producibile/modificaJSON", name="ASalvaModificaProducibile")
+     */
+     public function salvaModificaProducibileoAction(Request $request){
+        $em= $this->getDoctrine()->getManager();
+        $idProducibile=$request->get("idProducibile");
+        $producibile=$request->get("producibile");
+        $template=$em->getRepository("AppBundle:Producibile")->modifica($em,$idProducibile,$producibile);
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+     }
+     
+     /**
+     * @Route("/a/Articolo/modifica/{idSet}", name="AModificaArticolo")
+     */
+     public function modificaArticoloAction(Request $request){
+         $em= $this->getDoctrine()->getManager();
+         $idArticolo=$request->get('idArticolo');
+         $articolo=$em->getRepository("AppBundle:Articolo")->find($idArticolo);
+         return $this->render("AppBundle:Amministratore:modificaArticolo.html.twig", array("articolo"=>$articolo));
+     }
+  
+     
+    /**
+     * @Route("/a/Articolo/modificaArticoloJSON", name="ASalvaModificaArticolo")
+     */
+     public function salvaModificaArticoloAction(Request $request){
+        $em= $this->getDoctrine()->getManager();
+        $idArticolo=$request->get("idArticolo");
+        $articolo=$request->get("articolo");
+        $template=$em->getRepository("AppBundle:Articolo")->modifica($em,$idArticolo,$articolo);
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+     }
+     
+     /**
+     * @Route("/a/Categoria/modifica/{idCategoria}", name="AModificaCategoria")
+     */
+     public function modificaCategorialoAction(Request $request){
+         $em= $this->getDoctrine()->getManager();
+         $idCategoria=$request->get('idCategoria');
+         $Categoria=$em->getRepository("AppBundle:Categoria")->find($idCategoria);
+         return $this->render("AppBundle:Amministratore:modificaCategoria.html.twig", array("categoria"=>$Categoria));
+     }
+  
+     
+    /**
+     * @Route("/a/Categoria/modificaJson", name="ASalvaModificaCategoria")
+     */
+     public function salvaModificaCategoriaAction(Request $request){
+        $em= $this->getDoctrine()->getManager();
+        $idCategoria=$request->get("idCategoria");
+        $categoria=$request->get("categoria");
+        $template=$em->getRepository("AppBundle:Articolo")->modifica($em,$idCategoria,$categoria);
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+     }
 }
 
 

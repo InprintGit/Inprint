@@ -1,0 +1,51 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block title %}Nuova Categoria{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+
+    <script src="{{ asset("Amministratore/dist/jstree.min.js") }}"></script>
+    <script src="{{ asset("Amministratore/js/salvaCategoria.js") }}"></script>
+     <script src="{{ asset("Amministratore/js/AlberoCategorie.js") }}"></script>
+{% endblock %}
+
+{% block corpo %}
+
+<div id="content" class="top">
+	<h4>Nuovo Categoria</h4>
+    <section class="form" id="content">
+        <table>
+            <form method="post" action="" >
+                <tbody>
+                    <tr valign="top">
+                        <td>
+                            <div class="field-box" id='divNome'>
+                                <label>Nome :</label>
+                                <input name="nome" id="nome" value="{{categoria.nome}}" placeholder="" class="span6" style="width:240px" type="text">
+                            </div>
+                            <div class="field-box" id='divDescrizione'>
+                                <label>Breve descrizione:</label>
+                                <input name="descrizione" id="descrizione" value="{{categoria.descrizione}}" class="span6" style="width:240px" type="text">
+                            </div>	
+                            <div class="field-box" id="divImmagine">
+                                <label>Inserisci immaggine:</label>
+                                <input name="immagine" type="file" id="immagine" value="{{categoria.immagine}}" class="span6" style="width:240px" type="text">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <a id="invia" type="submit" class="btn-flat primary" onclick=modifica({{categoria.id}});>Invia</a>
+            </form>	
+        </table>
+    </section>
+</div>
+    <script>
+        $("#tree-container").on("select_node.jstree",
+     function(evt, data){
+         $("#invia").show();
+          console.log($("#tree-container").jstree('get_selected'));
+     }
+);
+    </script>
+{% endblock %}

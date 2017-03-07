@@ -53,4 +53,14 @@ class ProducibileRepository extends \Doctrine\ORM\EntityRepository
         $response= "cancellazione andata a buon fine";
         return $response;
     }
+    
+    public function modifica($em,$idProducibile,$producibile){
+        $unProducibile= $this->find($idProducibile);
+        $unProducibile->setNome($producibile[0]);
+        $unProducibile->setDescrizione($producibile[1]);
+        $unProducibile->setCompensoGrafico($producibile[2]);
+        $unProducibile->setImmagine($producibile[3]);
+        $em->flush();
+        return "Conferma completata";
+    }
 }

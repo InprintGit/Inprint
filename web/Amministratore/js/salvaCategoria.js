@@ -59,4 +59,23 @@ function elimina(idCategoria){
         
 }
 
+function modifica(idCategoria){
+        categoria[0]=document.getElementById("nome").value;
+        categoria[1]=document.getElementById("descrizione").value;
+        categoria[2]=document.getElementById("immagine").value;
+        
+        $.ajax({       
+                       type: "GET",
+                       url: "/a/Categoria/modificaJson",
+                       dataType: "json",
+                       data: {"categoria":categoria},
+                       success : function(response) 
+                         {
+                           $("#content").html(response);
+                        }
+                           });
+    }
+};
+
+
 

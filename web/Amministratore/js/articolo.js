@@ -64,3 +64,20 @@ function elimina(idArticolo){
     
         
 }
+
+function modifica(idArticolo){
+    c=1;
+    var articolo = new Array();
+    articolo[0]=$("#nome").val();
+    articolo[1]=$("#prezzo").val();
+    
+     $.ajax({
+                 type: "POST",
+                 url: "/a/Articolo/salvaModificaJson",
+                 dataType: "json",
+                 data: { articolo : articolo, idArticolo: idArticolo}, 
+                 success: function(response){
+                 $("#ContentNuovo").html(response);
+              }
+    });
+}

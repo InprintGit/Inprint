@@ -162,4 +162,13 @@ class ArticoloRepository extends \Doctrine\ORM\EntityRepository
         return $response;
     }
     
+        public function modifica($em,$idArticolo,$articolo){
+        $unArticolo= $this->find($idArticolo);
+        $unArticolo->setDenominazione($Articolo[0]);
+        $unArticolo->setPrezzoVendita($Articolo[1]);
+        $em->flush();
+        
+        return "Modifica Completata";
+    }
+    
 }
