@@ -53,7 +53,7 @@ class PrinkinoController extends Controller
         $cliente=$this->em->getRepository("AppBundle:Cliente")->RicercaClienteById($this->em,$idcliente);
         $ordini=$this->em->getRepository("AppBundle:Ordine")->RicercaOrdiniByCliente($this->em,$idcliente);
  
-        return $this->render('AppBundle:Prinkino:cliente.html.twig', array("clienti" => $cliente, "ordini" => $ordini, "idcliente" => $idcliente) );//, "ordini" => $ordini  ));
+        return $this->render('AppBundle:Prinkino:cliente.html.twig', array("cliente" => $cliente[0], "ordini" => $ordini, "idcliente" => $idcliente) );//, "ordini" => $ordini  ));
     }
 
     /**

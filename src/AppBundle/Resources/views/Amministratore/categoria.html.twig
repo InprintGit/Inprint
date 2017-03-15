@@ -1,0 +1,82 @@
+
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block javascripts %}
+    {{parent()}}
+    <script src="{{ asset("Amministratore/js/salvaCategoria.js") }}"></script>
+{% endblock %}
+{% block title %}categoria{% endblock %}
+    
+{% block corpo %}
+
+
+<div class="content">
+    <div id="sb-search" class="sb-search">
+        <form>
+            <input class="sb-search-input" placeholder="Search" type="text" value="" name="search" id="search">
+            <input class="sb-search-submit" type="submit" value="">
+            <span class="sb-icon-search"></span>
+            <script src={{asset("Amministratore/js/uisearch.js")}}></script>
+            <script>
+                new UISearch( document.getElementById( 'sb-search' ) );
+            </script>
+        </form>
+    </div>
+    <div class="component2">
+        <h2>Categoria - {{categoria.id}}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Padre</th>
+                        <th>Descrizione </th>
+                        <th>Numero sottocategoria</th>
+                        <th>Numero producibili</th>
+                        <th></th>							
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="user-name">{{categoria.nome}}</td>
+                        <td class="user-email">{{categoria.CategoriaPadreId}}</td>
+                        <td class="user-phone">{{categoria.descrizione}}</td>
+                        <td class="user-mobile">{{figli|length}}</td>
+                        <td class="user-mobile">{{producibili}}</td>
+                        <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;">Seleziona</a></td>
+                    </tr>
+                </tbody>
+                </table>
+                <h4>Figli</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>									
+                            <th></th>							
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {%for item in figli%}
+                        <tr>
+                            <td class="user-name">{{item.id}}</td>
+                            <td class="user-email">{{item.nome}}</td><td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;">Apri</a></td>
+                        </tr>
+                            {%endfor%}
+                    </tbody>
+                </table>
+                <div class="box bg-3">
+                    <button class="button button--nanuk button--border-thin button--round-s">
+                        <span>E</span><span>l</span><span>i</span><span>m</span><span>i</span><span>n</span><span>a</span>
+                    </button>
+                    <button class="button button--nanuk button--border-thin button--round-s">
+                        <span>M</span><span>o</span><span>d</span><span>i</span><span>f</span><span>i</span><span>c</span><span>a</span>
+                    </button>
+                            <script src={{asset("Amministratore/js/classie.js")}}></script>
+                            <script src={{asset("Amministratore/js/uisearch.js")}}></script>                       
+                    <script>
+                        new UISearch( document.getElementById( 'sb-search' ) );
+                    </script>
+                </div>			
+    </div>
+</div>
+    {% endblock %}

@@ -1,0 +1,71 @@
+/*custom font*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html 
+
+body {
+	font-family: montserrat, arial, verdana;
+}
+/*form styles*/
+#msform {
+	width: 900px;
+	margin: 110px auto;
+	text-align: center;
+	position: relative;
+}
+
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+
+/* colori nome step  */
+#progressbar li {
+	list-style-type: none;
+	color:#000000;
+	text-transform: uppercase;
+	font-size: 15px;
+	width: 16.33%;
+	float: left;
+	position: relative;
+}
+/*colori contenitore numero di fase quando non sono ancora active..... */
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 28px;
+	line-height: 30px;
+	display: block;
+	font-size: 15px;
+	color: white;
+	background:#808080;
+	border-radius:9px;
+	margin: 0 auto 7px auto;
+}
+/*progressbar connectors   Lunghezza linee, larghezza, colori, , */
+#progressbar li:after {
+	content: '';
+	width: 81%;
+	height: 2px;
+	background:#D3D3D3;
+	position: absolute;
+	left: -40%;
+	top: 14px;
+	z-index: 0; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*background: colore contenitore fasi active; color: colore numero delle fasi*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background:#1E90FF;
+	color: white;
+}

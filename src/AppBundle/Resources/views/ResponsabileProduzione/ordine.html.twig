@@ -19,13 +19,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                
+                          {%for item in ordine%}
                     <tr class="first" style="font-size:14px; cursor:pointer; ">
                         <td>{{ordine.data}}</td>
                         <td>{# ordine.dataconclusione #}<span class="label label-verde">Prevista</span></td>
                         <td>{{ordine.stato}}</td>
                         <td>{{ordine.descrizione}}</td>
                         <td>{{ordine.quantita}}</td>
+                           {%endfor%}
                     </tr>				    			
                     <tr class="dettagli"><td colspan="5"> Eventuali dettagli della lavorazione del prodotto</td></tr>
               

@@ -1,58 +1,207 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Amministratore</title>
-        <head>
-        <meta charset="UTF-8" />
+<html lang="en" class="no-js">
+
+    <head>   
         <title>{% block title %}Amministratore{% endblock %}</title>
         {% block stylesheets %}
-            <link href="{{ asset('Amministratore/style/monitor.css') }}" rel="stylesheet" />
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-            <link rel="stylesheet" href="{{ asset("Amministratore/dist/style.min.css") }}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/set1.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/set2.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/buttons.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/component.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/component2.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/demo.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/demo2.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/step.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/ricerca.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/cs-select.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/cs-skin-boxes.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/cs-skin-underline.css")}}" />
+            <link rel="stylesheet" type="text/css" href="{{asset("Amministratore/style/organicfoodicons.css")}}" />
         {% endblock %}
+
         {% block javascripts %}
-            <script src="{{ asset('Amministratore/js/base.js') }}"></script>
-    
-     
-            
+            <script src={{asset("prinkino/js/modernizr-custom.js")}}></script>
+
+
+            <script src={{asset("Amministratore/js/classie.js")}}></script>
+            <script src={{asset("Amministratore/js/dummydata.js")}}></script>
+            <script src={{asset("Amministratore/js/main.js")}}></script>
+            <script src={{asset("Amministratore/js/uisearch.js")}}></script>
         {% endblock %}
-  </head>
+
+    </head>
     <body>
-    {% block body %}
-        <header>
-            {% block header%}
-        	<img src="{{ asset('Amministratore/src/prink.png')}}" id="logo">
-        	<nav class="menu">
-            {%endblock%}
-        </header>
-        <div class="conteiner">
-	        <div class="aside">    
-                    {% block aside %}  
-                    <nav class="menu" id="laterale">
-                        <ul>
-                            <li><a href="{{ path('Ahome') }}"><img class="icon" src="{{ asset('Amministratore/src/home.ico')}}">Home</a></li>  
-                            <li><a href="{{ path('Aarticoli') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci articolo</a></li>                 
-                            <li><a href="{{ path('Aattributi') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci attributi</a></li> 	                        
-                            <li><a href="{{ path('Acategorie') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci categoria</a></li>
-                            <li><a href="{{ path('Aproducibili') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci producibili</a></li>
-                            <li><a href="{{ path('Aproducibili') }}"><img class="icon" src="{{ asset('Amministratore/src/catalogo.ico')}}">Gestisci producibili</a></li> 
-                        </ul> 
-	            </nav>
+
+
+        <div class="container">
+            {% block body %}
+                <header class="bp-header cf">
+                    {% block header %}
+                        <div class="dummy-logo">
+
+                            <h2 class="dummy-heading">Inprink</h2>
+                        </div>
+
+                    {% endblock %}
+                </header>
+                <button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
+                    {% block aside %}
+                    <nav id="ml-menu" class="menu">
+
+                        <button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
+                        <div class="menu__wrap">
+
+
+                            <ul data-menu="main" class="menu__level">					
+                                <li>Home</li>
+                                <li> <a href="{{path('Aarticoli')}}">Gestisci articolo</a></li>
+                                <li><a href="{{path('Aattributi')}}">Gestisci attributi</a></li>
+                                <li>Gestisci categoria</li>
+                                <li>Gestisci producibili</li>
+                                <li>Gestisci set-attributi</li>
+
+
+
+                            </ul>
+
+
+                            <ul data-menu="submenu-1" class="menu__level">
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" data-submenu="submenu-1-1" href="#">Secondo livello</a></li>
+                            </ul>
+
+                            <ul data-menu="submenu-1-1" class="menu__level">
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                            </ul>
+
+                            <ul data-menu="submenu-2" class="menu__level">
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" data-submenu="submenu-2-1" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                            </ul>
+
+                            <ul data-menu="submenu-2-1" class="menu__level">
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                            </ul>
+
+                            <ul data-menu="submenu-3" class="menu__level">
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" data-submenu="submenu-3-1" href="#">Secondo livello</a></li>
+                            </ul>
+
+                            <ul data-menu="submenu-3-1" class="menu__level">
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                            </ul>
+
+                            <ul data-menu="submenu-4" class="menu__level">
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" data-submenu="submenu-4-1" href="#">Selection</a></li>
+                            </ul>
+
+                            <ul data-menu="submenu-4-1" class="menu__level">
+                                <li class="menu__item"><a class="menu__link" href="#">Terzo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Terzo livello</a></li>
+                                <li class="menu__item"><a class="menu__link" href="#">Terzo livello</a></li>
+                            </ul>   
+                        {% endblock %}
+
+                    </div>
+
+                </nav> 
+                
+                <div class="content">  
+                    {% block corpo%}
+                    <h1> Benvenuto amministratore</h1>
+                    <div id="sb-search" class="sb-search">
+                        <form>
+                            <input class="sb-search-input" placeholder="Search" type="text" value="" name="search" id="search">
+                            <input class="sb-search-submit" type="submit" value="">
+                            <span class="sb-icon-search"></span>
+                            <script>
+                                new UISearch(document.getElementById('sb-search'));
+                            </script>                
+                        </form>
+
+
+                    </div> 
                     {% endblock%}
-	        </div>
-	        <div id="corpo">
-                {% block corpo %} 
-                    <div class="span12">
-                        <h4>Benvenuto Amministratore</h4>
-                    </div>	        	 
-	        {% endblock %}   
-	        </div>
-	        <footer>
-            	<p> inprint s.r.l.</p>
-	        </footer>
-	    </div>
+                </div>
+                {}
+                <script>
+                    (function () {
+                        var menuEl = document.getElementById('ml-menu'),
+                                mlmenu = new MLMenu(menuEl, {
+                                    // breadcrumbsCtrl : true, // show breadcrumbs
+                                    // initialBreadcrumb : 'all', // initial breadcrumb text
+                                    backCtrl: false, // show back button
+                                    // itemsDelayInterval : 60, // delay between each menu item sliding animation
+                                    onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+                                });
+
+                        // mobile menu toggle
+                        var openMenuCtrl = document.querySelector('.action--open'),
+                                closeMenuCtrl = document.querySelector('.action--close');
+
+                        openMenuCtrl.addEventListener('click', openMenu);
+                        closeMenuCtrl.addEventListener('click', closeMenu);
+
+                        function openMenu() {
+                            classie.add(menuEl, 'menu--open');
+                        }
+
+                        function closeMenu() {
+                            classie.remove(menuEl, 'menu--open');
+                        }
+
+                        // simulate grid content loading
+                        var gridWrapper = document.querySelector('.content');
+
+                        function loadDummyData(ev, itemName) {
+                            ev.preventDefault();
+
+                            closeMenu();
+                            gridWrapper.innerHTML = '';
+                            classie.add(gridWrapper, 'content--loading');
+                            setTimeout(function () {
+                                classie.remove(gridWrapper, 'content--loading');
+                                gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
+                            }, 700);
+                        }
+                    })();
+                </script>
+
+                <script>
+                    new UISearch(document.getElementById('sb-search'));
+                </script>
+
+            {% endblock %}
+
     </body>
-    {% endblock %}
+</div>
 </html>
+
+
+
+

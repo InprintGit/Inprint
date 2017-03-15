@@ -2,80 +2,172 @@
 
 {% block title %}Analisi Cliente{% endblock %}
 
+
+    {% block stylesheets %}
+
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/normalize.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/set1.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/buttons.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/demo.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/demo2.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/step.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/component.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/component2.css")}}" />
+<link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/ricerca.css")}}" />
+
+
+ {% endblock %}
+ 
+ 
+ {% block javascripts %}
+        <script src={{asset("prinkino/js/modernizr-custom.js")}}></script>
+        <script src={{asset("prinkino/js/classie.js")}}></script>
+        <script src={{asset("prinkino/js/uisearch.js")}}></script>
+{% endblock %}
+
 {% block corpo %}
 
-    <div class="container-fluid" style=""><script>var premiumAccess = 2;</script><script>var type=0; var csid=1750327;</script>
-        <div style="margin-top:20px;" align="center">
-            <h4 style="font-weight: 300;">Analisi cliente</h4>
-            {%for cliente in clienti%}
-            <h3 style="font-weight: 300; margin-top:10px;">{{cliente.nome}} {{cliente.cognome}}</h3>
+<div class="content">
+    <form id="msform"> 
+        <ul id="progressbar">
+            {% for i in 1..6 if i<=6 %}
+            <li class="active"> fase {{ i }}</li>
+            {% else %}
+            <li> fase i </li>
+            {% endfor %}
+        </ul>    			                   
+    </form>   	
+    <div class="column">
+        <div id="sb-search" class="sb-search">
+            <form>
+                <input class="sb-search-input" placeholder="Search" type="text" value="" name="search" id="search">
+                <input class="sb-search-submit" type="submit" value="">
+                <span class="sb-icon-search"></span>
+            </form>
         </div>
-        <table class="table ">
-            <caption><h4>Dati del cliente<h4></caption>
-            <thead>
-                <tr>
-                    <th class="span2">Data Nascita</th>
-                    <th class="span2"><span class="line"></span>Codice cliente </th>
-                    <th class="span2"><span class="line"></span>Codice Fiscale</th>
-                    <th class="span4"><span class="line"></span>Indirizzo</th>
-                    <th class="span2"><span class="line"></span>Citta'</th>
-                    <th class="span3"><span class="line"></span>telefono</th>
-                    <th class="span3"><span class="line"></span>Mail</th>
-                    <th class="span3"><span class="line"></span>fax</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="first" style="font-size:14px; cursor:pointer; ">
-                    <td>{{cliente.dataNascita|date('d-m-Y')}}</td>
-                    <td>{{cliente.codicecliente}}</td> 
-                    <td>{{cliente.codiceFiscale}}</td>
-                    <td>{{cliente.via}}, {{cliente.numeroCivico}}</td>
-                    <td>{{cliente.citta}}</td>
-                    <td>{{cliente.telefono}}</td>
-                    <td>{{cliente.mail}}</td>
-                    <td>{{cliente.fax}}</td>
-                </tr>
-            </tbody>
-            {%endfor%}
-        </table>
-        <div style="margin-top:15px;" align="right">
-            <a class="btn-flat success" href={{path('nuovoordine',{'idcliente':idcliente})}} style="border-radius:2px; cursor:pointer;"><i class="icon-mail-forward"></i> Aggiungi ordine</a>
-            <a class="btn-flat success" href="" style="border-radius:2px; cursor:pointer;"><i class="icon-mail-forward"></i> Modifica dati</a>
-        </div>
-        <table>
-            <tbody>
-                <tr valign="top">
-                    <td style="width: 1400px;" width="100%"><div class="row-fluid" id="boxTable" style="margin-top:30px;">
-                        <table class="table table-hover">
-                            <caption><h4>Ordini effettuati<h4></caption>
-                            <thead>
-                                <tr>
-                                    <th class="span2">Data ordine</th>
-                                    <th class="span2"><span class="line"></span>Grafica</th>
-                                    <th class="span2"><span class="line"></span>Stato</th>
-                                    <th class="span4"><span class="line"></span>Codice Articolo</th>
-                                    <th class="span1"><span class="line"></span>Codice Ordine</th>
-                                    <th class="span3"><span class="line"></span>Studio Grafico</th>
-                                    <th class="span3"><span class="line"></span>Sito di produzione</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {%for item in ordini %} 
-                                <tr class="first" style="font-size:14px; cursor:pointer; ">
-                                    <td>{{item.data|date('d-m-Y')}}</td>
-                                    <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('immagine', {'idgrafica': item.idgrafica, 'idcliente': idcliente} )}}>{{item.idgrafica}}</a></td>
-                                    <td>{{item.stato}}</td>
-                                    <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{ path('articolo2', {'idarticolo': item.articolo, 'idcliente': idcliente} )}}>{{item.articolo}}</a></td>
-                                    <td><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href={{path('ordine',{'idordine':item.codiceordine})}}>{{item.codiceordine}}</a></td>
-                                    <td> {{item.studiografico}}</td>
-                                    <td><span > {{item.sitoproduzione}}</span></td>
-                                </tr>	
-                            {%endfor%}						    			
-                            </tbody>
-                        </table>
-                    </td> 
-                </tr>
-            </tbody> 
-        </table>
-    </div>
+    </div>	
+    <div class="component2">	
+        <h1>Analisi cliente</h1>		
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dati del cliente</th>							
+                    </tr>
+                </thead>
+                <thead>
+                    <tr>
+                        <th>Data di<br> nascita</br></th>
+                        <th>Codice <br>cliente</br></th>
+                        <th>Codice <br>fiscale</br> </th>
+                        <th>Indirizzo </th>
+                        <th>Città </th>
+                        <th>Telefono </th>
+                        <th>Mail </th>
+                        <th>fax </th>
+
+                    </tr>
+                </thead>
+                <tbody>							
+                        <tr>
+                            <td class="user-datadinascita">{{cliente.dataNascita|date('d-m-Y')}}</td>
+                            <td class="user-codicecliente">{{cliente.codicecliente}}</td>
+                            <td class="user-codicefiscale">{{cliente.codiceFiscale}}</td>
+                            <td class="user-indirizzo">{{cliente.via}},{{cliente.numeroCivico}}</td>
+                            <td class="user-indirizzo">{{cliente.citta}}</td>
+                            <td class="user-telefono">{{cliente.telefono}}</td>
+                            <td class="user-telefono">{{cliente.mail}}</td>
+                            <td class="user-telefono">{{cliente.fax}}</td>                                                           
+                        </tr>							
+                </tbody>
+            </table>
+            <div class="box bg-3">
+                    <button class="button button--nanuk button--border-thin button--round-s">
+                            <span>A</span><span>g</span><span>g</span><span>i</span><span>u</span><span>n</span><span>g</span><span>i</span><span></span><span>O</span><span>r</span><span>d</span><span>i</span><span>n</span><span>e</span>
+                    </button>
+                    <button class="button button--nanuk button--border-thin button--round-s">
+                            <span>M</span><span>o</span><span>d</span><span>i</span><span>f</span><span>i</span><span>c</span><span>a</span><span></span><span>D</span><span>a</span><span>t</span><span>i</span>
+                    </button>
+            </div>
+            <table>	
+                <thead>
+                        <tr>							
+                                <th>Ordini effettuati</th>							
+                        </tr>
+                </thead>
+                <thead>
+                    <tr>
+                        <th>Data <br>ordine</br></th>
+                        <th>Grafica<br></th>
+                        <th>Stato <br></th>							
+                        <th>Codice <br>articolo</br></th>	
+                        <th>Codice <br>ordine</br></th>
+                        <th>Studio <br>grafico</br></th>
+                        <th>Sito di<br> produzione</br></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                        {%for item in ordini%}
+                    <tr>
+                        <td class="user-data">{{item.data|date('d-m-Y')}}</td>
+                        <td class="user-email"><a  href={{ path('immagine', {'idgrafica': item.idgrafica, 'idcliente': idcliente} )}}>{{item.idgrafica}}</a></td>
+                        <td class="user-phone">{{item.stato}}</td>
+                        <td class="user-name"><a  href={{ path('articolo2', {'idarticolo': item.articolo, 'idcliente': idcliente} )}}>{{item.articolo}}</a></td>
+                        <td class="user-name"><a  href={{path('ordine',{'idordine':item.codiceordine})}}>{{item.codiceordine}}</a></td>
+                        <td class="user-name">{{item.studiografico}}</td>
+                        <td class="user-name">{{item.sitoproduzione}}</td>
+                    </tr>
+                        {%endfor%}
+                </tbody>
+            </table>
+    </div>                    				
+                    <script src={{asset("prinkino/js/main.js")}}></script>			
+                    <script>
+                    new UISearch( document.getElementById( 'sb-search' ) );
+                    </script>
+                    
+                    
+                    <script>
+	(function() {
+		var menuEl = document.getElementById('ml-menu'),
+			mlmenu = new MLMenu(menuEl, {
+				// breadcrumbsCtrl : true, // show breadcrumbs
+				// initialBreadcrumb : 'all', // initial breadcrumb text
+				backCtrl : false, // show back button
+				// itemsDelayInterval : 60, // delay between each menu item sliding animation
+				onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+			});
+
+		// mobile menu toggle
+		var openMenuCtrl = document.querySelector('.action--open'),
+			closeMenuCtrl = document.querySelector('.action--close');
+
+		openMenuCtrl.addEventListener('click', openMenu);
+		closeMenuCtrl.addEventListener('click', closeMenu);
+
+		function openMenu() {
+			classie.add(menuEl, 'menu--open');
+		}
+
+		function closeMenu() {
+			classie.remove(menuEl, 'menu--open');
+		}
+
+		// simulate grid content loading
+		var gridWrapper = document.querySelector('.content');
+
+		function loadDummyData(ev, itemName) {
+			ev.preventDefault();
+
+			closeMenu();
+			gridWrapper.innerHTML = '';
+			classie.add(gridWrapper, 'content--loading');
+			setTimeout(function() {
+				classie.remove(gridWrapper, 'content--loading');
+				gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
+			}, 700);
+		}
+	})();
+	</script>  
+</div>
 {% endblock %}

@@ -1,78 +1,138 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Prinkino{% endblock %}</title>
-        {% block stylesheets %}
-            <link href="{{ asset('prinkino/style/monitor.css') }}" rel="stylesheet" />
-        {% endblock %}
-        {% block javascripts %}
-            <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-            <script src="{{ asset('prinkino/js/prova.js') }}"></script>
-            <script src="{{ asset('prinkino/js/catalogo.js') }}"></script>
-            <script src="{{ asset('prinkino/js/attributo.js') }}"></script>
-        {% endblock %}
+<html lang="en" class="no-js">
+
+<head>   
+    <title>{% block title %}Prinkino{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/normalize.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/set1.css")}}" />
+         <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/set2.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/buttons.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/component.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/component2.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/demo.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/demo2.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/step.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/ricerca.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/cs-select.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/cs-skin-boxes.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/cs-skin-underline.css")}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset("prinkino/style/organicfoodicons.css")}}" />
+        <link rel="shortcut icon" href="favicon.ico">
+    {% endblock %}
         
-    </head>
+    {% block javascripts %}
+        <script src={{asset("prinkino/js/modernizr-custom.js")}}></script>
+        
+
+        <script src={{asset("prinkino/js/classie.js")}}></script>
+        <script src={{asset("prinkino/js/dummydata.js")}}></script>
+        <script src={{asset("prinkino/js/main.js")}}></script>
+        <script src={{asset("prinkino/js/uisearch.js")}}></script>
+     {% endblock %}
+  
+</head>
     <body>
-        {% block body %}
-            <header>
+        <div class="container">
+            {% block body %}
+	    <header class="bp-header cf">
                 {% block header %}
-                    <img src="{{ asset('prinkino/src/prink.png')}}" id="logo">
-                    <nav class="menu">
-                        <ul>
-                            {%if app.session.get('ordine') is null %}
-                                <li><a href="{{ path('home') }}">Home</a></li>
-                                <li><a href="{{ path('nuovocliente') }}">Nuovo Cliente</a></li>
-                                <li><a href="{{ path('nuovoordine') }}">Nuovo Ordine</a></li>
-                                <li><a href="{{ path('ordini') }}">Gestione ordine</a></li>
-                            {%else%}
-                                 <li><a href=" {{ path('annulla')}}" >Annulla</a></li>
-                                <li><a href="{{ path('sospendi')}}">Sospendi</a></li>
-                                <li><a href="{{ path('visualizza')}}">Visualizza</a></li>
-                                <li><a href="{{ path('nuovoordine')}}">Continua</a></li>
-                            {%endif%}
-                        </ul>
-                    </nav>
+                <div class="dummy-logo">
+                    <div class="dummy-icon foodicon foodicon--coconut"></div>
+                    <h2 class="dummy-heading">Inprink</h2>
+                </div>
+                <div class="bp-header__main">
+                    <span class="bp-header__present">Inprink <span class="bp-tooltip bp-icon bp-icon--about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
+                </div>
                 {% endblock %}
             </header>
-            <div class="conteiner">
-                <div class="aside">  
-	            {% block aside %}    
-                        <nav class="menu" id="laterale">
-                                <ul>
-                                    <li><a href="{{ path('home') }}"><img class="icon" src="{{ asset('prinkino/src/home.ico')}}">Home</a></li>
-                                    <li><a href="{{ path('catalogo') }}"><img class="icon" src="{{ asset('prinkino/src/catalogo.ico')}}">Catalogo</a></li>
-                                    <li><a href="{{ path('clienti') }}"><img class="icon" src="{{ asset('prinkino/src/clienti.ico')}}">Clienti</a></li>
-                                    <li><a href="{{ path('ordini') }}"><img class="icon" src="{{ asset('prinkino/src/ordini.ico')}}">Ordini</a></li>
-                                </ul> 
-                        </nav>
-                    {% endblock %}
-	        </div>
-                <div id="corpo">
-                    {%if not(app.session.get('ordine') is null) %}
-                        {%set k=app.session.get('ordine')|length%}
-                        <form id="msform"> 
-                            <ul id="progressbar">
-                                {% for i in 1..6 %}
-                                    {%if i<=k%}
-                                        <li class="active"> fase {{ i }}</li>
-                                        {% else %}
-                                        <li> fase {{ i }} </li>
-                                    {%endif%}
-                                {% endfor %}
-                              </ul>    			                   
-                          </form>
-                    {%endif%}                   
-                    {% block corpo %}
-                   {% endblock %}
-                </div>
-                <footer>
-           		<p> inprint s.r.l.</p>
-	    	</footer>
-            </div>
-            {% endblock %}
-    </body>
+                <button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
+                 {% block aside %} 
+                    <nav id="ml-menu" class="menu">
+			<button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
+			<div class="menu__wrap">
+				
+				<ul data-menu="main" class="menu__level">					
+                                         <li> <a href="{{ path('home') }}" >Home</a></li>
+                                         <li> <a href="{{ path('catalogo') }}" >Catalogo</a></li>
+                                         <li> <a href="{{ path('nuovocliente') }}" >Nuovo cliente</a></li>
+                                         <li> <a href="{{ path('nuovoordine') }}" >Nuovo ordine...</a></li>
+                                         <li> <a href="{{ path('ordini') }}" >Ordini</a></li>
+                                         <li> <a href="{{ path('clienti') }}" >Clienti</a></li>
+                                         
+
+				</ul>
+				                                 
+				<ul data-menu="submenu-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-1-1" href="#">Secondo livello</a></li>
+				</ul>
+				  
+				<ul data-menu="submenu-1-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+				</ul>
+				 
+				<ul data-menu="submenu-2" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-2-1" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+				</ul>
+				 
+				<ul data-menu="submenu-2-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+				</ul>
+				 
+				<ul data-menu="submenu-3" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-3-1" href="#">Secondo livello</a></li>
+				</ul>
+				 
+				<ul data-menu="submenu-3-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+				</ul>
+				
+				<ul data-menu="submenu-4" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Secondo livello</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-4-1" href="#">Selection</a></li>
+				</ul>
+				 
+				<ul data-menu="submenu-4-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Terzo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Terzo livello</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Terzo livello</a></li>
+				</ul>   
+                                {% endblock %}
+			</div>
+		</nav> 
+		 {% endblock %}
+         {% block corpo %}
+        {% endblock %}
+        </body>
+    </div>
 </html>
 
 
+
+		
+            

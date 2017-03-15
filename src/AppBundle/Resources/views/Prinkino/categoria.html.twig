@@ -1,3 +1,6 @@
+{% extends "::base.html.twig" %}
+
+{% block corpo %}
 <section id="selezione">
     <select class="cs-select cs-skin-boxes" onclick="SottoCategorie(1)" >
         <option name"" value="" disabled selected>Seleziona Categoria</option>
@@ -18,3 +21,4 @@
 			})();
 		</script>
 </section>
+    {% endblock %}

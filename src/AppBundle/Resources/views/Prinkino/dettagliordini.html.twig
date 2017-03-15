@@ -1,0 +1,85 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Dettagli Ordine{% endblock %}
+
+{% block corpo %}
+
+
+<div class="container">
+	<!-- Top Navigation -->
+	<div class="codrops-top clearfix">
+		<a class="codrops-icon codrops-icon-prev" href="......."><span>Torna Indietro</span></a>
+		<span class="right"><a class="codrops-icon codrops-icon-drop" href="....."><span>Vai a...</span></a></span>
+	</div>	
+		<div class="column">
+		<div id="sb-search" class="sb-search">
+			<form>
+				<input class="sb-search-input" placeholder="Search" type="text" value="" name="search" id="search">
+				<input class="sb-search-submit" type="submit" value="">
+				<span class="sb-icon-search"></span>
+			</form>
+		</div>
+</div>		
+	<div class="component">	
+		<h1>Dettagli ordine</h1>		
+			<table>
+				<thead>
+					<tr>
+						<th>Ordine</th>							
+					</tr>
+				</thead>
+				<thead>
+					<tr>
+						<th>Data ordine</th>
+						<th>Data conclusione</th>
+						<th>Stato </th>
+						<th>Quantità </th>
+						<th>Studio grafico </th>
+						<th>sito di produzione</th>
+						<th>Importo</th>							
+					</tr>
+				</thead>
+				<tbody>
+					{%for item in dettagli%}
+					<tr><td class="user-data ordine">{{item.dataordine}}</td><td class="user-data conclusione">{{item.dataconclusione}}</td><td class="user-stato">{{item.stato}}</td><td class="user-quantità">{{item.quantita}}</td><td class="user-studio grafico">{{item.studiografico}}</td><td class="user-sitodiproduzione">{{item.sitodiproduzione}}</td>><td class="user-importo">{{item.importo}}</td>
+					{%endfor%}
+				</tbody>
+			</table>
+
+			<div class="box bg-3">
+				<button class="button button--nanuk button--border-thin button--round-s">
+					<span>R</span><span>i</span><span>p</span><span>e</span><span>t</span><span>i</span><span></span><span>O</span><span>r</span><span>d</span><span>i</span><span>n</span><span>e</span>
+				</button>
+				<button class="button button--nanuk button--border-thin button--round-s">
+					<span>M</span><span>o</span><span>d</span><span>i</span><span>f</span><span>i</span><span>c</span><span>a</span><span>O</span><span>r</span><span>d</span><span>i</span><span>n</span><span>e</span>
+				</button>
+				
+			</div>
+				<table>	
+					<thead>
+						<tr>							
+							<th>Eventi ordine</th>							
+						</tr>
+					</thead>
+					<thead>
+					
+						<tr>
+							<th>Data</th>
+							<th>Ora</th>
+							<th>Tipo </th>							
+							<th>Descrizione</th>
+						</tr>
+					</thead>
+					<tbody>
+						{%for item in dettagli%}
+						<tr><td class="user-data">{{item.data}}</td><td class="user-ora">{{item.ora}}</td><td class="user-tipo">{{item.tipo}}</td><td class="user-descrizione">{{item.descrizione}}</td>
+						{%endfor%}
+					</tbody>
+				</table>
+			</div>
+			<script src="js/classie.js"></script>
+	<script src="js/uisearch.js"></script>
+	<script>
+		new UISearch( document.getElementById( 'sb-search' ) );
+	</script>
+{% endblock %}

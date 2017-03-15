@@ -1,0 +1,143 @@
+{% extends "AppBundle:Amministratore:Abase.html.twig" %}
+
+{% block title %}Attributo{% endblock %}
+
+{% block javascript %} 
+    {{parent()}}
+    
+    <script src="{{asset(=Amministratore/js/attributo.js)}}"></script>
+    
+{% endblock %}
+
+{% block corpo %}
+
+<div class="content">
+    <div id="sb-search" class="sb-search">
+        <form>
+                <input class="sb-search-input" placeholder="Search" type="text" value="" name="search" id="search">
+                <input class="sb-search-submit" type="submit" value="">
+                <span class="sb-icon-search"></span>
+                <script src={{asset("Amministratore/js/uisearch.js")}}></script>
+                <script>
+                    new UISearch( document.getElementById( 'sb-search' ) );
+                </script>
+        </form>
+    </div>
+
+    <div class="component2">
+        <h2>Attributo - {{attributo.id}}</h2> 
+            <table>				
+                <thead>						
+                    <tr>								
+                        <th>Nome</th>
+                        <th>Numero set</th>								
+                    </tr>	
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="user-name">{{attributo.nome}}</td>
+                        <td class="user-email">{{setattributi|lenght}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Valori</span></h4>
+            <table>				
+                <thead>						
+                    <tr>								
+                        <th>Id</th>
+                        <th>Nome </th>								
+                    </tr>	
+                </thead>
+                <tbody>
+                    {%for item in valori%}
+                    <tr>
+                        <td class="user-name">{{item.id}}</td>
+                        <td class="user-email">{{item.nome}}</td>
+                    </tr>
+                     {%endfor%}
+                </tbody>
+            </table>
+
+            <h4>Set attributi</span></h4>
+            <table>				
+                <thead>						
+                    <tr>								
+                            <th>Id</th>
+                            <th>Nome </th>	
+                            <th></th>	
+                            <th></th>	
+                    </tr>	
+                </thead>
+                <tbody>
+                        {%for item in setattributi%}
+                        <tr><td class="user-name">{{item.id}}</td>
+                            <td class="user-email">{{item.nome}}</td>
+                            <td style="cursor:pointer;"><a class="btn-flat primary" style="border-radius:2px; cursor:pointer; margin-right:18px; padding: 3px 5px 3px 3px;" href="cliente.html"><i class="icon-zoom-in"></i> Apri</a></td>
+                        </tr>                       
+                            {%endfor%}
+                </tbody>
+            </table>
+
+            <div class="box bg-3">
+                <button class="button button--nanuk button--border-thin button--round-s">
+                    <span>E</span><span>l</span><span>i</span><span>m</span><span>i</span><span>n</span><span>a</span>
+                </button>
+                <button class="button button--nanuk button--border-thin button--round-s">
+                    <span>M</span><span>o</span><span>d</span><span>i</span><span>f</span><span>i</span><span>c</span><span>a</span>
+                </button>
+                    <script src={{asset("Amministratore/js/classie.js")}}></script>
+                     <script src={{asset("Amministratore/js/uisearch.js")}}></script>
+                    <script>
+                    new UISearch( document.getElementById( 'sb-search' ) );
+                    </script>
+            </div>		
+    </div>
+</div>
+ <!-- /view -->
+        <script src={{asset("Amministratore/js/dummydata.js")}}></script>
+        <script src={{asset("Amministratore/js/main.js")}}></script>
+        <script src={{asset("Amministratore/js/classie.js")}}></script>
+	<script>
+	(function() {
+		var menuEl = document.getElementById('ml-menu'),
+			mlmenu = new MLMenu(menuEl, {
+				// breadcrumbsCtrl : true, // show breadcrumbs
+				// initialBreadcrumb : 'all', // initial breadcrumb text
+				backCtrl : false, // show back button
+				// itemsDelayInterval : 60, // delay between each menu item sliding animation
+				onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+			});
+
+		// mobile menu toggle
+		var openMenuCtrl = document.querySelector('.action--open'),
+			closeMenuCtrl = document.querySelector('.action--close');
+
+		openMenuCtrl.addEventListener('click', openMenu);
+		closeMenuCtrl.addEventListener('click', closeMenu);
+
+		function openMenu() {
+			classie.add(menuEl, 'menu--open');
+		}
+
+		function closeMenu() {
+			classie.remove(menuEl, 'menu--open');
+		}
+
+		// simulate grid content loading
+		var gridWrapper = document.querySelector('.content');
+
+		function loadDummyData(ev, itemName) {
+			ev.preventDefault();
+
+			closeMenu();
+			gridWrapper.innerHTML = '';
+			classie.add(gridWrapper, 'content--loading');
+			setTimeout(function() {
+				classie.remove(gridWrapper, 'content--loading');
+				gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
+			}, 700);
+		}
+	})();
+	</script>                  
+{% endblock %}
